@@ -148,20 +148,21 @@ Test cases are JSON files in `medical_facts_evaluation/test_cases/`:
   "language": "de",
   "transcript": "Full doctor-patient conversation...",
   "ground_truth": {
-    "diagnoses": ["..."],
+    "diagnoses": ["Diabetes mellitus Typ 2", "..."],
     "medications": [
       {
-        "name": "Medication Name",
-        "dosage": "10 mg",
+        "name": "Metformin",
+        "dosage": "500 mg",
         "frequency": "1-0-1",
-        "notes": "Additional context"
+        "notes": "Increased dosage"
       }
     ],
-    "vital_signs": [...],
-    "lab_values": [...],
-    "symptoms": [...],
-    "procedures": [...],
-    "follow_up": "..."
+    "vital_signs": [
+      {"type": "HbA1c", "value": "7.2", "unit": "%"}
+    ],
+    "symptoms": ["Fatigue", "Increased thirst"],
+    "procedures": ["Blood glucose measurement"],
+    "follow_up": "Control appointment in 4 weeks"
   }
 }
 ```
@@ -193,20 +194,74 @@ results/
 
 ### RAGAS Metrics
 
-| Metric | Description | Threshold |
-|--------|-------------|-----------|
-| **Faithfulness** | Are extracted facts grounded in the transcript? | ≥ 90% |
-| **Context Recall** | Are all relevant facts from transcript captured? | ≥ 85% |
-| **Answer Relevancy** | Is the output relevant to the medical context? | ≥ 80% |
+RAGAS (Retrieval Augmented Generation Assessment) provides LLM-based evaluation metrics. Here's how each metric works:
+
+#### Faithfulness (≥ 90%)
+
+**What it measures**: Whether the agent's extracted facts are actually supported by the source transcript.
+
+**How it works**:
+1. The LLM breaks down the agent's output into individual **claims** (e.g., "Patient takes Metformin 500mg")
+2. For each claim, the LLM checks if it can be **inferred from the transcript**
+3. Claims are classified as either **supported** or **unsupported** (hallucinated)
+4. Score = `(Supported Claims) / (Total Claims)`
+
+**Example**:
+- Agent outputs: "Patient has diabetes (✓), takes Metformin (✓), allergic to penicillin (✗ - not mentioned)"
+- 2 out of 3 claims supported → **Faithfulness = 66.7%**
+
+**Why it matters**: A low faithfulness score indicates **hallucinations** - the agent is making up medical facts not present in the conversation.
+
+---
+
+#### Context Recall (≥ 85%)
+
+**What it measures**: Whether the agent captured all the relevant information from the transcript.
+
+**How it works**:
+1. The LLM examines the **ground truth** (expected output)
+2. For each piece of ground truth, it checks if it could be **attributed to the transcript**
+3. Then checks if this information appears in the **agent's output**
+4. Score = `(Ground Truth Items Retrieved) / (Total Ground Truth Items)`
+
+**Example**:
+- Ground truth has 5 medications
+- Agent correctly extracted 4 of them
+- **Context Recall = 80%**
+
+**Why it matters**: A low context recall means the agent is **missing important medical information** that was discussed.
+
+---
+
+#### Answer Relevancy (≥ 80%)
+
+**What it measures**: Whether the agent's output is actually relevant to the medical context and query.
+
+**How it works**:
+1. The LLM generates **synthetic questions** that the agent's answer would address
+2. These questions are compared to the **original context**
+3. Measures how well the answer addresses what was actually asked
+4. Penalizes irrelevant or off-topic content
+
+**Why it matters**: Ensures the agent stays focused on relevant medical facts rather than including tangential information.
+
+---
 
 ### Medication Metrics
 
-| Metric | Description | Threshold |
-|--------|-------------|-----------|
-| **Precision** | % of extracted medications that are correct | ≥ 95% |
-| **Recall** | % of ground truth medications that were found | ≥ 90% |
-| **F1 Score** | Harmonic mean of Precision and Recall | - |
-| **Hallucination Score** | % of outputs that are NOT hallucinated | ≥ 98% |
+These are deterministic (non-LLM) metrics calculated by comparing extracted medications against ground truth:
+
+| Metric | Formula | Threshold |
+|--------|---------|-----------|
+| **Precision** | `TP / (TP + FP)` - What % of extracted meds are correct | ≥ 95% |
+| **Recall** | `TP / (TP + FN)` - What % of actual meds were found | ≥ 90% |
+| **F1 Score** | `2 × (P × R) / (P + R)` - Balanced accuracy | - |
+| **Hallucination Score** | `1 - (Hallucinated Meds / Total Extracted)` | ≥ 98% |
+
+**Where**:
+- **TP** (True Positives): Medications correctly extracted
+- **FP** (False Positives): Medications extracted but not in ground truth (hallucinations)
+- **FN** (False Negatives): Medications in ground truth but not extracted (missed)
 
 ## Project Structure
 
