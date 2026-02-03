@@ -1,0 +1,26 @@
+{
+  "subjective": [
+    "Rückenschmerzen",
+    "Blutzuckerprobleme (Zucker macht was er will)",
+    "Bisher: Metformin 1000mg 1-0-1",
+    "Bisher: Ramipril 5mg morgens",
+    "Reise: Flug nach Mallorca nächste Woche"
+  ],
+  "objective": [
+    "RR: 160/90 mmHg",
+    "GFR <60 (aus Akte)"
+  ],
+  "assessment": [
+    "Blutdruck deutlich zu hoch",
+    "Nierenwerte grenzwertig, Ibuprofen nicht geeignet"
+  ],
+  "plan": [
+    "Umstellung: Ramipril auf 10mg täglich (2x 5mg bis Packung leer, dann 10mg Tabletten)",
+    "Neu: Metamizol 20-30 Trpf. bbd. max 4x (nierenverträglich)",
+    "Abgelehnt: Ozempic (Werte nicht schlecht genug, Lieferengpässe)",
+    "Tramadol-Reste sofort entsorgen",
+    "Labor durch Schwester Ute",
+    "Viel Wasser trinken und Beine bewegen auf Flug",
+    "Keine Thrombosespritze nötig für Mallorca"
+  ]
+}

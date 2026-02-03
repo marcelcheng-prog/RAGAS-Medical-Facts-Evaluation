@@ -1,0 +1,26 @@
+# Medical Facts Production Evaluation
+# Install: pip install -r requirements.txt
+
+# RAGAS framework
+ragas>=0.2.0
+
+# LangChain
+langchain>=0.2.0
+langchain-openai>=0.1.0
+
+# OpenAI
+openai>=1.0.0
+
+# Data
+datasets>=2.0.0
+pandas>=2.0.0
+
+# HTTP
+requests>=2.28.0
+
+# Beautiful output (recommended)
+rich>=13.0.0
+
+# Utilities
+pydantic>=2.0.0
+python-dotenv>=1.0.0

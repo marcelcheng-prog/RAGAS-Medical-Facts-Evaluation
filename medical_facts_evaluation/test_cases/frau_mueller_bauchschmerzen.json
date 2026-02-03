@@ -1,0 +1,113 @@
+{
+    "test_id": "frau_mueller_bauchschmerzen",
+    "name": "Frau Müller - Bauchschmerzen & Fieber",
+    "description": "Patient with fever, left-sided abdominal pain, diarrhea - suspected diverticulitis",
+    "language": "de",
+    "transcript": "So Frau Müller, dann können Sie mir jetzt mal erzählen, was führt Sie genau zu mir?\nAlso, ich habe seit drei Tagen Fieber.\nGestern hat Übelkeit dazu angefangen und linkseitige Bauchschmerzen.\nOkay, wie viel Fieber hatten Sie?\nDas Höchste, was ich gemessen habe, war 39,03.\nHaben Sie ein Medikament genommen?\nJa, ein Tafalgan, zwei antebotika, vier atihstamn.\nEingremmer habe ich genommen.\nUnd das Tiefste, das ich gemessen habe, wäre 37,7.\nOkay.\nHaben Sie ein Erbrechen oder Durchfall gehabt?\nÜbelkeit habe ich.\nErbrechen habe ich nicht müssen.\nDurchfall habe ich aber.\nWo tut es besonders weh am Bauch?\nHaben Sie eine gewisse Stelle, wo Ihnen besonders weh tut?\nJa, hier auf der linken Seite.\nAm linken am Bauch?\nJa.\nIst der Durchfall eine Blutung gewesen oder nicht?\nMuss ich Ihnen sagen, da habe ich mich gar nicht geachtet.\nHaben Sie das denn auch schon gehabt?\nSo in diesem Ausmass der Durchfall nicht, nein.\nHaben Sie am Beruf irgendwelche Vorerkrankungen?\nSind Sie mal operiert worden?\nNein.\nMein wirklicher Hausarzt meint, dass ich einen Reizdarm bin.\nAber ich bin der Meinung.\nHaben Sie immer wieder solche Probleme?\nJa, aber nicht mit Durchfall.\nEinfach nur Schmerzen.\nSind Sie in den Ferien gewesen oder haben Sie etwas Schlechtes gegessen?\nNein, eigentlich nicht.\nIst in der Familie noch jemand betroffen?\nDann dürfte ich sie kurz untersuchen.\nMöchten Sie kurz hier auf der Schraube liegen?\nJa.\nWenn ich hier drücke, tut es hier weh?\nOh ja.\nWenn ich loslasse, ist es schlimmer?\nMinim.\nMinim, okay.\nUnd wenn ich jetzt hier drücke, da?\nNein.\nDas ist nichts.\nWenn ich jetzt hier so rüttle, haben Sie Schmerzen?\nIst einfach unangenehm.\nIst einfach unangenehm, okay.\nDa hinten, muss ich verklappen.\nIst gut?\nJa.\nKein Problem, gut.\nIch darf Sie bei Ihnen noch kurz mit dem Stethoskop abhören und Sie noch schnell abhören.\nEs rubbelt aber schon recht.\nWas heisst das?\nJa, der Bauch ist recht aktiv.\nOkay.\nSoll ich Ihnen noch schnell die Fieber melzen?\nJa, 38 viert.\nDas ist gar nicht so wenig.\nUnd eben seit gestern ist das.\nAlso, aber wenn ich hier drücke und loslasse, dann wird es schlimmer?\nJa.\nOkay, ja.\nGut, dann dürfen Sie mal wieder aufstehen.\nIch muss noch hinsetzen.\nDann würde ich Ihnen noch schnell den Blutdruck messen.\nSo.\nWow.\nDann starten wir hier schnell.\nJetzt müssen wir kurz warten.\nJetzt müssen Sie einfach schauen, dass Sie sich nicht bewegen.\nMöglichst auch nicht zu vorne reden, bis es fertig gemessen hat.\nSonst gibt es dann möglicherweise eine Fehlmessung.\nJa, 109 auf 66, der Puls ist 94 eher, ein wenig hoch.\nWie haben Sie eigentlich so gegessen und getrunken?\nIst das noch gegangen, oder?\nJa, eigentlich schon.\nDer Puls ist jetzt gerade ein wenig hoch.\nGut, das ist natürlich wahrscheinlich auch ein wenig wegen der Fieber.\nAber, ähm, haben Sie den wahnsinnigen Durstgefühl im Moment, oder geht's?\nNicht einmal, also ich trinke, so wie ich eigentlich sonst trinke.\nOkay.\nBlutdruck hatten wir im K109 auf 66.\nObwohl es war 66.\nÄh, 94, genau.\n28,4 Grad Fieber.\nSo, wunderbar.\nAlso, ja, ich habe das Gefühl, sie haben sicher eine Art Magen-Darm-Grippe.\nIch denke, wahrscheinlich können sogar die Vertikulitis sein.\nDas ist eine Entzündung, die es meistens gibt im Endarm, im linken Unterbauchbereich.\nUnd das ist etwas, was man in der Regel muss antibiotisch behandeln.\nBesser, damit wir das entscheiden können, würde ich gerne noch kurz ins Labor nehmen.\nDann nehmen wir ein bisschen Blut.\nUnd dann sehen wir, nachdem es die Entzündungszellen sind, können wir entscheiden, ob es eine Antibiotikatherapie braucht oder nicht.\nUnd dann gebe ich Ihnen sicher noch etwas gegen die Schmerzen mit und etwas gegen den Durchfall nützt.\nAllergie oder so haben Sie nicht, gellet Sie?\nNur Heuschnupfen.\nAh, das ist gut, ja.\nAlso jetzt gerade ist es nicht gut.\nIst wahr?\nJa.\nEs ist stark.\nKann ich mir noch vorstellen.\nAber so Cortison oder so nehmen Sie nichts ein?\nNein.\nOder haben Sie Cortisonspritze gehabt?\nSeit zwei Jahren nicht mehr.\nNicht?\nOkay, gut.\nNehmen Sie Antiallergika ein?\nJa.\nWie weissen Sie?\nDas Gesinsaal.\nOkay, ja.\nDas ist das Einzige.\nNehmen Sie sonst noch Medikamente?\nNein.\nOkay, gut.\nWunderbar.\nJe nachdem, wenn wir uns nicht ganz sicher sind, auch vom Labor her müssen wir ja noch schauen, ob wir auch noch eine CT-Abklärung machen wollen.\nAber jetzt primär mal warten wir das Labor ab und dann sehen wir uns nachher wieder.\nVielen Dank und bis nachher.\nDanke.",
+    "ground_truth": {
+        "medications_taken": [
+            {
+                "name": "Tafalgan",
+                "dose": "1g",
+                "frequency": "",
+                "action": "continued",
+                "notes": "Patient took for fever (Eingremmer = Ein Gramm)"
+            },
+            {
+                "name": "antebotika",
+                "dose": "zwei",
+                "frequency": "",
+                "action": "continued",
+                "notes": "Transcription as-is"
+            },
+            {
+                "name": "atihstamn",
+                "dose": "vier",
+                "frequency": "",
+                "action": "continued",
+                "notes": "Transcription as-is"
+            },
+            {
+                "name": "gesinsaal",
+                "dose": "",
+                "frequency": "",
+                "action": "continued",
+                "notes": "Antihistamine (transcribed as Gesinsaal)"
+            }
+        ],
+        "medications_planned": [
+            {
+                "name": "Antibiotika",
+                "dose": "",
+                "frequency": "",
+                "action": "new",
+                "notes": "Pending lab results, for suspected diverticulitis"
+            },
+            {
+                "name": "Schmerzmittel",
+                "dose": "",
+                "frequency": "",
+                "action": "new",
+                "notes": "Doctor will prescribe something for pain"
+            },
+            {
+                "name": "Durchfallmedikament",
+                "dose": "",
+                "frequency": "",
+                "action": "new",
+                "notes": "Doctor will prescribe something for diarrhea"
+            }
+        ],
+        "all_medication_names": [
+            "Tafalgan",
+            "antebotika",
+            "atihstamn",
+            "gesinsaal",
+            "Antibiotika",
+            "Schmerzmittel",
+            "Durchfallmedikament"
+        ],
+        "vital_measurements": [
+            {
+                "parameter": "Blutdruck",
+                "value": "109/66",
+                "unit": "mmHg"
+            },
+            {
+                "parameter": "Puls",
+                "value": "94",
+                "unit": "bpm"
+            },
+            {
+                "parameter": "Temperatur",
+                "value": "38.4",
+                "unit": "°C"
+            }
+        ],
+        "symptoms": [
+            "Fieber seit 3 Tagen",
+            "Übelkeit",
+            "Linkseitige Bauchschmerzen",
+            "Durchfall"
+        ],
+        "medical_history": [
+            "Reizdarm",
+            "Heuschnupfen",
+            "Cortisonspritze vor 2 Jahren"
+        ],
+        "physical_examination": [
+            "Druckschmerz linker Unterbauch",
+            "Loslass-Schmerz positiv",
+            "Aktive Darmgeräusche"
+        ],
+        "diagnostic_hypotheses": [
+            "Magen-Darm-Grippe",
+            "Divertikulitis"
+        ],
+        "diagnostic_plans": [
+            "Labor (Entzündungswerte)",
+            "CT-Abklärung (falls unklar)"
+        ],
+        "forbidden_medications": []
+    }
+}
