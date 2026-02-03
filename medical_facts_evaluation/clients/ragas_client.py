@@ -54,7 +54,8 @@ def setup_ragas(
         Tuple of (llm, embeddings) for RAGAS evaluation
     """
     from ragas.llms import llm_factory
-    from ragas.embeddings import OpenAIEmbeddings
+    from langchain_openai import OpenAIEmbeddings as LangChainOpenAIEmbeddings
+    
     
     if verbose:
         print("  Creating LLM via llm_factory...")
@@ -88,13 +89,15 @@ def setup_ragas(
         print(f"  ✅ LLM ready: {llm}")
         print("  Creating embeddings...")
     
-    embeddings = OpenAIEmbeddings(
-        client=openai_client,
-        model=embedding_model
+    # Use LangChain's OpenAIEmbeddings which has the embed_query method
+    # required by RAGAS answer_relevancy metric
+    embeddings = LangChainOpenAIEmbeddings(
+        model=embedding_model,
+        # LangChain will use OPENAI_API_KEY from environment
     )
     
     if verbose:
-        print("  ✅ Embeddings ready")
+        print(f"  ✅ Embeddings ready: {embedding_model}")
     
     return llm, embeddings
 
