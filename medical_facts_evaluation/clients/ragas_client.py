@@ -59,14 +59,30 @@ def setup_ragas(
     if verbose:
         print("  Creating LLM via llm_factory...")
     
-    # RAGAS automatically handles max_tokens -> max_completion_tokens mapping
-    # for GPT-5.x and o-series models, so we always pass max_tokens
-    llm = llm_factory(
-        model=model,
-        provider="openai",
-        client=openai_client,
-        max_tokens=10000
+    # Check if model is GPT-5.x or o-series (reasoning models)
+    model_lower = model.lower()
+    is_reasoning_model = (
+        model_lower.startswith('gpt-5') or 
+        model_lower.startswith('gpt-6') or
+        (model_lower.startswith('o') and len(model_lower) >= 2 and model_lower[1].isdigit())
     )
+    
+    if is_reasoning_model:
+        # For GPT-5.x and o-series: use max_completion_tokens directly
+        llm = llm_factory(
+            model=model,
+            provider="openai",
+            client=openai_client,
+            max_completion_tokens=10000
+        )
+    else:
+        # For GPT-4.x and older: use max_tokens
+        llm = llm_factory(
+            model=model,
+            provider="openai",
+            client=openai_client,
+            max_tokens=10000
+        )
     
     if verbose:
         print(f"  ✅ LLM ready: {llm}")
