@@ -66,18 +66,10 @@ MEDICAL_FACTS_AUTH_TOKEN=ragflow-your-token-here
 
 # Optional
 RAGFLOW_BASE_URL=http://172.17.16.150/api/v1/agents_openai
-OPENAI_MODEL=gpt-4.1  # or gpt-4o, gpt-4o-mini
+OPENAI_MODEL=gpt-5.2  # or gpt-4o, gpt-4.1, o3, etc.
 ```
 
-### Supported OpenAI Models
-
-| Model | Quality | Speed | Cost | RAGAS Compatible |
-|-------|---------|-------|------|------------------|
-| `gpt-4.1` | ⭐⭐⭐⭐⭐ | Medium | $$ | ✅ |
-| `gpt-4o` | ⭐⭐⭐⭐ | Fast | $$ | ✅ |
-| `gpt-4o-mini` | ⭐⭐⭐ | Fast | $ | ✅ |
-| `gpt-4-turbo` | ⭐⭐⭐⭐ | Medium | $$$ | ✅ |
-| `gpt-5.x` | ⭐⭐⭐⭐⭐ | Fast | $$$ | ⚠️ Partial |
+All OpenAI models are supported, including GPT-5.x and o-series reasoning models.
 
 > **Note**: GPT-5.x models require `max_completion_tokens` instead of `max_tokens`. The framework has partial support, but some RAGAS features may not work.
 
@@ -278,7 +270,6 @@ PRODUCTION = QualityThresholds(
 
 - **Exact String Matching**: Medication names require exact matches. "Esomep" ≠ "Esomeprazol"
 - **German Only**: Test cases and prompts are in German
-- **GPT-5.x Support**: Partial - RAGAS library needs update for `max_completion_tokens`
 
 ## Future Improvements
 

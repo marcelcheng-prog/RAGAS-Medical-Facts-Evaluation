@@ -46,7 +46,7 @@ def setup_ragas(
     
     Args:
         openai_client: Configured OpenAI client
-        model: LLM model name
+        model: LLM model name (supports gpt-4.x, gpt-5.x, o1, o3, etc.)
         embedding_model: Embedding model name
         verbose: Whether to print status messages
         
@@ -59,25 +59,14 @@ def setup_ragas(
     if verbose:
         print("  Creating LLM via llm_factory...")
     
-    # GPT-5.x and o1/o3 models use max_completion_tokens instead of max_tokens
-    # Use a compatible approach for newer models
-    is_new_model = any(model.startswith(prefix) for prefix in ['gpt-5', 'o1', 'o3'])
-    
-    if is_new_model:
-        # For GPT-5.x and reasoning models, don't pass max_tokens
-        # The RAGAS library may need updating for full support
-        llm = llm_factory(
-            model=model,
-            provider="openai",
-            client=openai_client,
-        )
-    else:
-        llm = llm_factory(
-            model=model,
-            provider="openai",
-            client=openai_client,
-            max_tokens=10000
-        )
+    # RAGAS automatically handles max_tokens -> max_completion_tokens mapping
+    # for GPT-5.x and o-series models, so we always pass max_tokens
+    llm = llm_factory(
+        model=model,
+        provider="openai",
+        client=openai_client,
+        max_tokens=10000
+    )
     
     if verbose:
         print(f"  ✅ LLM ready: {llm}")
@@ -102,7 +91,6 @@ class RagasEvaluator:
         llm: Any,
         embeddings: Any,
         verbose: bool = False,
-        model_name: str = "gpt-4o-mini",
     ):
         """
         Initialize RAGAS evaluator.
@@ -111,17 +99,10 @@ class RagasEvaluator:
             llm: RAGAS LLM instance
             embeddings: RAGAS embeddings instance
             verbose: Whether to print status messages
-            model_name: Name of the model (to handle GPT-5.x differences)
         """
         self.llm = llm
         self.embeddings = embeddings
         self.verbose = verbose
-        self.model_name = model_name
-        
-        # Set max tokens for evaluation (only for older models)
-        is_new_model = any(model_name.startswith(prefix) for prefix in ['gpt-5', 'o1', 'o3'])
-        if not is_new_model:
-            self.llm.max_tokens = 8000
     
     def evaluate(
         self,
@@ -251,5 +232,4 @@ class RagasEvaluator:
             llm=llm, 
             embeddings=embeddings, 
             verbose=verbose,
-            model_name=settings.openai_model
         )
