@@ -271,18 +271,5 @@ PRODUCTION = QualityThresholds(
 - **Exact String Matching**: Medication names require exact matches. "Esomep" ≠ "Esomeprazol"
 - **German Only**: Test cases and prompts are in German
 
-## Future Improvements
-
-- [ ] Fuzzy matching for medication names (RapidFuzz)
-- [ ] Synonym database for brand/generic names
-- [ ] Multi-language support
-- [ ] Web UI for results visualization
-- [ ] Batch evaluation across all test cases
-
-## License
-
-MIT
-
-## Author
 
 Marcel Cheng - [marcelcheng-prog](https://github.com/marcelcheng-prog)
