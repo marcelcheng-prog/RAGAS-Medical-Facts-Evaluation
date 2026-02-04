@@ -39,7 +39,7 @@ env/
 # Test results (keep results directory structure but not contents)
 results/
 *.json
-!test_cases/*.json
+!medical_facts_evaluation/test_cases/*.json
 
 # Logs
 *.log

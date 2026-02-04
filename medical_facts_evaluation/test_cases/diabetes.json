@@ -9,52 +9,69 @@
             "Diabetes mellitus Typ 2",
             "Übergewicht"
         ],
-        "medications": [
+        "medications_taken": [
+            {
+                "name": "Chardians Met",
+                "dose": "",
+                "frequency": "",
+                "action": "stopped",
+                "notes": "Jardiance/SGLT2-Inhibitor - gestoppt"
+            },
+            {
+                "name": "Forsiga",
+                "dose": "",
+                "frequency": "",
+                "action": "stopped",
+                "notes": "Forxiga/SGLT2-Inhibitor - gestoppt"
+            },
+            {
+                "name": "DPP4-Hämer",
+                "dose": "",
+                "frequency": "",
+                "action": "stopped",
+                "notes": "DPP-4-Hemmer - gestoppt"
+            }
+        ],
+        "medications_planned": [
             {
                 "name": "Ozempic",
-                "dosage": "0,5 mg aktuell, Erhöhung auf 1,0 mg",
+                "action": "new",
+                "dose": "0,5 mg aktuell, Erhöhung auf 1,0 mg",
                 "frequency": "wöchentlich",
-                "notes": "GLP-1-Analogon, Subkutane Injektion, neu gestartet"
+                "notes": "GLP-1-Analogon, Subkutane Injektion"
             },
             {
                 "name": "Metformin",
-                "dosage": "",
+                "action": "new",
+                "dose": "",
                 "frequency": "",
-                "notes": "Basistherapie Diabetes, neu gestartet"
+                "notes": "Basistherapie Diabetes"
             },
             {
-                "name": "Wegovy",
-                "dosage": "",
+                "name": "Wegobi",
+                "action": "refused",
+                "dose": "",
                 "frequency": "",
-                "notes": "Diskutiert aber abgelehnt - Limitation der regelmäßigen Kontrolle (Wegobi im Diktat)"
-            },
-            {
-                "name": "Jardiance",
-                "dosage": "",
-                "frequency": "",
-                "notes": "Gestoppt - SGLT2-Inhibitor (Chardians Met im Diktat)"
-            },
-            {
-                "name": "Forxiga",
-                "dosage": "",
-                "frequency": "",
-                "notes": "Gestoppt - SGLT2-Inhibitor (Forsiga im Diktat)"
-            },
-            {
-                "name": "DPP-4-Hemmer",
-                "dosage": "",
-                "frequency": "",
-                "notes": "Gestoppt - nicht näher spezifiziert (DPP4-Hämer im Diktat)"
+                "notes": "Diskutiert aber abgelehnt - Limitation der regelmäßigen Kontrolle"
             }
         ],
-        "vital_signs": [
+        "all_medication_names": [
+            "Chardians Met",
+            "Forsiga",
+            "DPP4-Hämer",
+            "SGLT2-Hybirdur",
+            "Ozempic",
+            "Metformin",
+            "Wegobi"
+        ],
+        "vital_measurements": [
             {
-                "name": "BMI",
+                "parameter": "BMI",
                 "value": "29",
                 "unit": "kg/m²"
             },
             {
-                "name": "Gewichtsverlust",
+                "parameter": "Gewichtsverlust",
                 "value": "2",
                 "unit": "kg"
             }
