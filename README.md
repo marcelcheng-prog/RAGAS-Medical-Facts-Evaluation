@@ -29,6 +29,31 @@ This agent uses the **same prompt as the production Medical Facts agent**. It ha
 python -m medical_facts_evaluation --agent-a e1a25a64fdc611f0b3cb4afd40f7103b --verbose
 ```
 
+## Parallel Extraction Agent (Experimental)
+
+**Agent ID**: `a6ef1157028011f180502a3cdbc575c7`
+
+This experimental agent splits Medical Facts extraction into **4 parallel categories**:
+1. **Medication** - Drug names, dosages, frequencies
+2. **Clinical Assessment** - Diagnoses, symptoms, findings
+3. **Measurement & Extraction** - Lab values, vital signs
+4. **Patient Context** - Demographics, history, lifestyle
+
+**Pros:**
+- ⚡ **Faster performance** due to parallel processing
+
+**Cons:**
+- ❌ **Lower quality** than production agent
+- Missing equivalence patterns (e.g., "Metamizol = Novalgin")
+- ~80% Medication Recall vs 100% on production agent
+
+```bash
+# Test the parallel extraction agent
+python -m medical_facts_evaluation --agent-a a6ef1157028011f180502a3cdbc575c7 --test-case medical_facts_evaluation/test_cases/hausarzt.json
+```
+
+**Recommendation**: Use production agent `e1a25a64fdc611f0b3cb4afd40f7103b` for better accuracy.
+
 ## Features
 
 - 🔬 **RAGAS Evaluation**: Industry-standard LLM evaluation metrics
