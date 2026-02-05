@@ -51,6 +51,11 @@
         "dose": "10 mg",
         "frequency": "täglich",
         "reason": "Blutdruck zu hoch"
+      },
+      {
+        "name": "Thrombosespritze",
+        "action": "refused",
+        "reason": "Flug zu kurz"
       }
     ],
     
@@ -61,7 +66,8 @@
       "Ibuprofen",
       "Novalgin Tropfen",
       "Metamizol",
-      "Ramipril"
+      "Ramipril",
+      "Thrombosespritze"
     ],
     
     "vital_measurements": [

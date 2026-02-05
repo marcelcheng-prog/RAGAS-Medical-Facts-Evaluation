@@ -46,6 +46,26 @@ def evaluate_medications(
     agent_planned = agent_facts.get('medications_planned', [])
     agent_all_names = agent_facts.get('medications_names', [])
     
+    # If medications_names is empty, extract names from medications_taken and medications_planned
+    if not agent_all_names:
+        extracted_names = set()
+        
+        # Extract from medications_taken
+        for med in agent_taken:
+            if isinstance(med, dict) and med.get('name'):
+                extracted_names.add(med['name'])
+            elif isinstance(med, str):
+                extracted_names.add(med)
+        
+        # Extract from medications_planned
+        for med in agent_planned:
+            if isinstance(med, dict) and med.get('name'):
+                extracted_names.add(med['name'])
+            elif isinstance(med, str):
+                extracted_names.add(med)
+        
+        agent_all_names = list(extracted_names)
+    
     # Normalize names for comparison
     expected_names = set(normalize_med_name(m) for m in ground_truth.all_medication_names)
     found_names = set(normalize_med_name(m) for m in agent_all_names if m)

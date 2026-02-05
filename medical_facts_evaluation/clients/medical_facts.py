@@ -176,9 +176,65 @@ class MedicalFactsClient:
         )
 
 
+def _clean_double_quotes(obj):
+    """Recursively clean double-escaped quotes from strings in nested structures."""
+    if isinstance(obj, str):
+        # Fix ""value"" -> "value"
+        if obj.startswith('"') and obj.endswith('"'):
+            obj = obj[1:-1]
+        return obj
+    elif isinstance(obj, list):
+        return [_clean_double_quotes(item) for item in obj if item is not None]
+    elif isinstance(obj, dict):
+        return {k: _clean_double_quotes(v) for k, v in obj.items() if v is not None}
+    return obj
+
+
+def _merge_nested_structure(data: dict) -> dict:
+    """
+    Merge nested structure from 4-agent no-merger approach into flat structure.
+    
+    Expected input format:
+    {
+        "clinical": {"chief_complaint": ..., "symptoms": ..., ...},
+        "medications": {"medications_taken": ..., "medications_names": ..., ...},
+        "measurements": {"vital_signs": ..., "physical_examination": ..., ...},
+        "context": {"medical_history": ..., "therapeutic_interventions": ..., ...}
+    }
+    
+    Output: flat dict with all keys at top level
+    """
+    nested_keys = ["clinical", "medications", "measurements", "context"]
+    
+    # Check if this is a nested structure
+    if not any(key in data for key in nested_keys):
+        return data  # Already flat
+    
+    merged = {}
+    
+    for section_key in nested_keys:
+        section = data.get(section_key, {})
+        if isinstance(section, dict):
+            merged.update(section)
+        elif isinstance(section, list) and len(section) > 0:
+            # Handle case where section is array instead of object
+            if isinstance(section[0], dict):
+                merged.update(section[0])
+    
+    # Also copy any top-level keys that aren't the section keys
+    for key, value in data.items():
+        if key not in nested_keys and key not in merged:
+            merged[key] = value
+    
+    return merged
+
+
 def parse_medical_facts(content: str) -> Tuple[Optional[dict], Optional[str]]:
     """
     Parse Medical Facts JSON from agent response.
+    
+    Handles both flat structure (from Merger agent) and nested structure 
+    (from 4-agent no-merger approach).
     
     Args:
         content: Raw response content from agent
@@ -187,11 +243,39 @@ def parse_medical_facts(content: str) -> Tuple[Optional[dict], Optional[str]]:
         Tuple of (parsed_dict, error_message)
     """
     import json
+    import re
     
     if not content:
         return None, "Empty response"
     
+    # Try to clean up common JSON issues before parsing
+    cleaned_content = content
+    
+    # Remove any text before first { or after last }
+    first_brace = cleaned_content.find('{')
+    last_brace = cleaned_content.rfind('}')
+    if first_brace != -1 and last_brace != -1:
+        cleaned_content = cleaned_content[first_brace:last_brace + 1]
+    
+    # Fix double-double quotes: ""value"" -> "value"
+    cleaned_content = re.sub(r'""([^"]+)""', r'"\1"', cleaned_content)
+    
+    # Fix malformed key-value: ""key": "value"" -> "key": "value"
+    cleaned_content = re.sub(r'""(\w+)":', r'"\1":', cleaned_content)
+    
     try:
-        return json.loads(content), None
+        data = json.loads(cleaned_content)
     except json.JSONDecodeError as e:
-        return None, f"JSON parse error: {str(e)}"
+        # Try original content as fallback
+        try:
+            data = json.loads(content)
+        except json.JSONDecodeError:
+            return None, f"JSON parse error: {str(e)}"
+    
+    # Clean any remaining double-quote issues in the parsed data
+    data = _clean_double_quotes(data)
+    
+    # Merge nested structure if present
+    data = _merge_nested_structure(data)
+    
+    return data, None

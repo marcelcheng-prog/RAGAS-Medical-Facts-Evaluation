@@ -2,6 +2,8 @@
 
 A comprehensive evaluation framework for testing Medical Facts extraction agents using the [RAGAS](https://docs.ragas.io/) (Retrieval Augmented Generation Assessment) framework.
 
+> **⚠️ Scope**: This framework currently evaluates **Medical Facts Extraction** agents only. SOAP note generation evaluation is **not yet supported**.
+
 ## Overview
 
 This tool evaluates the quality of Medical Facts agents deployed on RAGFlow by:
@@ -11,6 +13,21 @@ This tool evaluates the quality of Medical Facts agents deployed on RAGFlow by:
 - **Computing RAGAS metrics** (Faithfulness, Context Recall, Answer Relevancy)
 - **Measuring medication extraction quality** (Precision, Recall, F1, Hallucinations)
 - **Comparing multiple agents** side-by-side
+
+## Production Prompt Agent
+
+**Agent ID**: `e1a25a64fdc611f0b3cb4afd40f7103b`
+
+This agent uses the **same prompt as the production Medical Facts agent**. It has been tested across multiple test cases and achieves:
+- **87-100% Medication Precision** (no hallucinations)
+- **80-87% Medication Recall** 
+- **95-100% Faithfulness**
+- **~97% Quality Score** on most test cases
+
+```bash
+# Test the agent with the production prompt
+python -m medical_facts_evaluation --agent-a e1a25a64fdc611f0b3cb4afd40f7103b --verbose
+```
 
 ## Features
 
@@ -101,13 +118,14 @@ python -m medical_facts_evaluation --test-case test_cases/michael_mueller.json
 
 ### Compare Two Agents
 
-Compare Agent A vs Agent B:
+Compare Agent A (production) vs Agent B:
 
 ```bash
 python -m medical_facts_evaluation --compare \
   --agent-a e1a25a64fdc611f0b3cb4afd40f7103b \
   --agent-b df4cb87efd2011f0b3234afd40f7103b \
-  --test-case test_cases/diabetes_kneubühler.json
+  --test-case medical_facts_evaluation/test_cases/hausarzt.json \
+  --verbose
 ```
 
 ### All Options
@@ -131,12 +149,30 @@ options:
 
 Test cases are JSON files in `medical_facts_evaluation/test_cases/`:
 
-| Test Case | Description | Medications |
-|-----------|-------------|-------------|
-| `michael_mueller.json` | Diabetes & back pain consultation | 7 meds (new, stopped, refused) |
-| `diabetes_kneubühler.json` | Diabetes therapy change (DPP-4 → Ozempic) | 6 meds including Wegovy |
-| `frau_mueller_bauchschmerzen.json` | Abdominal pain, suspected diverticulitis | Multiple antibiotics |
-| `magenschmerzen_gastritis.json` | Gastritis with PPI therapy | Esomep, Novalgin, etc. |
+| Test Case | Description | Medications | Complexity |
+|-----------|-------------|-------------|------------|
+| `michael_mueller.json` | Diabetes & back pain consultation | 8 meds (new, stopped, refused) | Medium |
+| `diabetes.json` | Diabetes therapy change (DPP-4 → Ozempic) | 7 meds including Wegovy | Medium |
+| `magenschmerzen_gastritis.json` | Gastritis with PPI therapy | 5 meds | Medium |
+| `hausarzt.json` | **Hausarzt Praxis** - Complete GP consultation | 5 meds | **High** |
+
+### Hausarzt Praxis Test Case (Recommended)
+
+The `hausarzt.json` test case is the **longest and most comprehensive transcript**, representing a typical Swiss German GP (Hausarzt) consultation with:
+- Detailed patient history taking
+- Complete physical examination
+- Multiple vital sign measurements
+- Lab value discussion (CRP, white blood cells)
+- Medication changes (Esomep → Dexilant)
+- Patient education
+
+```bash
+# Test with the comprehensive Hausarzt Praxis case
+python -m medical_facts_evaluation \
+  --test-case medical_facts_evaluation/test_cases/hausarzt.json \
+  --agent-a e1a25a64fdc611f0b3cb4afd40f7103b \
+  --verbose
+```
 
 ### Test Case Structure
 
