@@ -1,6 +1,6 @@
 # RAGAS Medical Facts Evaluation Framework
 
-A comprehensive evaluation framework for testing Medical Facts extraction agents using the [RAGAS](https://docs.ragas.io/) (Retrieval Augmented Generation Assessment) framework.
+Evaluation framework for testing Medical Facts extraction agents using the [RAGAS](https://docs.ragas.io/) (Retrieval Augmented Generation Assessment) framework.
 
 > **⚠️ Scope**: This framework currently evaluates **Medical Facts Extraction** agents only. SOAP note generation evaluation is **not yet supported**.
 
