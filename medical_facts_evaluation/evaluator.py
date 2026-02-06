@@ -107,6 +107,17 @@ class MedicalFactsEvaluator:
         vital_acc = vital_signs.evaluate_vital_signs(agent_facts, test_case.ground_truth)
         symptom_comp = symptoms.evaluate_symptoms(agent_facts, test_case.ground_truth)
         
+        # Evaluate family history using RAGAS (semantic matching)
+        self.reporter.print_status("👨‍👩‍👧 Evaluating family history with RAGAS...")
+        agent_family_history = agent_facts.get('family_history', []) if agent_facts else []
+        family_hist_comp = self.ragas.evaluate_family_history(
+            test_case.transcript,
+            agent_family_history,
+            test_case.ground_truth.family_history,
+        )
+        if family_hist_comp is None:
+            family_hist_comp = 0.0  # Default to 0 if RAGAS fails
+        
         # Run RAGAS
         self.reporter.print_status("📊 Running RAGAS evaluation...")
         ragas_scores = self.ragas.evaluate(
@@ -130,6 +141,7 @@ class MedicalFactsEvaluator:
             med_eval=med_eval,
             vital_acc=vital_acc,
             symptom_comp=symptom_comp,
+            family_hist_comp=family_hist_comp,
             ragas_scores=ragas_scores,
         )
         
@@ -147,6 +159,7 @@ class MedicalFactsEvaluator:
         med_eval: MedicationEvaluation,
         vital_acc: float,
         symptom_comp: float,
+        family_hist_comp: float,
         ragas_scores: RagasScores,
     ) -> EvaluationResult:
         """Build the final evaluation result with pass/fail determination."""
@@ -178,6 +191,8 @@ class MedicalFactsEvaluator:
             "Medication Recall": (med_eval.name_recall, self.thresholds.medication_recall),
             "Action Classification": (med_eval.action_accuracy, self.thresholds.action_classification),
             "Vital Signs": (vital_acc, self.thresholds.vital_signs_accuracy),
+            "Symptoms": (symptom_comp, self.thresholds.symptoms_completeness),
+            "Family History": (family_hist_comp, self.thresholds.family_history_completeness),
         }
         
         if ragas_scores.faithfulness is not None:
@@ -226,6 +241,7 @@ class MedicalFactsEvaluator:
             medication_eval=med_eval,
             vital_signs_accuracy=vital_acc,
             symptoms_completeness=symptom_comp,
+            family_history_completeness=family_hist_comp,
             critical_hallucinations=critical_hallucinations,
             warnings=warnings,
             passed=passed,

@@ -74,6 +74,9 @@ class GroundTruth:
     # Relevant medical history
     medical_history: list[str] = field(default_factory=list)
     
+    # Family history (Familienanamnese) - diseases in relatives
+    family_history: list[str] = field(default_factory=list)
+    
     # Planned diagnostic procedures
     diagnostic_plans: list[str] = field(default_factory=list)
     
@@ -92,6 +95,7 @@ class GroundTruth:
             "vital_measurements": [v.to_dict() for v in self.vital_measurements],
             "symptoms": self.symptoms,
             "medical_history": self.medical_history,
+            "family_history": self.family_history,
             "diagnostic_plans": self.diagnostic_plans,
             "therapeutic_interventions": self.therapeutic_interventions,
             "forbidden_medications": self.forbidden_medications,
@@ -119,6 +123,7 @@ class GroundTruth:
             ],
             symptoms=data.get("symptoms", []),
             medical_history=data.get("medical_history", []),
+            family_history=data.get("family_history", []),
             diagnostic_plans=data.get("diagnostic_plans", []),
             therapeutic_interventions=data.get("therapeutic_interventions", []),
             forbidden_medications=data.get("forbidden_medications", []),

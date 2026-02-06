@@ -62,6 +62,7 @@ TestCase JSON → MedicalFactsClient → Agent Response
                               evaluate_symptoms()
                                           ↓
                               RagasEvaluator.evaluate()
+                              RagasEvaluator.evaluate_family_history()
                                           ↓
                               EvaluationResult
                                           ↓

@@ -23,6 +23,8 @@ class QualityThresholds:
     
     # Field accuracy
     vital_signs_accuracy: float = 0.95
+    symptoms_completeness: float = 0.80
+    family_history_completeness: float = 0.80
     action_classification: float = 0.90
     null_value_score: float = 0.60
     
@@ -39,6 +41,8 @@ class QualityThresholds:
             "medication_recall": self.medication_recall,
             "hallucination_score": self.hallucination_score,
             "vital_signs_accuracy": self.vital_signs_accuracy,
+            "symptoms_completeness": self.symptoms_completeness,
+            "family_history_completeness": self.family_history_completeness,
             "action_classification": self.action_classification,
             "null_value_score": self.null_value_score,
             "max_api_time_seconds": self.max_api_time_seconds,
@@ -55,6 +59,8 @@ DEVELOPMENT = QualityThresholds(
     medication_recall=0.75,
     hallucination_score=0.90,
     vital_signs_accuracy=0.85,
+    symptoms_completeness=0.70,
+    family_history_completeness=0.70,
     action_classification=0.80,
 )
 

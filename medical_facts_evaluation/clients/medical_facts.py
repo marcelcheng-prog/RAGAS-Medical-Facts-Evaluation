@@ -251,11 +251,21 @@ def parse_medical_facts(content: str) -> Tuple[Optional[dict], Optional[str]]:
     # Try to clean up common JSON issues before parsing
     cleaned_content = content
     
-    # Remove any text before first { or after last }
+    # Check if response is an array or object
+    first_bracket = cleaned_content.find('[')
     first_brace = cleaned_content.find('{')
-    last_brace = cleaned_content.rfind('}')
-    if first_brace != -1 and last_brace != -1:
-        cleaned_content = cleaned_content[first_brace:last_brace + 1]
+    
+    # Determine if it's an array or object
+    if first_bracket != -1 and (first_brace == -1 or first_bracket < first_brace):
+        # It's an array - extract it
+        last_bracket = cleaned_content.rfind(']')
+        if last_bracket != -1:
+            cleaned_content = cleaned_content[first_bracket:last_bracket + 1]
+    elif first_brace != -1:
+        # It's an object - extract it
+        last_brace = cleaned_content.rfind('}')
+        if last_brace != -1:
+            cleaned_content = cleaned_content[first_brace:last_brace + 1]
     
     # Fix double-double quotes: ""value"" -> "value"
     cleaned_content = re.sub(r'""([^"]+)""', r'"\1"', cleaned_content)
@@ -271,6 +281,15 @@ def parse_medical_facts(content: str) -> Tuple[Optional[dict], Optional[str]]:
             data = json.loads(content)
         except json.JSONDecodeError:
             return None, f"JSON parse error: {str(e)}"
+    
+    # Handle array response - extract first valid dict
+    if isinstance(data, list):
+        for item in data:
+            if isinstance(item, dict) and len(item) > 0:
+                data = item
+                break
+        else:
+            return None, "Response is array with no valid dict objects"
     
     # Clean any remaining double-quote issues in the parsed data
     data = _clean_double_quotes(data)

@@ -1,0 +1,255 @@
+{
+  "test_id": "hausarzt_medikamentenreview_aeltere_patientin",
+  "name": "Patientin - Hausarzt Medikamentenreview mit Polypharmazie",
+  "description": "Ältere Patientin (78 Jahre) mit Herzinsuffizienz, Vorhofflimmern und Arthrose. Medikamentenreview mit mehreren Anpassungen. Phonetische Transkriptionsfehler (Swiss-German ASR). Positive Familienanamnese.",
+  "language": "de-CH",
+  "transcript": "Guten Tag Frau Weber, kommen Sie rein. Setzen Sie sich. Wie geht es Ihnen heute? Ja, es geht so, Herr Doktor. Aber ich bin müde. Immer müde. Und die Beine, die sind geschwollen. Zeigen Sie mal. Ja, beide Unterschenkel sind geschwollen. Drücke ich hier, bleibt eine Delle. Das sind Ödeme. Haben Sie Atemnot? Beim Treppensteigen schon. Ich muss immer Pause machen. Im zweiten Stock wohne ich. Verstehe. Und nachts, wie schlafen Sie? Mit zwei Kissen. Sonst kriege ich keine Luft. Okay. Nehmen Sie Ihre Medikamente regelmässig? Ja, ich glaube schon. Ich habe die Liste mitgebracht. Gut, schauen wir mal. Also Sie nehmen momentan Koncor 5 Milligramm morgens. Ja, das für das Herz. Genau. Und Xarelto 20 Milligramm auch morgens wegen dem Vorhofflimmern. Ja, das damit ich keinen Schlaganfall kriege. Richtig. Dann haben Sie noch Torasemid 10 Milligramm. Das Wassertablett. Ja genau, die Wassertablette. Nehmen Sie die jeden Tag? Nein, nicht jeden Tag. Nur wenn die Beine dick sind. Aha, wie oft ist das? So zwei, drei Mal pro Woche. Okay. Und dann haben Sie noch Tafalgan. Ja, für die Schmerzen. In den Knien. Wie viel nehmen Sie davon? Morgens eine, mittags eine, abends eine. Also drei pro Tag? Ja. Jeden Tag? Ja, jeden Tag. Sonst habe ich zu viele Schmerzen. Verstehe. Und dann steht hier noch Kalzium und Witamin D. Ja, das hat der andere Arzt gesagt. Wegen den Knochen. Gut. Sagen Sie, in Ihrer Familie, gab es da Herzprobleme? Ja, meine Mutter. Die hatte auch ein schwaches Herz. Und ist gestorben mit 72 an Herzversagen. Das tut mir leid. Und Ihr Vater? Der hatte Krebs. Lungenkrebs. Er hat viel geraucht. Mit 65 ist er gestorben. Verstehe. Geschwister haben Sie? Ja, eine Schwester. Die lebt noch, aber die hat auch Probleme mit dem Herzen. Okay, das ist wichtig zu wissen. Und Sie, rauchen Sie? Nein, nie geraucht. Gut, sehr gut. Alkohol? Nein, gar nicht. Sehr schön. So, ich möchte Sie jetzt untersuchen. Blutdruck messen wir zuerst. 145 zu 88. Das ist noch okay. Puls 68, schön regelmässig, aber das Vorhofflimmern sehe ich auf dem Monitor. Und die Sauerstoffsättigung ist 94 Prozent. Das ist ein bisschen tief. Atmen Sie mal tief ein. Gut. Noch einmal. Ich höre Rasselgeräusche über beiden Lungen. Das ist Wasser in der Lunge. Das Herz. Herztöne sind sehr leise. Und schnell schauen wir die Beine an. Ja, deutliche Ödeme bis zum Knie. Beide Seiten. Frau Weber, Ihre Herzinsuffizienz ist nicht gut eingestellt. Das Wasser sammelt sich in den Beinen und in der Lunge. Deshalb sind Sie müde und haben Atemnot. Was machen wir jetzt? Wir müssen die Medikamente anpassen. Erstens, das Torasemid. Sie nehmen es nur zwei, drei Mal pro Woche. Das ist zu wenig. Sie müssen es jeden Tag nehmen. Jeden Tag? Ja, jeden Tag am Morgen. Und ich erhöhe die Dosis auf 20 Milligramm. Okay. Zweitens, das Koncor. Wir erhöhen das auch. Von 5 auf 10 Milligramm. Aber nur wenn der Blutdruck nicht zu tief geht. Sie müssen das zu Hause kontrollieren. Ich habe kein Gerät. Wir können Ihnen eins ausleihen. Von der Spitex. Gut. Drittens, das Tafalgan. Das ist ein Problem. Sie nehmen drei Gramm pro Tag, jeden Tag. Das ist zu viel für die Leber, besonders in Ihrem Alter. Aber ich habe Schmerzen. Ich weiss. Ich gebe Ihnen stattdessen Voltaren Gel. Das schmieren Sie auf die Knie. Zwei Mal pro Tag. Das wirkt lokal und belastet die Leber nicht. Und Tafalgan nur noch bei Bedarf. Maximum zwei pro Tag. Nicht jeden Tag. Okay, ich probiere es. Und das Xarelto bleibt gleich. Das ist wichtig für das Vorhofflimmern. Das nehmen Sie weiter jeden Tag 20 Milligramm. Und Kalzium und Witamin D auch. Die bleiben. Gut. Ich möchte Sie in zwei Wochen wiedersehen. Dann machen wir auch Blutabnahme. Leber, Nieren, Salze kontrollieren. Und Sie müssen sich jeden Tag wiegen. Morgens vor dem Frühstück. Schreiben Sie das Gewicht auf. Wenn Sie mehr als zwei Kilo zunehmen in drei Tagen, dann rufen Sie sofort an. Das heisst, es sammelt sich Wasser. Verstanden? Ja, ich glaube schon. Gut. Und wenn Sie starke Atemnot haben, oder Brustschmerzen, dann kommen Sie sofort wieder oder rufen Sie den Notfall. Ja, mache ich. Haben Sie noch Fragen? Nein, ich glaube nicht. Gut, dann bis in zwei Wochen. Passen Sie auf sich auf. Danke, Herr Doktor. Aufwiedersehen.",
+  "ground_truth": {
+    "chief_complaint": "Müdigkeit und geschwollene Beine, Atemnot beim Treppensteigen",
+    "symptoms": [
+      "Müdigkeit",
+      "Geschwollene Beine",
+      "Atemnot beim Treppensteigen",
+      "Knieschmerzen"
+    ],
+    "patient_measurements": [],
+    "vital_measurements": [
+      {
+        "parameter": "Blutdruck",
+        "value": "145/88",
+        "unit": "mmHg",
+        "source": "doctor_measured"
+      },
+      {
+        "parameter": "Herzfrequenz",
+        "value": "68",
+        "unit": "/min",
+        "source": "doctor_measured"
+      },
+      {
+        "parameter": "Sauerstoffsättigung",
+        "value": "94",
+        "unit": "%",
+        "source": "doctor_measured"
+      }
+    ],
+    "physical_examination": [
+      "Ödeme beide Unterschenkel bis zum Knie",
+      "Rasselgeräusche über beiden Lungen",
+      "Herztöne sehr leise",
+      "Vorhofflimmern auf Monitor sichtbar",
+      "Eindrückbare Ödeme (Delle bleibt)"
+    ],
+    "medical_history": [
+      "Herzinsuffizienz",
+      "Vorhofflimmern",
+      "Arthrose (Knie)"
+    ],
+    "family_history": [
+      {
+        "relation": "Mutter",
+        "condition": "Herzinsuffizienz",
+        "age": "72",
+        "status": "verstorben an Herzversagen"
+      },
+      {
+        "relation": "Vater",
+        "condition": "Lungenkrebs",
+        "age": "65",
+        "status": "verstorben",
+        "notes": "Raucher"
+      },
+      {
+        "relation": "Schwester",
+        "condition": "Herzprobleme",
+        "age": "",
+        "status": "lebt"
+      }
+    ],
+    "social_history": {
+      "Rauchen": "Nie geraucht",
+      "Alkohol": "Kein Alkohol",
+      "Wohnsituation": "2. Stock (Treppensteigen erforderlich)"
+    },
+    "allergies": [],
+    "medications_taken": [
+      {
+        "name": "Koncor",
+        "dose": "5 mg",
+        "frequency": "morgens",
+        "indication": "Herz",
+        "notes": ""
+      },
+      {
+        "name": "Xarelto",
+        "dose": "20 mg",
+        "frequency": "morgens",
+        "indication": "Vorhofflimmern, Schlaganfallprophylaxe",
+        "notes": ""
+      },
+      {
+        "name": "Torasemid",
+        "dose": "10 mg",
+        "frequency": "2-3x pro Woche",
+        "indication": "Wassertablette, Ödeme",
+        "notes": "nur wenn Beine dick sind"
+      },
+      {
+        "name": "Tafalgan",
+        "dose": "1000 mg",
+        "frequency": "3x täglich (morgens, mittags, abends)",
+        "indication": "Knieschmerzen",
+        "notes": "jeden Tag"
+      },
+      {
+        "name": "Kalzium",
+        "dose": "",
+        "frequency": "",
+        "indication": "Knochen",
+        "notes": "von anderem Arzt verschrieben"
+      },
+      {
+        "name": "Witamin D",
+        "dose": "",
+        "frequency": "",
+        "indication": "Knochen",
+        "notes": "von anderem Arzt verschrieben"
+      }
+    ],
+    "medications_planned": [
+      {
+        "name": "Torasemid",
+        "action": "changed",
+        "dose": "20 mg",
+        "frequency": "jeden Tag am Morgen",
+        "indication": "Herzinsuffizienz, Ödeme",
+        "reason": "Herzinsuffizienz nicht gut eingestellt, Dosis zu niedrig und zu selten eingenommen"
+      },
+      {
+        "name": "Koncor",
+        "action": "changed",
+        "dose": "10 mg",
+        "frequency": "morgens",
+        "indication": "Herzinsuffizienz",
+        "reason": "Herzinsuffizienz nicht gut eingestellt",
+        "notes": "nur wenn Blutdruck nicht zu tief"
+      },
+      {
+        "name": "Tafalgan",
+        "action": "changed",
+        "dose": "maximum 2x täglich",
+        "frequency": "bei Bedarf",
+        "indication": "Schmerzen",
+        "reason": "3g täglich ist zu viel für Leber im Alter",
+        "notes": "nicht mehr jeden Tag"
+      },
+      {
+        "name": "Voltaren Gel",
+        "action": "new",
+        "dose": "",
+        "frequency": "2x täglich auf die Knie",
+        "indication": "Knieschmerzen",
+        "reason": "Lokale Therapie statt systemisches Tafalgan, schont die Leber"
+      },
+      {
+        "name": "Xarelto",
+        "action": "continued",
+        "dose": "20 mg",
+        "frequency": "jeden Tag",
+        "indication": "Vorhofflimmern",
+        "reason": "wichtig für Schlaganfallprophylaxe"
+      },
+      {
+        "name": "Kalzium",
+        "action": "continued",
+        "dose": "",
+        "frequency": "",
+        "indication": "Knochen",
+        "reason": ""
+      },
+      {
+        "name": "Witamin D",
+        "action": "continued",
+        "dose": "",
+        "frequency": "",
+        "indication": "Knochen",
+        "reason": ""
+      }
+    ],
+    "medication_side_effects": [],
+    "all_medication_names": [
+      "Koncor",
+      "Xarelto",
+      "Torasemid",
+      "Tafalgan",
+      "Kalzium",
+      "Witamin D",
+      "Voltaren Gel"
+    ],
+    "forbidden_medications": [],
+    "diagnostic_hypotheses": [
+      "Dekompensierte Herzinsuffizienz",
+      "Lungenödem"
+    ],
+    "diagnostic_plans": [
+      "Blutabnahme in 2 Wochen: Leber, Nieren, Salze"
+    ],
+    "laboratory_results": [],
+    "functional_status": {
+      "description": "Atemnot beim Treppensteigen, wohnt im 2. Stock",
+      "limitations": [
+        "Treppensteigen nur mit Pausen möglich",
+        "Schlafen nur mit 2 Kissen möglich wegen Atemnot"
+      ]
+    },
+    "sick_leave": {},
+    "therapeutic_interventions": [
+      "Täglich wiegen am Morgen vor Frühstück",
+      "Gewicht aufschreiben",
+      "Blutdruck zu Hause kontrollieren",
+      "Voltaren Gel auf Knie schmieren 2x täglich"
+    ],
+    "follow_up_instructions": {
+      "next_appointment": "in 2 Wochen",
+      "red_flags": [
+        "Gewichtszunahme mehr als 2 kg in 3 Tagen",
+        "Starke Atemnot",
+        "Brustschmerzen"
+      ],
+      "monitoring": [
+        "Täglich wiegen",
+        "Blutdruck zu Hause messen",
+        "Gewicht aufschreiben"
+      ]
+    },
+    "patient_education": [
+      "Erklärung: Herzinsuffizienz nicht gut eingestellt, Wasser sammelt sich in Beinen und Lunge",
+      "Erklärung: Torasemid muss jeden Tag genommen werden, nicht nur bei Bedarf",
+      "Erklärung: 3g Tafalgan täglich zu viel für Leber im Alter",
+      "Erklärung: Voltaren Gel wirkt lokal und belastet Leber nicht",
+      "Erklärung: Gewichtszunahme >2kg in 3 Tagen bedeutet Wasseransammlung",
+      "Erklärung: Xarelto wichtig für Schlaganfallprophylaxe bei Vorhofflimmern",
+      "Erklärung: Blutdruckgerät von Spitex ausleihen"
+    ]
+  },
+  "evaluation_config": {
+    "thresholds": {
+      "medication_recall": 0.90,
+      "medication_precision": 0.95,
+      "vital_signs_accuracy": 0.95,
+      "faithfulness": 0.90,
+      "context_recall": 0.85,
+      "answer_relevancy": 0.80,
+      "action_classification": 0.90,
+      "family_history_recall": 0.95
+    },
+    "critical_fields": [
+      "all_medication_names",
+      "vital_measurements",
+      "medications_planned",
+      "family_history",
+      "functional_status"
+    ],
+    "notes": "Medication names contain Swiss-German ASR errors that should be preserved in extraction: Koncor (Concor), Tafalgan (Dafalgan), Witamin (Vitamin). These will be normalized in a separate agent."
+  }
+}

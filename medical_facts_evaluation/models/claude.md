@@ -19,6 +19,7 @@ class GroundTruth:
     vital_measurements: list[VitalMeasurement]
     symptoms: list[str]
     medical_history: list[str]
+    family_history: list[str]                # Familienanamnese
     diagnostic_plans: list[str]
     therapeutic_interventions: list[str]
     forbidden_medications: list[str]         # Should NEVER appear
@@ -69,6 +70,7 @@ class EvaluationResult:
     medication_eval: MedicationEvaluation
     vital_signs_accuracy: float
     symptoms_completeness: float
+    family_history_completeness: float
     
     # Safety
     critical_hallucinations: list[str]

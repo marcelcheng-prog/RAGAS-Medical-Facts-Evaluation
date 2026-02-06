@@ -78,6 +78,7 @@ class EvaluationResult:
     medication_eval: Optional[MedicationEvaluation] = None
     vital_signs_accuracy: float = 0.0
     symptoms_completeness: float = 0.0
+    family_history_completeness: float = 0.0
     diagnostic_plans_accuracy: float = 0.0
     
     # Safety

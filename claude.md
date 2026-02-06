@@ -71,6 +71,16 @@ Agent ID: `e1a25a64fdc611f0b3cb4afd40f7103b`
 - 95-100% Faithfulness
 - ~97% Quality Score
 
+## Test Cases
+
+| Test Case | Description | Key Features |
+|-----------|-------------|--------------|
+| `hausarzt.json` | Complete GP consultation | Comprehensive, longest transcript |
+| `diabetes.json` | Diabetes therapy change | DPP-4 → Ozempic transition |
+| `michael_mueller.json` | Diabetes & back pain | New, stopped, refused medications |
+| `diabetes_hypertonie.json` | Diabetes + Hypertension | **Family history** evaluation |
+| `medikamentenreview_polypharmazie.json` | Elderly polypharmacy | **Swiss-German ASR errors** |
+
 ## Test Case Format
 
 Test cases are JSON files in `test_cases/` containing:

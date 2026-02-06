@@ -20,6 +20,7 @@ class RagasScores:
     faithfulness: Optional[float] = None
     context_recall: Optional[float] = None
     answer_relevancy: Optional[float] = None
+    family_history_recall: Optional[float] = None
     error: Optional[str] = None
     
     @property
@@ -218,6 +219,94 @@ class RagasEvaluator:
                 traceback.print_exc()
             
             return RagasScores(error=str(e))
+    
+    def evaluate_family_history(
+        self,
+        transcript: str,
+        agent_family_history: list[str],
+        ground_truth_family_history: list[str],
+    ) -> Optional[float]:
+        """
+        Run RAGAS-based semantic evaluation specifically for family history.
+        
+        Uses Context Recall metric to measure how well the agent captured
+        family history items from the transcript, with semantic understanding
+        of German medical terms.
+        
+        Args:
+            transcript: Original medical transcript
+            agent_family_history: Family history items extracted by agent
+            ground_truth_family_history: Expected family history items
+            
+        Returns:
+            Context recall score (0.0-1.0) or None if evaluation fails
+        """
+        # If no family history expected, return 1.0 (nothing to miss)
+        if not ground_truth_family_history:
+            return 1.0
+        
+        try:
+            import pandas as pd
+            from ragas import evaluate
+            from ragas.metrics import context_recall
+            from ragas.dataset_schema import SingleTurnSample, EvaluationDataset
+            
+            if self.verbose:
+                print("  📋 Evaluating family history with RAGAS...")
+                print(f"    Expected: {ground_truth_family_history}")
+                print(f"    Found: {agent_family_history}")
+            
+            # Format agent output as the response
+            agent_response = "Family History (Familienanamnese):\n" + "\n".join(
+                f"- {item}" for item in agent_family_history
+            ) if agent_family_history else "No family history documented."
+            
+            # Format ground truth as reference
+            reference = "Expected Family History:\n" + "\n".join(
+                f"- {item}" for item in ground_truth_family_history
+            )
+            
+            # Create sample for RAGAS evaluation
+            # Context Recall measures: what % of ground truth items were captured?
+            sample = SingleTurnSample(
+                user_input="Extract all family history (Familienanamnese) from the medical conversation.",
+                response=agent_response,
+                retrieved_contexts=[transcript],
+                reference=reference
+            )
+            
+            dataset = EvaluationDataset(samples=[sample])
+            
+            if self.verbose:
+                print("    Running RAGAS context_recall for family history...")
+            
+            results = evaluate(
+                dataset=dataset,
+                metrics=[context_recall],
+                llm=self.llm,
+                embeddings=self.embeddings
+            )
+            
+            df = results.to_pandas()
+            
+            if 'context_recall' in df.columns:
+                val = df['context_recall'].iloc[0]
+                score = float(val) if pd.notna(val) else None
+                
+                if self.verbose and score is not None:
+                    print(f"    ✅ Family History Recall: {score:.1%}")
+                
+                return score
+            
+            return None
+            
+        except Exception as e:
+            if self.verbose:
+                print(f"  ❌ Family history RAGAS evaluation failed: {e}")
+                import traceback
+                traceback.print_exc()
+            
+            return None
     
     @classmethod
     def from_settings(

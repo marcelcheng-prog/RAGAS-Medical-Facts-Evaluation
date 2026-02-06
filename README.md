@@ -180,6 +180,8 @@ Test cases are JSON files in `medical_facts_evaluation/test_cases/`:
 | `diabetes.json` | Diabetes therapy change (DPP-4 → Ozempic) | 7 meds including Wegovy | Medium |
 | `magenschmerzen_gastritis.json` | Gastritis with PPI therapy | 5 meds | Medium |
 | `hausarzt.json` | **Hausarzt Praxis** - Complete GP consultation | 5 meds | **High** |
+| `diabetes_hypertonie.json` | Diabetes Typ 2 + Hypertonie with family history | 7 meds (Jardins, Ramipril) | **High** |
+| `medikamentenreview_polypharmazie.json` | Elderly patient (78y) with heart failure, polypharmacy | 7 meds, Swiss-German ASR errors | **High** |
 
 ### Hausarzt Praxis Test Case (Recommended)
 
@@ -196,6 +198,42 @@ The `hausarzt.json` test case is the **longest and most comprehensive transcript
 python -m medical_facts_evaluation \
   --test-case medical_facts_evaluation/test_cases/hausarzt.json \
   --agent-a e1a25a64fdc611f0b3cb4afd40f7103b \
+  --verbose
+```
+
+### New Test Cases (February 2026)
+
+#### Diabetes & Hypertonie with Family History
+
+The `diabetes_hypertonie.json` test case features:
+- Middle-aged patient with Diabetes Typ 2 and Hypertonie
+- **Positive family history** (father: MI at 58, mother: diabetes/hypertension, brother: diabetes)
+- Multiple medication adjustments (Amlodipin, Metformin, new Ramipril, Empagliflozin/Jardins)
+- Tests **family history extraction** with RAGAS Context Recall
+
+```bash
+# Test family history extraction
+python -m medical_facts_evaluation --compare \
+  --agent-a b6bd2f21034811f19b402a3cdbc575c7 \
+  --agent-b e1a25a64fdc611f0b3cb4afd40f7103b \
+  --test-case medical_facts_evaluation/test_cases/diabetes_hypertonie.json \
+  --verbose
+```
+
+#### Polypharmacy & Swiss-German ASR Errors
+
+The `medikamentenreview_polypharmazie.json` test case features:
+- **Elderly patient (78 years)** with heart failure, atrial fibrillation, and osteoarthritis
+- **Polypharmacy** review with 7 medications
+- **Swiss-German ASR transcription errors**: `Koncor` (Concor), `Tafalgan` (Dafalgan), `Witamin D` (Vitamin D)
+- Tests agent handling of phonetic transcription artifacts
+
+```bash
+# Test polypharmacy and ASR error handling
+python -m medical_facts_evaluation --compare \
+  --agent-a b6bd2f21034811f19b402a3cdbc575c7 \
+  --agent-b e1a25a64fdc611f0b3cb4afd40f7103b \
+  --test-case medical_facts_evaluation/test_cases/medikamentenreview_polypharmazie.json \
   --verbose
 ```
 
