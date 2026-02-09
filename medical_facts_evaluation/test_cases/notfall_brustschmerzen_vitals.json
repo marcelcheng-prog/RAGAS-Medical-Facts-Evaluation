@@ -1,0 +1,215 @@
+{
+  "test_id": "notfall_brustschmerzen_vitals",
+  "name": "Notfall - Brustschmerzen mit multiplen Vitalzeichen",
+  "description": "Patient mit akuten Brustschmerzen in der Notaufnahme, multiple Vitalzeichenmessungen zu verschiedenen Zeitpunkten, EKG-Befunde, Troponin-Werte. Testet QM-011 (Vital Signs) umfassend, sowie QM-001 (Medikamente), QM-003 (Neu vs Akut), QM-008 (Negation bei Ausschlussdiagnostik).",
+  "language": "de",
+  "transcript": "Notaufnahme, Herr Keller, 62 Jahre. Guten Tag Herr Keller, ich bin Dr. Baumann. Was führt Sie zu uns? Ach Herr Doktor, ich habe so Schmerzen in der Brust. Das hat vor etwa 2 Stunden angefangen. So ein Druck hier in der Mitte. Zeigen Sie mir mal wo genau. Hier, hinter dem Brustbein. Und es strahlt auch in den linken Arm aus. Okay, das ist wichtig. Sind die Schmerzen jetzt noch da? Ja, aber etwas besser als am Anfang. Am Anfang war es wie eine 8 von 10, jetzt vielleicht eine 5. Gut. Haben Sie Atemnot? Ein bisschen, ja. Nicht schlimm, aber ich merke es. Übelkeit oder Erbrechen? Etwas Übelkeit, aber ich habe nicht erbrochen. Schwitzen Sie? Ja, mir ist ganz kalt-schwitzig. Okay. Wir messen jetzt erstmal Ihre Vitalzeichen. Schwester, bitte Monitor anlegen. So, Blutdruck 165 zu 95. Puls 92, regelmässig. Sauerstoffsättigung 94 Prozent an Raumluft. Temperatur 36.9 Grad. Das ist etwas zu niedrig die Sättigung. Wir geben Ihnen erstmal Sauerstoff über die Nasenbrille. 4 Liter pro Minute. Okay. Haben Sie Vorerkrankungen? Ja, ich habe Bluthochdruck. Seit etwa 10 Jahren. Und erhöhtes Cholesterin. Nehmen Sie Medikamente dafür? Ja, ich nehme Lisinopril 10 Milligramm, einmal am Tag. Und ein Statin, Atorvastatin 40 Milligramm, abends. Okay. Und Aspirin? Nehmen Sie Blutverdünner? Nein, das nehme ich nicht regelmässig. Nur manchmal eine Aspirin wenn ich Kopfschmerzen habe. Gut. Hatten Sie schon mal einen Herzinfarkt? Nein, noch nie. Auch keine Bypass-Operation oder Stents? Nein, nichts. Und in der Familie? Ja, mein Vater hatte einen Herzinfarkt mit 58. Er hat es überlebt, aber er ist dann mit 72 an einem zweiten gestorben. Und mein Bruder hatte auch schon einen Stent, der ist 65. Verstehe. Das ist wichtig. Rauchen Sie? Ja, leider. So 15 Zigaretten am Tag, seit 40 Jahren. Okay. Wir machen jetzt ein EKG. Bitte Oberkörper freimachen. So, EKG läuft. Ich sehe hier ST-Hebungen in den Ableitungen V2 bis V4. Das ist ein Zeichen für einen akuten Herzinfarkt. Wir müssen schnell handeln. Oh Gott. Keine Panik, wir kümmern uns um Sie. Schwester, bitte 300 Milligramm Aspirin kauen lassen, und 5000 Einheiten Heparin intravenös. Und bitte den Kardiologen rufen für eine Herzkatheteruntersuchung. Hier ist das Aspirin, bitte kauen und schlucken. Ich lege jetzt noch einen zweiten venösen Zugang. Blutabnahme ist auch schon gemacht. So, Aspirin ist drin? Ja. Gut. Ich gebe Ihnen jetzt noch Nitro-Spray unter die Zunge. Das erweitert die Herzkranzgefässe. Zweimal sprühen bitte. Okay. Brennt ein bisschen. Ja, das ist normal. Und jetzt Morphin gegen die Schmerzen. 5 Milligramm intravenös langsam. Wie sind die Schmerzen jetzt? Besser, vielleicht eine 3 noch. Gut. Blutdruck nach Nitro: 145 zu 85. Puls 88. Sättigung mit Sauerstoff jetzt 98 Prozent. Besser. Das Troponin vom Labor ist da. Troponin I 0.8 Nanogramm pro Milliliter. Normal wäre unter 0.04. Das bestätigt den Herzinfarkt. Die gute Nachricht ist, wir haben Sie rechtzeitig hier. Der Kardiologe ist unterwegs für den Herzkatheter. Er wird die verstopfte Arterie öffnen und wahrscheinlich einen Stent setzen. Wie lange dauert das? Etwa eine Stunde. Danach kommen Sie auf die Intensivstation zur Überwachung. Vorher geben wir Ihnen noch einen Gerinnungshemmer. Ticagrelor 180 Milligramm als Ladedosis. Das verhindert, dass der Stent verstopft. Noch Fragen? Werde ich das überleben? Herr Keller, wir haben alles unter Kontrolle. Sie sind schnell gekommen, das ist gut. Die Prognose ist günstig. Okay. Danke. So, letzte Kontrolle vor dem Katheter: Blutdruck 138 zu 82. Puls 78, regelmässig. Sättigung 99 Prozent. Schmerzen? Nur noch eine 2, fast weg. Sehr gut. Der Kardiologe ist da. Ab in den Katheterraum.",
+  "ground_truth": {
+    "chief_complaint": "Akute Brustschmerzen seit 2 Stunden, retrosternal mit Ausstrahlung in linken Arm",
+    "symptoms": [
+      "Brustschmerzen retrosternal (Schmerzstärke initial 8/10, aktuell 5/10, nach Therapie 3/10, zuletzt 2/10)",
+      "Ausstrahlung in linken Arm",
+      "Atemnot (leicht)",
+      "Übelkeit (ohne Erbrechen)",
+      "Kaltschweissigkeit"
+    ],
+    "vital_measurements": [
+      {
+        "parameter": "Blutdruck",
+        "value": "165/95",
+        "unit": "mmHg",
+        "source": "doctor_measured",
+        "timing": "initial"
+      },
+      {
+        "parameter": "Puls",
+        "value": "92",
+        "unit": "/min",
+        "source": "doctor_measured",
+        "timing": "initial",
+        "notes": "regelmässig"
+      },
+      {
+        "parameter": "Sauerstoffsättigung",
+        "value": "94",
+        "unit": "%",
+        "source": "doctor_measured",
+        "timing": "initial",
+        "notes": "an Raumluft"
+      },
+      {
+        "parameter": "Temperatur",
+        "value": "36.9",
+        "unit": "°C",
+        "source": "doctor_measured",
+        "timing": "initial"
+      },
+      {
+        "parameter": "Blutdruck",
+        "value": "145/85",
+        "unit": "mmHg",
+        "source": "doctor_measured",
+        "timing": "nach Nitro"
+      },
+      {
+        "parameter": "Puls",
+        "value": "88",
+        "unit": "/min",
+        "source": "doctor_measured",
+        "timing": "nach Nitro"
+      },
+      {
+        "parameter": "Sauerstoffsättigung",
+        "value": "98",
+        "unit": "%",
+        "source": "doctor_measured",
+        "timing": "mit O2",
+        "notes": "mit 4L O2/min"
+      },
+      {
+        "parameter": "Blutdruck",
+        "value": "138/82",
+        "unit": "mmHg",
+        "source": "doctor_measured",
+        "timing": "vor Katheter"
+      },
+      {
+        "parameter": "Puls",
+        "value": "78",
+        "unit": "/min",
+        "source": "doctor_measured",
+        "timing": "vor Katheter",
+        "notes": "regelmässig"
+      },
+      {
+        "parameter": "Sauerstoffsättigung",
+        "value": "99",
+        "unit": "%",
+        "source": "doctor_measured",
+        "timing": "vor Katheter"
+      }
+    ],
+    "physical_examination": [
+      "EKG: ST-Hebungen in V2-V4 (Vorderwandinfarkt)"
+    ],
+    "medical_history": [
+      "Arterielle Hypertonie (seit 10 Jahren)",
+      "Hypercholesterinämie",
+      "Nikotinabusus (15 Zigaretten/Tag seit 40 Jahren, ca. 30 pack-years)"
+    ],
+    "family_history": [
+      "Vater: Herzinfarkt mit 58, verstorben an zweitem Herzinfarkt mit 72",
+      "Bruder (65): Koronare Herzkrankheit mit Stent"
+    ],
+    "allergies": [],
+    "medications_taken": [
+      {
+        "name": "Lisinopril",
+        "dose": "10 mg",
+        "frequency": "einmal täglich",
+        "indication": "Hypertonie"
+      },
+      {
+        "name": "Atorvastatin",
+        "dose": "40 mg",
+        "frequency": "einmal täglich abends",
+        "indication": "Hypercholesterinämie"
+      }
+    ],
+    "medications_planned": [
+      {
+        "name": "Aspirin",
+        "action": "new",
+        "dose": "300 mg",
+        "frequency": "Einmalgabe (Ladedosis)",
+        "indication": "Akuter Myokardinfarkt",
+        "reason": "Thrombozytenaggregationshemmung"
+      },
+      {
+        "name": "Heparin",
+        "action": "new",
+        "dose": "5000 Einheiten",
+        "frequency": "Einmalgabe i.v.",
+        "indication": "Akuter Myokardinfarkt",
+        "reason": "Antikoagulation"
+      },
+      {
+        "name": "Sauerstoff",
+        "action": "new",
+        "dose": "4 L/min",
+        "frequency": "kontinuierlich via Nasenbrille",
+        "indication": "Hypoxämie (SpO2 94%)",
+        "reason": "Sättigung verbessern"
+      },
+      {
+        "name": "Nitroglycerin-Spray",
+        "action": "new",
+        "dose": "2 Hübe",
+        "frequency": "Einmalgabe sublingual",
+        "indication": "Brustschmerzen bei ACS",
+        "reason": "Koronardilatation"
+      },
+      {
+        "name": "Morphin",
+        "action": "new",
+        "dose": "5 mg",
+        "frequency": "Einmalgabe i.v.",
+        "indication": "Starke Brustschmerzen",
+        "reason": "Analgesie"
+      },
+      {
+        "name": "Ticagrelor",
+        "action": "new",
+        "dose": "180 mg",
+        "frequency": "Einmalgabe (Ladedosis)",
+        "indication": "Akuter Myokardinfarkt, vor PCI",
+        "reason": "Duale Thrombozytenaggregationshemmung"
+      }
+    ],
+    "all_medication_names": [
+      "Lisinopril",
+      "Atorvastatin",
+      "Aspirin",
+      "Heparin",
+      "Sauerstoff",
+      "Nitroglycerin",
+      "Nitro-Spray",
+      "Morphin",
+      "Ticagrelor"
+    ],
+    "forbidden_medications": [],
+    "diagnostic_hypotheses": [
+      "Akuter ST-Hebungsinfarkt (STEMI) der Vorderwand",
+      "Akutes Koronarsyndrom"
+    ],
+    "diagnostic_plans": [
+      "Herzkatheteruntersuchung (Koronarangiographie)",
+      "Perkutane Koronarintervention (PCI) mit Stentimplantation"
+    ],
+    "laboratory_results": [
+      {
+        "parameter": "Troponin I",
+        "value": "0.8",
+        "unit": "ng/mL",
+        "reference": "<0.04",
+        "interpretation": "Stark erhöht, bestätigt Myokardinfarkt"
+      }
+    ],
+    "therapeutic_interventions": [
+      "Sauerstoffgabe 4 L/min via Nasenbrille",
+      "Aspirin 300 mg Ladedosis",
+      "Heparin 5000 IE i.v.",
+      "Nitroglycerin-Spray 2 Hübe sublingual",
+      "Morphin 5 mg i.v.",
+      "Ticagrelor 180 mg Ladedosis",
+      "Notfall-Herzkatheter geplant"
+    ],
+    "follow_up_instructions": {
+      "next_steps": "Herzkatheter, danach Intensivstation",
+      "monitoring": [
+        "Kontinuierliche EKG-Überwachung",
+        "Vitalzeichen-Monitoring"
+      ]
+    }
+  }
+}

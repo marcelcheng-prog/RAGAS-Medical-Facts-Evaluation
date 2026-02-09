@@ -1,0 +1,98 @@
+{
+    "test_id": "korrektur_noise_filter_001",
+    "name": "Frau Weber - Korrektur-Erkennung und Noise Filter Test",
+    "description": "Test case for QM-013 (Correction Recognition - only final corrected statements count) and QM-015 (Noise Filter - no smalltalk). Patient repeatedly corrects themselves (medications, dosages, allergies) with smalltalk interspersed.",
+    "language": "de",
+    "transcript": "Arzt: Guten Tag Frau Weber, wie geht es Ihnen heute? Schönes Wetter draußen, nicht wahr?\n\nPatientin: Ja, herrlich sonnig! Wir waren letzte Woche im Urlaub in Spanien, das war fantastisch. Die Strände waren wunderbar und das Essen...\n\nArzt: Das klingt schön. Aber kommen wir zu Ihren Beschwerden.\n\nPatientin: Also, ich nehme Metoprolol... nein, warten Sie, ich verwechsle das immer. Ich nehme Bisoprolol 5 mg morgens.\n\nArzt: Gut, Bisoprolol 5 mg. Und sonst?\n\nPatientin: Dann noch Ramipril 2.5 mg... äh, nein doch nicht 2.5, es sind 5 mg, die ich nehme. Morgens eine Tablette.\n\nArzt: Haben Sie das Ramipril gut vertragen?\n\nPatientin: Ja, sehr gut. Apropos vertragen, haben Sie den neuen Fernseher im Wartezimmer gesehen? Der ist ja riesig! Mein Schwager arbeitet bei einem Elektromarkt...\n\nArzt: Frau Weber, bleiben wir bei Ihrer Gesundheit.\n\nPatientin: Entschuldigung. Also, ich habe auch eine Allergie gegen... wie heißt das nochmal... Penicillin! Nein, Moment, nicht Penicillin. Amoxicillin ist es. Da bekomme ich Hautausschlag.\n\nArzt: Amoxicillin-Allergie mit Hautausschlag, verstanden. Nehmen Sie noch andere Medikamente?\n\nPatientin: Ja, ich nehme abends Simvastatin 20 mg... ach nein, das wurde ja erhöht! Jetzt sind es 40 mg abends. Das hatte ich vergessen.\n\nArzt: Also Simvastatin 40 mg abends. Gibt es bekannte Nebenwirkungen?\n\nPatientin: Nein, alles gut. Haben Sie übrigens Kinder? Meine Enkelin hat gerade...\n\nArzt: Frau Weber, bitte. Haben Sie noch andere Medikamente?\n\nPatientin: Oh ja, L-Thyroxin 50... nein, 75 Mikrogramm! Die Dosis wurde letzten Monat angepasst. Morgens nüchtern.\n\nArzt: Hat sich Ihre Schilddrüsenfunktion verbessert?\n\nPatientin: Ja, die Werte sind besser. Ach, und mein Mann lässt schön grüßen, er ist heute beim Angeln...\n\nArzt: Danke. Haben Sie aktuell Beschwerden?\n\nPatientin: Ja, ich habe seit drei Tagen Husten. Zuerst dachte ich, es wäre trocken, aber nein, es ist doch produktiv mit gelblichem Auswurf.\n\nArzt: Fieber?\n\nPatientin: Gestern hatte ich 38.5 Grad... äh nein, das war vorgestern. Gestern waren es 37.8 Grad.\n\nArzt: Gut, dann schauen wir uns das an.",
+    "ground_truth": {
+        "medications_taken": [
+            {
+                "name": "Bisoprolol",
+                "dose": "5 mg",
+                "frequency": "morgens",
+                "action": "continued",
+                "notes": "QM-013: Patient initially said Metoprolol then corrected to Bisoprolol"
+            },
+            {
+                "name": "Ramipril",
+                "dose": "5 mg",
+                "frequency": "morgens",
+                "action": "continued",
+                "notes": "QM-013: Patient initially said 2.5 mg then corrected to 5 mg"
+            },
+            {
+                "name": "Simvastatin",
+                "dose": "40 mg",
+                "frequency": "abends",
+                "action": "changed",
+                "notes": "QM-013: Patient said 20 mg then corrected to 40 mg (dose increased)"
+            },
+            {
+                "name": "L-Thyroxin",
+                "dose": "75 µg",
+                "frequency": "morgens nüchtern",
+                "action": "changed",
+                "notes": "QM-013: Patient said 50 then corrected to 75 µg (dose adjusted last month)"
+            }
+        ],
+        "medications_planned": [],
+        "all_medication_names": ["Bisoprolol", "Ramipril", "Simvastatin", "L-Thyroxin"],
+        "vital_measurements": [
+            {
+                "parameter": "Temperatur",
+                "value": "37.8",
+                "unit": "°C",
+                "source": "patient_reported"
+            },
+            {
+                "parameter": "Temperatur",
+                "value": "38.5",
+                "unit": "°C",
+                "source": "patient_reported"
+            }
+        ],
+        "symptoms": [
+            "produktiver Husten seit drei Tagen",
+            "gelblicher Auswurf",
+            "Fieber"
+        ],
+        "medical_history": [
+            "Amoxicillin-Allergie mit Hautausschlag"
+        ],
+        "family_history": [],
+        "diagnostic_plans": [],
+        "therapeutic_interventions": [],
+        "forbidden_medications": ["Metoprolol", "Penicillin"]
+    },
+    "metadata": {
+        "qm_codes_tested": ["QM-013", "QM-015", "QM-001", "QM-002", "QM-003", "QM-007"],
+        "qm_013_corrections": {
+            "description": "All corrections made during conversation - only final value should appear",
+            "corrections": [
+                {"initial": "Metoprolol", "corrected": "Bisoprolol", "expected": "Bisoprolol only"},
+                {"initial": "Ramipril 2.5 mg", "corrected": "Ramipril 5 mg", "expected": "5 mg only"},
+                {"initial": "Penicillin-Allergie", "corrected": "Amoxicillin-Allergie", "expected": "Amoxicillin only"},
+                {"initial": "Simvastatin 20 mg", "corrected": "Simvastatin 40 mg", "expected": "40 mg with action=changed"},
+                {"initial": "L-Thyroxin 50 µg", "corrected": "L-Thyroxin 75 µg", "expected": "75 µg with action=changed"},
+                {"initial": "trockener Husten", "corrected": "produktiver Husten", "expected": "produktiv only"},
+                {"initial": "38.5°C gestern", "corrected": "38.5°C vorgestern, 37.8°C gestern", "expected": "both temperatures with correct dates"}
+            ]
+        },
+        "qm_015_noise": {
+            "description": "Smalltalk that should NOT appear in output",
+            "noise_items": [
+                "Wetter/Sonnenschein",
+                "Urlaub in Spanien",
+                "Strände und Essen",
+                "Fernseher im Wartezimmer",
+                "Schwager im Elektromarkt",
+                "Frage nach Kindern des Arztes",
+                "Enkelin",
+                "Mann beim Angeln"
+            ]
+        },
+        "author": "test_framework",
+        "created": "2025-02-06",
+        "version": "1.0"
+    }
+}

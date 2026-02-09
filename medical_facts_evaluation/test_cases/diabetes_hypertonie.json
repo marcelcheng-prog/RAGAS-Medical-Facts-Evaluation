@@ -115,7 +115,7 @@
     "allergies": [],
     "medications_taken": [
       {
-        "name": "Metformin",
+        "name": "Metvormin",
         "dose": "1000 mg",
         "frequency": "zweimal täglich",
         "indication": "Diabetes",

@@ -1,0 +1,45 @@
+Arzt: Guten Tag Frau Weber, wie geht es Ihnen heute? Schönes Wetter draußen, nicht wahr?
+
+Patientin: Ja, herrlich sonnig! Wir waren letzte Woche im Urlaub in Spanien, das war fantastisch. Die Strände waren wunderbar und das Essen...
+
+Arzt: Das klingt schön. Aber kommen wir zu Ihren Beschwerden.
+
+Patientin: Also, ich nehme Metoprolol... nein, warten Sie, ich verwechsle das immer. Ich nehme Bisoprolol 5 mg morgens.
+
+Arzt: Gut, Bisoprolol 5 mg. Und sonst?
+
+Patientin: Dann noch Ramipril 2.5 mg... äh, nein doch nicht 2.5, es sind 5 mg, die ich nehme. Morgens eine Tablette.
+
+Arzt: Haben Sie das Ramipril gut vertragen?
+
+Patientin: Ja, sehr gut. Apropos vertragen, haben Sie den neuen Fernseher im Wartezimmer gesehen? Der ist ja riesig! Mein Schwager arbeitet bei einem Elektromarkt...
+
+Arzt: Frau Weber, bleiben wir bei Ihrer Gesundheit.
+
+Patientin: Entschuldigung. Also, ich habe auch eine Allergie gegen... wie heißt das nochmal... Penicillin! Nein, Moment, nicht Penicillin. Amoxicillin ist es. Da bekomme ich Hautausschlag.
+
+Arzt: Amoxicillin-Allergie mit Hautausschlag, verstanden. Nehmen Sie noch andere Medikamente?
+
+Patientin: Ja, ich nehme abends Simvastatin 20 mg... ach nein, das wurde ja erhöht! Jetzt sind es 40 mg abends. Das hatte ich vergessen.
+
+Arzt: Also Simvastatin 40 mg abends. Gibt es bekannte Nebenwirkungen?
+
+Patientin: Nein, alles gut. Haben Sie übrigens Kinder? Meine Enkelin hat gerade...
+
+Arzt: Frau Weber, bitte. Haben Sie noch andere Medikamente?
+
+Patientin: Oh ja, L-Thyroxin 50... nein, 75 Mikrogramm! Die Dosis wurde letzten Monat angepasst. Morgens nüchtern.
+
+Arzt: Hat sich Ihre Schilddrüsenfunktion verbessert?
+
+Patientin: Ja, die Werte sind besser. Ach, und mein Mann lässt schön grüßen, er ist heute beim Angeln...
+
+Arzt: Danke. Haben Sie aktuell Beschwerden?
+
+Patientin: Ja, ich habe seit drei Tagen Husten. Zuerst dachte ich, es wäre trocken, aber nein, es ist doch produktiv mit gelblichem Auswurf.
+
+Arzt: Fieber?
+
+Patientin: Gestern hatte ich 38.5 Grad... äh nein, das war vorgestern. Gestern waren es 37.8 Grad.
+
+Arzt: Gut, dann schauen wir uns das an.

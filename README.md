@@ -170,20 +170,155 @@ options:
   --iterations N        Run multiple iterations (default: 1)
 ```
 
+## Quality Metrics (QM) Codes
+
+The evaluation framework tests agents against specific quality metrics. These codes define what aspects of medical extraction are being validated.
+
+### Severity Levels
+
+| Level | Icon | Description |
+|-------|:----:|-------------|
+| **PASS** | 🟢 | Akzeptiert - meets quality standards |
+| **MAJOR** | 🟡 | Nacharbeit nötig - requires manual review/correction |
+| **CRITICAL** | 🔴 | Showstopper - patient safety risk, must be fixed |
+
+---
+
+### SAFETY Metrics (QM-001 to QM-008) - Medikation & Patientendaten
+
+| ID | Kategorie | Metrik / Prüfpunkt | 🟢 PASS | 🟡 MAJOR | 🔴 CRITICAL |
+|----|-----------|-------------------|---------|----------|-------------|
+| **QM-001** | Medikation | **Wirkstoff-Integrität** | Name korrekt erkannt (Verbatim) | Leichter Tippfehler im Namen | Falscher Wirkstoff / Halluzination |
+| **QM-002** | Medikation | **Dosierung & Einheit** | Zahl und Einheit (mg/µg) exakt | Einheit fehlt, aber Zahl stimmt | Falsche Dosis oder Einheit (z.B. mg statt µg) |
+| **QM-003** | Medikation | **Logik: Bestand vs. Neu** | Korrekt getrennt in Anamnese/Plan | Vermischt, aber als Medikation erkennbar | Bestandsmedikament fälschlich als "neu" |
+| **QM-004** | Medikation | **Negativ-Filter** | Abgelehntes Medikament ignoriert | Erwähnt, aber Status unklar | Abgelehntes Medikament als "Verordnung" |
+| **QM-005** | Medikation | **Unsicherheits-Handling** | Markiert als [UNCLEAR] | Ungenaue Angabe ohne Markierung | KI rät/erfindet eine Dosis |
+| **QM-006** | Patientendaten | **Lateralität (Links/Rechts)** | Seite korrekt (z.B. linkes Knie) | Seite fehlt (nur "Knie") | Seite vertauscht (Rechts statt Links) |
+| **QM-007** | Patientendaten | **Allergien (CAVE)** | Allergie korrekt erfasst | Allergie im Fließtext versteckt | Allergie übersehen oder "Keine Allergien" erfunden |
+| **QM-008** | Patientendaten | **Ausschluss (Negation)** | Kein Fieber korrekt erkannt | Unpräzise ("Unwohlsein" statt "Grippe") | Hat Fieber (Das "Kein" überlesen) |
+
+---
+
+### ACCURACY Metrics (QM-009 to QM-013) - Diagnostik & Kontext
+
+| ID | Kategorie | Metrik / Prüfpunkt | 🟢 PASS | 🟡 MAJOR | 🔴 CRITICAL |
+|----|-----------|-------------------|---------|----------|-------------|
+| **QM-009** | Diagnostik | **Hauptdiagnose** | Kernproblem korrekt identifiziert | Unpräzise ("Unwohlsein" statt "Grippe") | Thema verfehlt / Falsche Diagnose erfunden |
+| **QM-010** | Diagnostik | **Messwerte (Vitals/Labs)** | Werte exakt (RR 120/80) | Wert da, Parametername unklar | Zahlenfehler (Kommafehler) |
+| **QM-011** | Kontext | **Attribution (Wer?)** | Symptome Dritter (Ehefrau) ignoriert | Dritte erwähnt, aber abgegrenzt | Symptome Dritter dem Patienten zugeordnet |
+| **QM-012** | Kontext | **Zeitlicher Verlauf** | Zeitangaben ("seit 3 Tagen") korrekt | Zeit fehlt ("seit einiger Zeit") | Falsche Zeit ("seit 3 Wochen" statt "3 Tagen") |
+| **QM-013** | Kontext | **Korrektur-Erkennung** | Letztgültige Aussage ("nein doch nicht") zählt | Beide Aussagen (falsch & richtig) gelistet | Nur die falsche (korrigierte) Aussage übernommen |
+
+---
+
+### USABILITY Metrics (QM-014 to QM-018) - Struktur, Inhalt & Stil
+
+| ID | Kategorie | Metrik / Prüfpunkt | 🟢 PASS | 🟡 MAJOR | 🔴 CRITICAL |
+|----|-----------|-------------------|---------|----------|-------------|
+| **QM-014** | Struktur | **SOAP-Formatierung** | Saubere Trennung S-O-A-P | Infos in falscher Sektion (z.B. Befund in Plan) | Keine Struktur / Fließtext-Block |
+| **QM-015** | Inhalt | **Noise Filter (Smalltalk)** | Kein Smalltalk (Wetter/Urlaub) | Kurzer Satz Smalltalk enthalten | Lange Passagen über Irrelevantes (Urlaub, Admin) |
+| **QM-016** | Stil | **Medizinischer Jargon** | Fachsprache / Stichpunkte | Umgangssprache / Ganze Sätze | Chatbot-Stil ("Der Arzt sagte dann...") |
+| **QM-017** | Stil | **Sprache & Grammatik** | Korrekte deutsche Grammatik | Leichte Grammatikfehler | Englische Wörter gemischt / Sinn entstellt |
+| **QM-018** | Inhalt | **Halluzination (Füller)** | Nur Fakten aus Audio | - | Erfundene Untersuchungen ("Abdomen weich"), die nie stattfanden |
+
+---
+
+> **Note**: QM-014 (SOAP Formatting) applies to SOAP note generation, not Medical Facts extraction.
+
 ## Test Cases
 
 Test cases are JSON files in `medical_facts_evaluation/test_cases/`:
 
-| Test Case | Description | Medications | Complexity |
-|-----------|-------------|-------------|------------|
-| `michael_mueller.json` | Diabetes & back pain consultation | 8 meds (new, stopped, refused) | Medium |
-| `diabetes.json` | Diabetes therapy change (DPP-4 → Ozempic) | 7 meds including Wegovy | Medium |
-| `magenschmerzen_gastritis.json` | Gastritis with PPI therapy | 5 meds | Medium |
-| `hausarzt.json` | **Hausarzt Praxis** - Complete GP consultation | 5 meds | **High** |
-| `diabetes_hypertonie.json` | Diabetes Typ 2 + Hypertonie with family history | 7 meds (Jardins, Ramipril) | **High** |
-| `medikamentenreview_polypharmazie.json` | Elderly patient (78y) with heart failure, polypharmacy | 7 meds, Swiss-German ASR errors | **High** |
+### Test Case Overview
 
-### Hausarzt Praxis Test Case (Recommended)
+| Test Case | Description | Medications | QM Codes Tested | Complexity |
+|-----------|-------------|:-----------:|-----------------|:----------:|
+| `ortho_knee_arthrose.json` | Knee arthritis, NSAID allergy, opioid refusal | 8 | **QM-002 to QM-008** | **High** |
+| `gyn_pregnancy_gestational_diabetes.json` | Pregnancy SSW 28, gestational diabetes, 3 allergies | 11 | **QM-002 to QM-008** | **High** |
+| `diabetes_hypertonie.json` | Diabetes + Hypertension with family history | 7 | QM-001, QM-003, **QM-010** | **High** |
+| `medikamentenreview_polypharmazie.json` | Elderly polypharmacy, heart failure | 7 | QM-001, **QM-009** (ASR) | **High** |
+| `hausarzt.json` | Complete GP consultation | 5 | QM-001, QM-003, QM-011 | **High** |
+| `michael_mueller.json` | Diabetes & back pain | 8 | QM-001, QM-003, QM-004 | Medium |
+| `diabetes.json` | Diabetes therapy change | 7 | QM-001, QM-003 | Medium |
+| `magenschmerzen_gastritis.json` | Gastritis with PPI therapy | 5 | QM-001, QM-011, QM-012 | Medium |
+| `bauchschmerzen.json` | Abdominal pain & fever | 5 | QM-001, QM-011 | Medium |
+| `korrektur_noise_filter.json` | Corrections & smalltalk | 4 | **QM-013**, **QM-015** | High |
+
+### Recommended Test Cases for Comprehensive QM Testing
+
+#### For QM-002 through QM-008 (Critical Accuracy Metrics):
+
+```bash
+# Test all critical QM codes (002-008) with orthopedic case
+python -m medical_facts_evaluation \
+  --agent-a e1a25a64fdc611f0b3cb4afd40f7103b \
+  --test-case medical_facts_evaluation/test_cases/ortho_knee_arthrose.json \
+  --verbose
+
+# Test all critical QM codes (002-008) with gynecology/pregnancy case
+python -m medical_facts_evaluation \
+  --agent-a e1a25a64fdc611f0b3cb4afd40f7103b \
+  --test-case medical_facts_evaluation/test_cases/gyn_pregnancy_gestational_diabetes.json \
+  --verbose
+```
+
+#### For QM-013 (Correction Recognition) and QM-015 (Noise Filter):
+
+```bash
+# Test correction handling and smalltalk filtering
+python -m medical_facts_evaluation \
+  --agent-a e1a25a64fdc611f0b3cb4afd40f7103b \
+  --test-case medical_facts_evaluation/test_cases/korrektur_noise_filter.json \
+  --verbose
+```
+
+### QM Code Details by Test Case
+
+#### `korrektur_noise_filter.json` - QM-013 & QM-015
+
+| QM Code | What's Tested | Expected Behavior |
+|---------|---------------|-------------------|
+| QM-013 | Patient corrections: "Metoprolol...nein, Bisoprolol" | Only final corrected value should appear |
+| QM-013 | Dose corrections: "2.5 mg...nein doch nicht, 5 mg" | Only corrected dose |
+| QM-013 | Allergen correction: "Penicillin...nein, Amoxicillin" | Only corrected allergen |
+| QM-015 | Smalltalk: vacation in Spain, weather, TV | Should NOT appear in output |
+| QM-015 | Non-medical: husband fishing, grandchildren | Should NOT appear in output |
+
+**Test Corrections to Detect:**
+- Metoprolol → Bisoprolol ✅ (forbidden: Metoprolol)
+- Ramipril 2.5 mg → 5 mg
+- Penicillin → Amoxicillin ✅ (forbidden: Penicillin)
+- Simvastatin 20 mg → 40 mg (action=changed)
+- L-Thyroxin 50 → 75 µg (action=changed)
+- trockener Husten → produktiver Husten
+
+#### `ortho_knee_arthrose.json` - Orthopädie (QM-002 to QM-008)
+
+| QM Code | What's Tested | Expected Behavior |
+|---------|---------------|-------------------|
+| QM-002 | L-Thyroxin 75 **µg** (not mg!) | Must recognize Mikrogramm vs Milligramm |
+| QM-003 | L-Thyroxin=continued, Dafalgan=changed, Capsaicin=new | Correct action classification |
+| QM-004 | Tramadol refused, Voltaren-Gel contraindicated | Must NOT appear in `medications_planned` |
+| QM-005 | L-Thyroxin dose unclear (75 or 50 µg) | Should mark as `[UNCLEAR]` |
+| QM-006 | Left knee=pain, Right knee=normal | No laterality confusion |
+| QM-007 | Ibuprofen allergy (rash) | Must capture with reaction |
+| QM-008 | No swelling, no redness, no fever | Must NOT invert negations |
+
+#### `gyn_pregnancy_gestational_diabetes.json` - Gynäkologie (QM-002 to QM-008)
+
+| QM Code | What's Tested | Expected Behavior |
+|---------|---------------|-------------------|
+| QM-002 | Ferro-Gradumet 105 mg, Dafalgan 500 mg | Correct mg dosages |
+| QM-003 | Elevit/Magnesium=continued, Ferro-Gradumet/Dafalgan=new, Pille=stopped | Full action classification |
+| QM-004 | Ibuprofen **kontraindiziert** in pregnancy | Critical: Must NOT prescribe |
+| QM-005 | Magnesium dose unclear (300 or 400 mg), Elevit timing unclear | Mark uncertainties |
+| QM-006 | Right-sided pain, left side pain-free | Correct laterality |
+| QM-007 | 3 allergies: Penicillin, Cotrimoxazol, Novalgin | All three with reactions |
+| QM-008 | No bleeding, no contractions, no fever | Negations preserved |
+
+### Additional Test Case Details
+
+#### Hausarzt Praxis Test Case
 
 The `hausarzt.json` test case is the **longest and most comprehensive transcript**, representing a typical Swiss German GP (Hausarzt) consultation with:
 - Detailed patient history taking
