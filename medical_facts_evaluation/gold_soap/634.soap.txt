@@ -1,0 +1,21 @@
+S:
+- Hauptgrund: Starke krampfartige Bauchschmerzen kombiniert mit Diarrhoe
+- Bauchschmerzen
+- Diarrhoe
+
+O:
+- Diffuse Druckdolenz
+- Medikamente aktuell: Ziproxin
+
+A:
+- Enterokolitis
+- Bakterielle Enteritis (Salmonellen, EAEC)
+- Enteritis des terminalen Ileums
+- Enteritis Colon transversum
+- Invagination im Bereich Jejunum/Ileum
+
+P:
+- Diagnostik: Gastroenterologie-Überweisung zur Beurteilung
+- Diagnostik: CT-Abdomen
+- Nachkontrolle: Gastroenterologie Kantonspital Baden
+- Befunde mit Patientin besprochen

@@ -1,0 +1,15 @@
+S:
+- produktiver Husten seit drei Tagen
+- gelblicher Auswurf
+- Fieber
+
+O:
+- Temperatur 37.8 °C (patient_reported)
+- Temperatur 38.5 °C (patient_reported)
+- Medikamente aktuell: Bisoprolol 5 mg morgens; Ramipril 5 mg morgens; Simvastatin 40 mg abends; L-Thyroxin 75 µg morgens nüchtern
+
+A:
+- Objektive Messungen vorliegend; Symptomatik: produktiver Husten seit drei Tagen, gelblicher Auswurf, Fieber
+
+P:
+- kein Plan dokumentiert

@@ -1,0 +1,285 @@
+{
+  "metadata": {
+    "generated_by": "soap_formatter.py",
+    "timestamp": "2026-03-16T04:39:48.052031+00:00",
+    "source_file": "medical_facts_evaluation/test_cases\\medikamentenreview_polypharmazie.json"
+  },
+  "soap_text": "S:\n- Hauptgrund: Müdigkeit und geschwollene Beine, Atemnot beim Treppensteigen\n- Müdigkeit\n- Geschwollene Beine\n- Atemnot beim Treppensteigen\n\nO:\n- Blutdruck 145/88 mmHg (doctor_measured)\n- Herzfrequenz 68 /min (doctor_measured)\n- Sauerstoffsättigung 94 % (doctor_measured)\n- Ödeme beide Unterschenkel bis zum Knie\n- Rasselgeräusche über beiden Lungen\n- Herztöne sehr leise\n- Medikamente aktuell: Koncor 5 mg morgens; Xarelto 20 mg morgens; Torasemid 10 mg 2-3x pro Woche; Tafalgan 1000 mg 3x täglich (morgens, mittags, abends); Kalzium; Witamin D\n\nA:\n- Dekompensierte Herzinsuffizienz\n- Lungenödem\n\nP:\n- Medikament: Torasemid; Aktion: changed; Dosis: 20 mg; Frequenz: jeden Tag am Morgen; Grund: Herzinsuffizienz nicht gut eingestellt, Dosis zu niedrig und zu selten eingenommen\n- Medikament: Koncor; Aktion: changed; Dosis: 10 mg; Frequenz: morgens; Grund: Herzinsuffizienz nicht gut eingestellt\n- Medikament: Tafalgan; Aktion: changed; Dosis: maximum 2x täglich; Frequenz: bei Bedarf; Grund: 3g täglich ist zu viel für Leber im Alter\n- Medikament: Voltaren Gel; Aktion: new; Frequenz: 2x täglich auf die Knie; Grund: Lokale Therapie statt systemisches Tafalgan, schont die Leber\n- Medikament: Xarelto; Aktion: continued; Dosis: 20 mg; Frequenz: jeden Tag; Grund: wichtig für Schlaganfallprophylaxe\n- Medikament: Kalzium; Aktion: continued\n- Medikament: Witamin D; Aktion: continued\n- Diagnostik: Blutabnahme in 2 Wochen: Leber, Nieren, Salze\n- Täglich wiegen am Morgen vor Frühstück\n- Gewicht aufschreiben\n- Blutdruck zu Hause kontrollieren\n- Voltaren Gel auf Knie schmieren 2x täglich\n- Nachkontrolle: in 2 Wochen\n- Monitoring: Täglich wiegen\n- Monitoring: Blutdruck zu Hause messen\n- Monitoring: Gewicht aufschreiben\n- Erklärung: Herzinsuffizienz nicht gut eingestellt, Wasser sammelt sich in Beinen und Lunge\n- Erklärung: Torasemid muss jeden Tag genommen werden, nicht nur bei Bedarf\n- Erklärung: 3g Tafalgan täglich zu viel für Leber im Alter\n- Erklärung: Voltaren Gel wirkt lokal und belastet Leber nicht\n- Erklärung: Gewichtszunahme >2kg in 3 Tagen bedeutet Wasseransammlung\n- Erklärung: Xarelto wichtig für Schlaganfallprophylaxe bei Vorhofflimmern\n- Erklärung: Blutdruckgerät von Spitex ausleihen",
+  "soap": {
+    "S": [
+      "Hauptgrund: Müdigkeit und geschwollene Beine, Atemnot beim Treppensteigen",
+      "Müdigkeit",
+      "Geschwollene Beine",
+      "Atemnot beim Treppensteigen"
+    ],
+    "O": [
+      "Blutdruck 145/88 mmHg (doctor_measured)",
+      "Herzfrequenz 68 /min (doctor_measured)",
+      "Sauerstoffsättigung 94 % (doctor_measured)",
+      "Ödeme beide Unterschenkel bis zum Knie",
+      "Rasselgeräusche über beiden Lungen",
+      "Herztöne sehr leise",
+      "Medikamente aktuell: Koncor 5 mg morgens; Xarelto 20 mg morgens; Torasemid 10 mg 2-3x pro Woche; Tafalgan 1000 mg 3x täglich (morgens, mittags, abends); Kalzium; Witamin D"
+    ],
+    "A": [
+      "Dekompensierte Herzinsuffizienz",
+      "Lungenödem"
+    ],
+    "P": [
+      "Medikament: Torasemid; Aktion: changed; Dosis: 20 mg; Frequenz: jeden Tag am Morgen; Grund: Herzinsuffizienz nicht gut eingestellt, Dosis zu niedrig und zu selten eingenommen",
+      "Medikament: Koncor; Aktion: changed; Dosis: 10 mg; Frequenz: morgens; Grund: Herzinsuffizienz nicht gut eingestellt",
+      "Medikament: Tafalgan; Aktion: changed; Dosis: maximum 2x täglich; Frequenz: bei Bedarf; Grund: 3g täglich ist zu viel für Leber im Alter",
+      "Medikament: Voltaren Gel; Aktion: new; Frequenz: 2x täglich auf die Knie; Grund: Lokale Therapie statt systemisches Tafalgan, schont die Leber",
+      "Medikament: Xarelto; Aktion: continued; Dosis: 20 mg; Frequenz: jeden Tag; Grund: wichtig für Schlaganfallprophylaxe",
+      "Medikament: Kalzium; Aktion: continued",
+      "Medikament: Witamin D; Aktion: continued",
+      "Diagnostik: Blutabnahme in 2 Wochen: Leber, Nieren, Salze",
+      "Täglich wiegen am Morgen vor Frühstück",
+      "Gewicht aufschreiben",
+      "Blutdruck zu Hause kontrollieren",
+      "Voltaren Gel auf Knie schmieren 2x täglich",
+      "Nachkontrolle: in 2 Wochen",
+      "Monitoring: Täglich wiegen",
+      "Monitoring: Blutdruck zu Hause messen",
+      "Monitoring: Gewicht aufschreiben",
+      "Erklärung: Herzinsuffizienz nicht gut eingestellt, Wasser sammelt sich in Beinen und Lunge",
+      "Erklärung: Torasemid muss jeden Tag genommen werden, nicht nur bei Bedarf",
+      "Erklärung: 3g Tafalgan täglich zu viel für Leber im Alter",
+      "Erklärung: Voltaren Gel wirkt lokal und belastet Leber nicht",
+      "Erklärung: Gewichtszunahme >2kg in 3 Tagen bedeutet Wasseransammlung",
+      "Erklärung: Xarelto wichtig für Schlaganfallprophylaxe bei Vorhofflimmern",
+      "Erklärung: Blutdruckgerät von Spitex ausleihen"
+    ]
+  },
+  "source_extract": {
+    "chief_complaint": "Müdigkeit und geschwollene Beine, Atemnot beim Treppensteigen",
+    "symptoms": [
+      "Müdigkeit",
+      "Geschwollene Beine",
+      "Atemnot beim Treppensteigen",
+      "Knieschmerzen"
+    ],
+    "patient_measurements": [],
+    "vital_measurements": [
+      {
+        "parameter": "Blutdruck",
+        "value": "145/88",
+        "unit": "mmHg",
+        "source": "doctor_measured"
+      },
+      {
+        "parameter": "Herzfrequenz",
+        "value": "68",
+        "unit": "/min",
+        "source": "doctor_measured"
+      },
+      {
+        "parameter": "Sauerstoffsättigung",
+        "value": "94",
+        "unit": "%",
+        "source": "doctor_measured"
+      }
+    ],
+    "physical_examination": [
+      "Ödeme beide Unterschenkel bis zum Knie",
+      "Rasselgeräusche über beiden Lungen",
+      "Herztöne sehr leise",
+      "Vorhofflimmern auf Monitor sichtbar",
+      "Eindrückbare Ödeme (Delle bleibt)"
+    ],
+    "medical_history": [
+      "Herzinsuffizienz",
+      "Vorhofflimmern",
+      "Arthrose (Knie)"
+    ],
+    "family_history": [
+      {
+        "relation": "Mutter",
+        "condition": "Herzinsuffizienz",
+        "age": "72",
+        "status": "verstorben an Herzversagen"
+      },
+      {
+        "relation": "Vater",
+        "condition": "Lungenkrebs",
+        "age": "65",
+        "status": "verstorben",
+        "notes": "Raucher"
+      },
+      {
+        "relation": "Schwester",
+        "condition": "Herzprobleme",
+        "age": "",
+        "status": "lebt"
+      }
+    ],
+    "social_history": {
+      "Rauchen": "Nie geraucht",
+      "Alkohol": "Kein Alkohol",
+      "Wohnsituation": "2. Stock (Treppensteigen erforderlich)"
+    },
+    "allergies": [],
+    "medications_taken": [
+      {
+        "name": "Koncor",
+        "dose": "5 mg",
+        "frequency": "morgens",
+        "indication": "Herz",
+        "notes": ""
+      },
+      {
+        "name": "Xarelto",
+        "dose": "20 mg",
+        "frequency": "morgens",
+        "indication": "Vorhofflimmern, Schlaganfallprophylaxe",
+        "notes": ""
+      },
+      {
+        "name": "Torasemid",
+        "dose": "10 mg",
+        "frequency": "2-3x pro Woche",
+        "indication": "Wassertablette, Ödeme",
+        "notes": "nur wenn Beine dick sind"
+      },
+      {
+        "name": "Tafalgan",
+        "dose": "1000 mg",
+        "frequency": "3x täglich (morgens, mittags, abends)",
+        "indication": "Knieschmerzen",
+        "notes": "jeden Tag"
+      },
+      {
+        "name": "Kalzium",
+        "dose": "",
+        "frequency": "",
+        "indication": "Knochen",
+        "notes": "von anderem Arzt verschrieben"
+      },
+      {
+        "name": "Witamin D",
+        "dose": "",
+        "frequency": "",
+        "indication": "Knochen",
+        "notes": "von anderem Arzt verschrieben"
+      }
+    ],
+    "medications_planned": [
+      {
+        "name": "Torasemid",
+        "action": "changed",
+        "dose": "20 mg",
+        "frequency": "jeden Tag am Morgen",
+        "indication": "Herzinsuffizienz, Ödeme",
+        "reason": "Herzinsuffizienz nicht gut eingestellt, Dosis zu niedrig und zu selten eingenommen"
+      },
+      {
+        "name": "Koncor",
+        "action": "changed",
+        "dose": "10 mg",
+        "frequency": "morgens",
+        "indication": "Herzinsuffizienz",
+        "reason": "Herzinsuffizienz nicht gut eingestellt",
+        "notes": "nur wenn Blutdruck nicht zu tief"
+      },
+      {
+        "name": "Tafalgan",
+        "action": "changed",
+        "dose": "maximum 2x täglich",
+        "frequency": "bei Bedarf",
+        "indication": "Schmerzen",
+        "reason": "3g täglich ist zu viel für Leber im Alter",
+        "notes": "nicht mehr jeden Tag"
+      },
+      {
+        "name": "Voltaren Gel",
+        "action": "new",
+        "dose": "",
+        "frequency": "2x täglich auf die Knie",
+        "indication": "Knieschmerzen",
+        "reason": "Lokale Therapie statt systemisches Tafalgan, schont die Leber"
+      },
+      {
+        "name": "Xarelto",
+        "action": "continued",
+        "dose": "20 mg",
+        "frequency": "jeden Tag",
+        "indication": "Vorhofflimmern",
+        "reason": "wichtig für Schlaganfallprophylaxe"
+      },
+      {
+        "name": "Kalzium",
+        "action": "continued",
+        "dose": "",
+        "frequency": "",
+        "indication": "Knochen",
+        "reason": ""
+      },
+      {
+        "name": "Witamin D",
+        "action": "continued",
+        "dose": "",
+        "frequency": "",
+        "indication": "Knochen",
+        "reason": ""
+      }
+    ],
+    "medication_side_effects": [],
+    "all_medication_names": [
+      "Koncor",
+      "Xarelto",
+      "Torasemid",
+      "Tafalgan",
+      "Kalzium",
+      "Witamin D",
+      "Voltaren Gel"
+    ],
+    "forbidden_medications": [],
+    "diagnostic_hypotheses": [
+      "Dekompensierte Herzinsuffizienz",
+      "Lungenödem"
+    ],
+    "diagnostic_plans": [
+      "Blutabnahme in 2 Wochen: Leber, Nieren, Salze"
+    ],
+    "laboratory_results": [],
+    "functional_status": {
+      "description": "Atemnot beim Treppensteigen, wohnt im 2. Stock",
+      "limitations": [
+        "Treppensteigen nur mit Pausen möglich",
+        "Schlafen nur mit 2 Kissen möglich wegen Atemnot"
+      ]
+    },
+    "sick_leave": {},
+    "therapeutic_interventions": [
+      "Täglich wiegen am Morgen vor Frühstück",
+      "Gewicht aufschreiben",
+      "Blutdruck zu Hause kontrollieren",
+      "Voltaren Gel auf Knie schmieren 2x täglich"
+    ],
+    "follow_up_instructions": {
+      "next_appointment": "in 2 Wochen",
+      "red_flags": [
+        "Gewichtszunahme mehr als 2 kg in 3 Tagen",
+        "Starke Atemnot",
+        "Brustschmerzen"
+      ],
+      "monitoring": [
+        "Täglich wiegen",
+        "Blutdruck zu Hause messen",
+        "Gewicht aufschreiben"
+      ]
+    },
+    "patient_education": [
+      "Erklärung: Herzinsuffizienz nicht gut eingestellt, Wasser sammelt sich in Beinen und Lunge",
+      "Erklärung: Torasemid muss jeden Tag genommen werden, nicht nur bei Bedarf",
+      "Erklärung: 3g Tafalgan täglich zu viel für Leber im Alter",
+      "Erklärung: Voltaren Gel wirkt lokal und belastet Leber nicht",
+      "Erklärung: Gewichtszunahme >2kg in 3 Tagen bedeutet Wasseransammlung",
+      "Erklärung: Xarelto wichtig für Schlaganfallprophylaxe bei Vorhofflimmern",
+      "Erklärung: Blutdruckgerät von Spitex ausleihen"
+    ]
+  },
+  "provenance": {
+    "status": "auto-generated"
+  }
+}

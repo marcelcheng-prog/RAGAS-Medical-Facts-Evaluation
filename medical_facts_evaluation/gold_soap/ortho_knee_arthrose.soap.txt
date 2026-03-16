@@ -1,0 +1,27 @@
+S:
+- Hauptgrund: Schmerzen im linken Knie seit 3 Monaten, verschlimmert beim Treppensteigen
+- Schmerzen linkes Knie
+- Schmerzverstärkung beim Treppensteigen
+- Knacken im Knie gelegentlich
+
+O:
+- Rechtes Knie: unauffällig, keine Schwellung, keine Rötung
+- Linkes Knie: keine sichtbare Schwellung, keine Rötung
+- Druckschmerz medial (innen) am linken Knie
+- Medikamente aktuell: L-Thyroxin 75 µg einmal täglich am Morgen; Dafalgan 500 mg 2-3x täglich bei Bedarf
+
+A:
+- Gonarthrose links (Knie-Arthrose)
+
+P:
+- Medikament: Dafalgan; Aktion: changed; Dosis: 500 mg; Frequenz: dreimal täglich; Grund: Regelmässige Einnahme statt nur bei Bedarf
+- Medikament: Capsaicin-Salbe; Aktion: new; Dosis: dünn auftragen; Frequenz: dreimal täglich; Grund: Alternative zu NSAIDs wegen Ibuprofen-Allergie
+- Medikament: L-Thyroxin; Aktion: continued; Dosis: 75 µg; Frequenz: einmal täglich am Morgen
+- Medikament: Tramadol; Aktion: refused; Grund: Patient lehnt ab wegen Übelkeit in der Vorgeschichte
+- Medikament: Voltaren-Gel; Aktion: refused; Grund: NSAR - kontraindiziert bei Ibuprofen-Allergie
+- Diagnostik: Röntgen linkes Knie
+- Diagnostik: Physiotherapie 12 Sitzungen
+- Medikamentöse Schmerztherapie (Dafalgan 500mg 3x täglich)
+- Topische Schmerztherapie (Capsaicin-Salbe auf linkes Knie)
+- Physiotherapie 12 Sitzungen
+- Nachkontrolle: in 4 Wochen zur Kontrolle mit Röntgenbild

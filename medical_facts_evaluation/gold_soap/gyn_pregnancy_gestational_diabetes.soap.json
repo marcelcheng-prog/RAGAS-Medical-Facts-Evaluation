@@ -1,0 +1,202 @@
+{
+  "metadata": {
+    "generated_by": "soap_formatter.py",
+    "timestamp": "2026-03-16T04:39:47.841303+00:00",
+    "source_file": "medical_facts_evaluation/test_cases\\gyn_pregnancy_gestational_diabetes.json"
+  },
+  "soap_text": "S:\n- Hauptgrund: Rechtsseitige Unterbauchschmerzen seit gestern, SSW 28\n- Rechtsseitiger Unterbauchschmerz (ziehend, flächig)\n- Wadenkrämpfe\n\nO:\n- Fetale Herzfrequenz 145 /min (doctor_measured)\n- Temperatur 36.8 °C (doctor_measured)\n- Blutdruck 125/80 mmHg (doctor_measured)\n- Bauch rund, schwangerschaftsentsprechend\n- Linker Unterbauch: schmerzfrei, unauffällig\n- Rechter Unterbauch: Druckschmerz, flächig (ca. handgross), tolerabel\n- Medikamente aktuell: Elevit 1 Tablette einmal täglich; Magnesium 300-400 mg einmal täglich abends\n\nA:\n- Gestationsdiabetes (neu diagnostiziert)\n- Rechtsseitiger Unterbauchschmerz (V.a. Mutterbandschmerzen)\n- Grenzwertiger Eisenmangel\n\nP:\n- Medikament: Elevit; Aktion: continued; Dosis: 1 Tablette; Frequenz: einmal täglich morgens zum Frühstück; Grund: Fortführung der bestehenden Supplementierung\n- Medikament: Magnesium; Aktion: continued; Frequenz: einmal täglich abends\n- Medikament: Ferro-Gradumet; Aktion: new; Dosis: 105 mg; Frequenz: einmal täglich; Grund: Hämoglobin an unterer Grenze\n- Medikament: Dafalgan; Aktion: new; Dosis: 500 mg; Frequenz: bei Bedarf, maximal dreimal täglich; Grund: Analgesie bei Bedarf, sicher in Schwangerschaft\n- Medikament: Ibuprofen; Aktion: refused; Grund: Kontraindiziert in Schwangerschaft, besonders im 3. Trimenon\n- Medikament: Pille; Aktion: stopped; Grund: Kontraindiziert in Schwangerschaft, bereits bei Schwangerschaftsbeginn abgesetzt\n- Diagnostik: Blutzuckerselbstmessung 4x täglich\n- Diagnostik: Blutzuckertagebuch führen\n- Diagnostik: Überweisung zur Ernährungsberatung\n- Diagnostik: Blutzuckermessgerät verschreiben\n- Ernährungsumstellung: weniger Zucker und Kohlenhydrate, mehr Gemüse und Eiweiss\n- Eisensupplementierung (Ferro-Gradumet)\n- Blutzuckerselbstkontrolle\n- Schmerztherapie bei Bedarf (Paracetamol/Dafalgan)\n- Fortführung Magnesium gegen Wadenkrämpfe\n- Fortführung pränatale Vitamine (Elevit)\n- Nachkontrolle: in 2 Wochen zur Kontrolle",
+  "soap": {
+    "S": [
+      "Hauptgrund: Rechtsseitige Unterbauchschmerzen seit gestern, SSW 28",
+      "Rechtsseitiger Unterbauchschmerz (ziehend, flächig)",
+      "Wadenkrämpfe"
+    ],
+    "O": [
+      "Fetale Herzfrequenz 145 /min (doctor_measured)",
+      "Temperatur 36.8 °C (doctor_measured)",
+      "Blutdruck 125/80 mmHg (doctor_measured)",
+      "Bauch rund, schwangerschaftsentsprechend",
+      "Linker Unterbauch: schmerzfrei, unauffällig",
+      "Rechter Unterbauch: Druckschmerz, flächig (ca. handgross), tolerabel",
+      "Medikamente aktuell: Elevit 1 Tablette einmal täglich; Magnesium 300-400 mg einmal täglich abends"
+    ],
+    "A": [
+      "Gestationsdiabetes (neu diagnostiziert)",
+      "Rechtsseitiger Unterbauchschmerz (V.a. Mutterbandschmerzen)",
+      "Grenzwertiger Eisenmangel"
+    ],
+    "P": [
+      "Medikament: Elevit; Aktion: continued; Dosis: 1 Tablette; Frequenz: einmal täglich morgens zum Frühstück; Grund: Fortführung der bestehenden Supplementierung",
+      "Medikament: Magnesium; Aktion: continued; Frequenz: einmal täglich abends",
+      "Medikament: Ferro-Gradumet; Aktion: new; Dosis: 105 mg; Frequenz: einmal täglich; Grund: Hämoglobin an unterer Grenze",
+      "Medikament: Dafalgan; Aktion: new; Dosis: 500 mg; Frequenz: bei Bedarf, maximal dreimal täglich; Grund: Analgesie bei Bedarf, sicher in Schwangerschaft",
+      "Medikament: Ibuprofen; Aktion: refused; Grund: Kontraindiziert in Schwangerschaft, besonders im 3. Trimenon",
+      "Medikament: Pille; Aktion: stopped; Grund: Kontraindiziert in Schwangerschaft, bereits bei Schwangerschaftsbeginn abgesetzt",
+      "Diagnostik: Blutzuckerselbstmessung 4x täglich",
+      "Diagnostik: Blutzuckertagebuch führen",
+      "Diagnostik: Überweisung zur Ernährungsberatung",
+      "Diagnostik: Blutzuckermessgerät verschreiben",
+      "Ernährungsumstellung: weniger Zucker und Kohlenhydrate, mehr Gemüse und Eiweiss",
+      "Eisensupplementierung (Ferro-Gradumet)",
+      "Blutzuckerselbstkontrolle",
+      "Schmerztherapie bei Bedarf (Paracetamol/Dafalgan)",
+      "Fortführung Magnesium gegen Wadenkrämpfe",
+      "Fortführung pränatale Vitamine (Elevit)",
+      "Nachkontrolle: in 2 Wochen zur Kontrolle"
+    ]
+  },
+  "source_extract": {
+    "chief_complaint": "Rechtsseitige Unterbauchschmerzen seit gestern, SSW 28",
+    "symptoms": [
+      "Rechtsseitiger Unterbauchschmerz (ziehend, flächig)",
+      "Wadenkrämpfe"
+    ],
+    "vital_measurements": [
+      {
+        "parameter": "Fetale Herzfrequenz",
+        "value": "145",
+        "unit": "/min",
+        "source": "doctor_measured"
+      },
+      {
+        "parameter": "Temperatur",
+        "value": "36.8",
+        "unit": "°C",
+        "source": "doctor_measured"
+      },
+      {
+        "parameter": "Blutdruck",
+        "value": "125/80",
+        "unit": "mmHg",
+        "source": "doctor_measured"
+      }
+    ],
+    "physical_examination": [
+      "Bauch rund, schwangerschaftsentsprechend",
+      "Linker Unterbauch: schmerzfrei, unauffällig",
+      "Rechter Unterbauch: Druckschmerz, flächig (ca. handgross), tolerabel",
+      "Kein Loslassschmerz",
+      "Fetale Herztöne: 145/min, regelmässig",
+      "Keine Blutungen",
+      "Keine Wehen/Kontraktionen",
+      "Bauch weich",
+      "Ausfluss: normal, unauffällig"
+    ],
+    "medical_history": [
+      "Schwangerschaft SSW 28",
+      "Gestationsdiabetes (neu diagnostiziert)",
+      "Wadenkrämpfe",
+      "Früher: Hormonelle Kontrazeption (Pille), abgesetzt bei Schwangerschaftsbeginn"
+    ],
+    "family_history": [],
+    "allergies": [
+      "Penicillin (Hautausschlag und Juckreiz)",
+      "Cotrimoxazol (Schwerer Durchfall)",
+      "Novalgin (Starker Schwindel)"
+    ],
+    "medications_taken": [
+      {
+        "name": "Elevit",
+        "dose": "1 Tablette",
+        "frequency": "einmal täglich",
+        "indication": "Schwangerschaftsvitamine",
+        "notes": "Patient unsicher über Timing (morgens oder abends)"
+      },
+      {
+        "name": "Magnesium",
+        "dose": "300-400 mg",
+        "frequency": "einmal täglich abends",
+        "indication": "Wadenkrämpfe",
+        "notes": "Patient unsicher über genaue Dosis (300 mg oder 400 mg)"
+      }
+    ],
+    "medications_planned": [
+      {
+        "name": "Elevit",
+        "action": "continued",
+        "dose": "1 Tablette",
+        "frequency": "einmal täglich morgens zum Frühstück",
+        "indication": "Schwangerschaftsvitamine",
+        "reason": "Fortführung der bestehenden Supplementierung"
+      },
+      {
+        "name": "Magnesium",
+        "action": "continued",
+        "frequency": "einmal täglich abends",
+        "indication": "Wadenkrämpfe",
+        "notes": "Weiterführung, genaue Dosis muss Patient zu Hause überprüfen"
+      },
+      {
+        "name": "Ferro-Gradumet",
+        "action": "new",
+        "dose": "105 mg",
+        "frequency": "einmal täglich",
+        "indication": "Eisenmangel, Schwangerschaft",
+        "reason": "Hämoglobin an unterer Grenze"
+      },
+      {
+        "name": "Dafalgan",
+        "action": "new",
+        "dose": "500 mg",
+        "frequency": "bei Bedarf, maximal dreimal täglich",
+        "indication": "Rechtsseitige Unterbauchschmerzen",
+        "reason": "Analgesie bei Bedarf, sicher in Schwangerschaft"
+      },
+      {
+        "name": "Ibuprofen",
+        "action": "refused",
+        "reason": "Kontraindiziert in Schwangerschaft, besonders im 3. Trimenon"
+      },
+      {
+        "name": "Pille",
+        "action": "stopped",
+        "reason": "Kontraindiziert in Schwangerschaft, bereits bei Schwangerschaftsbeginn abgesetzt"
+      }
+    ],
+    "all_medication_names": [
+      "Elevit",
+      "Magnesium",
+      "Ferro-Gradumet",
+      "Dafalgan",
+      "Paracetamol",
+      "Ibuprofen",
+      "Pille",
+      "Insulin",
+      "Penicillin",
+      "Cotrimoxazol",
+      "Novalgin"
+    ],
+    "forbidden_medications": [],
+    "diagnostic_hypotheses": [
+      "Gestationsdiabetes (neu diagnostiziert)",
+      "Rechtsseitiger Unterbauchschmerz (V.a. Mutterbandschmerzen)",
+      "Grenzwertiger Eisenmangel"
+    ],
+    "diagnostic_plans": [
+      "Blutzuckerselbstmessung 4x täglich",
+      "Blutzuckertagebuch führen",
+      "Überweisung zur Ernährungsberatung",
+      "Blutzuckermessgerät verschreiben"
+    ],
+    "therapeutic_interventions": [
+      "Ernährungsumstellung: weniger Zucker und Kohlenhydrate, mehr Gemüse und Eiweiss",
+      "Eisensupplementierung (Ferro-Gradumet)",
+      "Blutzuckerselbstkontrolle",
+      "Schmerztherapie bei Bedarf (Paracetamol/Dafalgan)",
+      "Fortführung Magnesium gegen Wadenkrämpfe",
+      "Fortführung pränatale Vitamine (Elevit)"
+    ],
+    "follow_up_instructions": {
+      "next_appointment": "in 2 Wochen zur Kontrolle",
+      "red_flags": [
+        "Verschlimmerung der rechtsseitigen Schmerzen",
+        "Blutungen",
+        "Wehen/Kontraktionen",
+        "Fieber"
+      ]
+    }
+  },
+  "provenance": {
+    "status": "auto-generated"
+  }
+}

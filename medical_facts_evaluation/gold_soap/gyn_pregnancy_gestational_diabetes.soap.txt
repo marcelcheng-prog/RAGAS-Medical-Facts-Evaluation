@@ -1,0 +1,37 @@
+S:
+- Hauptgrund: Rechtsseitige Unterbauchschmerzen seit gestern, SSW 28
+- Rechtsseitiger Unterbauchschmerz (ziehend, flächig)
+- Wadenkrämpfe
+
+O:
+- Fetale Herzfrequenz 145 /min (doctor_measured)
+- Temperatur 36.8 °C (doctor_measured)
+- Blutdruck 125/80 mmHg (doctor_measured)
+- Bauch rund, schwangerschaftsentsprechend
+- Linker Unterbauch: schmerzfrei, unauffällig
+- Rechter Unterbauch: Druckschmerz, flächig (ca. handgross), tolerabel
+- Medikamente aktuell: Elevit 1 Tablette einmal täglich; Magnesium 300-400 mg einmal täglich abends
+
+A:
+- Gestationsdiabetes (neu diagnostiziert)
+- Rechtsseitiger Unterbauchschmerz (V.a. Mutterbandschmerzen)
+- Grenzwertiger Eisenmangel
+
+P:
+- Medikament: Elevit; Aktion: continued; Dosis: 1 Tablette; Frequenz: einmal täglich morgens zum Frühstück; Grund: Fortführung der bestehenden Supplementierung
+- Medikament: Magnesium; Aktion: continued; Frequenz: einmal täglich abends
+- Medikament: Ferro-Gradumet; Aktion: new; Dosis: 105 mg; Frequenz: einmal täglich; Grund: Hämoglobin an unterer Grenze
+- Medikament: Dafalgan; Aktion: new; Dosis: 500 mg; Frequenz: bei Bedarf, maximal dreimal täglich; Grund: Analgesie bei Bedarf, sicher in Schwangerschaft
+- Medikament: Ibuprofen; Aktion: refused; Grund: Kontraindiziert in Schwangerschaft, besonders im 3. Trimenon
+- Medikament: Pille; Aktion: stopped; Grund: Kontraindiziert in Schwangerschaft, bereits bei Schwangerschaftsbeginn abgesetzt
+- Diagnostik: Blutzuckerselbstmessung 4x täglich
+- Diagnostik: Blutzuckertagebuch führen
+- Diagnostik: Überweisung zur Ernährungsberatung
+- Diagnostik: Blutzuckermessgerät verschreiben
+- Ernährungsumstellung: weniger Zucker und Kohlenhydrate, mehr Gemüse und Eiweiss
+- Eisensupplementierung (Ferro-Gradumet)
+- Blutzuckerselbstkontrolle
+- Schmerztherapie bei Bedarf (Paracetamol/Dafalgan)
+- Fortführung Magnesium gegen Wadenkrämpfe
+- Fortführung pränatale Vitamine (Elevit)
+- Nachkontrolle: in 2 Wochen zur Kontrolle

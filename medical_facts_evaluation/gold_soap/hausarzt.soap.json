@@ -1,0 +1,192 @@
+{
+  "metadata": {
+    "generated_by": "soap_formatter.py",
+    "timestamp": "2026-03-16T04:39:47.893862+00:00",
+    "source_file": "medical_facts_evaluation/test_cases\\hausarzt.json"
+  },
+  "soap_text": "S:\n- Hauptgrund: Magenschmerzen seit einigen Tagen, heute stärker, mit Erbrechen und Durchfall\n- Magenschmerzen\n- Epigastrische Schmerzen\n- Erbrechen (nur Speichel)\n\nO:\n- Temperatur 36.9 °C (doctor_measured)\n- Blutdruck 163/76 mmHg (doctor_measured)\n- Herzfrequenz 77 /min (doctor_measured)\n- Empfindlichkeit im Oberbauch/epigastrisch\n- Empfindlichkeit im linken Unterbauch\n- Empfindlichkeit in der rechten Flanke\n- Medikamente aktuell: Esomep 40 mg manchmal täglich; Metamizol heute Morgen\n\nA:\n- Magenschleimhautentzündung\n\nP:\n- Medikament: Dexilant; Aktion: new; Frequenz: einmal täglich; Grund: moderner und länger wirkend als Esomep\n- Medikament: Esomep; Aktion: stopped; Grund: pausieren für vier Wochen Test mit Dexilant\n- Medikament: Alukohl-Gel; Aktion: new; Dosis: zwei Messlöffel; Frequenz: 3-4x täglich\n- Diagnostik: Urinanalyse\n- Diagnostik: Kontrolle Entzündungswerte\n- Dexilant einmal täglich zur gleichen Tageszeit nehmen\n- Alukohl-Gel nach dem Essen und Trinken nehmen\n- Alukohl-Gel nicht mit Wasser runterspülen\n- Nachkontrolle: morgen Nachmittag\n- Monitoring: CRP kontrollieren\n- Monitoring: Weisse Blutzellen kontrollieren\n- Dexilant kann vor, mit oder nach dem Essen eingenommen werden\n- Alukohl-Gel muss wirken können, nicht mit Wasser runterspülen\n- Vier Wochen Test mit Dexilant",
+  "soap": {
+    "S": [
+      "Hauptgrund: Magenschmerzen seit einigen Tagen, heute stärker, mit Erbrechen und Durchfall",
+      "Magenschmerzen",
+      "Epigastrische Schmerzen",
+      "Erbrechen (nur Speichel)"
+    ],
+    "O": [
+      "Temperatur 36.9 °C (doctor_measured)",
+      "Blutdruck 163/76 mmHg (doctor_measured)",
+      "Herzfrequenz 77 /min (doctor_measured)",
+      "Empfindlichkeit im Oberbauch/epigastrisch",
+      "Empfindlichkeit im linken Unterbauch",
+      "Empfindlichkeit in der rechten Flanke",
+      "Medikamente aktuell: Esomep 40 mg manchmal täglich; Metamizol heute Morgen"
+    ],
+    "A": [
+      "Magenschleimhautentzündung"
+    ],
+    "P": [
+      "Medikament: Dexilant; Aktion: new; Frequenz: einmal täglich; Grund: moderner und länger wirkend als Esomep",
+      "Medikament: Esomep; Aktion: stopped; Grund: pausieren für vier Wochen Test mit Dexilant",
+      "Medikament: Alukohl-Gel; Aktion: new; Dosis: zwei Messlöffel; Frequenz: 3-4x täglich",
+      "Diagnostik: Urinanalyse",
+      "Diagnostik: Kontrolle Entzündungswerte",
+      "Dexilant einmal täglich zur gleichen Tageszeit nehmen",
+      "Alukohl-Gel nach dem Essen und Trinken nehmen",
+      "Alukohl-Gel nicht mit Wasser runterspülen",
+      "Nachkontrolle: morgen Nachmittag",
+      "Monitoring: CRP kontrollieren",
+      "Monitoring: Weisse Blutzellen kontrollieren",
+      "Dexilant kann vor, mit oder nach dem Essen eingenommen werden",
+      "Alukohl-Gel muss wirken können, nicht mit Wasser runterspülen",
+      "Vier Wochen Test mit Dexilant"
+    ]
+  },
+  "source_extract": {
+    "chief_complaint": "Magenschmerzen seit einigen Tagen, heute stärker, mit Erbrechen und Durchfall",
+    "symptoms": [
+      "Magenschmerzen",
+      "Epigastrische Schmerzen",
+      "Erbrechen (nur Speichel)",
+      "Durchfall",
+      "Gefühl von Wärme"
+    ],
+    "patient_measurements": [],
+    "vital_signs": [
+      {
+        "parameter": "Temperatur",
+        "value": "36.9",
+        "unit": "°C",
+        "source": "doctor_measured"
+      },
+      {
+        "parameter": "Blutdruck",
+        "value": "163/76",
+        "unit": "mmHg",
+        "source": "doctor_measured"
+      },
+      {
+        "parameter": "Herzfrequenz",
+        "value": "77",
+        "unit": "/min",
+        "source": "doctor_measured"
+      }
+    ],
+    "physical_examination": [
+      "Empfindlichkeit im Oberbauch/epigastrisch",
+      "Empfindlichkeit im linken Unterbauch",
+      "Empfindlichkeit in der rechten Flanke",
+      "Rege Darmgeräusche",
+      "Keine Unterschenkel-Ödeme",
+      "Keine gestauten Halsvenen"
+    ],
+    "medical_history": [
+      "Nierensteine"
+    ],
+    "family_history": [],
+    "social_history": {
+      "Belastung": "Tod des Ehemannes"
+    },
+    "allergies": [],
+    "medications_taken": [
+      {
+        "name": "Esomep",
+        "dose": "40 mg",
+        "frequency": "manchmal täglich",
+        "indication": "Magenschoner",
+        "notes": ""
+      },
+      {
+        "name": "Metamizol",
+        "dose": "",
+        "frequency": "heute Morgen",
+        "indication": "Schmerzmedikament",
+        "notes": ""
+      }
+    ],
+    "medications_planned": [
+      {
+        "name": "Dexilant",
+        "action": "new",
+        "dose": "",
+        "frequency": "einmal täglich",
+        "indication": "Magensäureblocker",
+        "reason": "moderner und länger wirkend als Esomep"
+      },
+      {
+        "name": "Esomep",
+        "action": "stopped",
+        "dose": "",
+        "frequency": "",
+        "indication": "",
+        "reason": "pausieren für vier Wochen Test mit Dexilant"
+      },
+      {
+        "name": "Alukohl-Gel",
+        "action": "new",
+        "dose": "zwei Messlöffel",
+        "frequency": "3-4x täglich",
+        "indication": "Beruhigung",
+        "reason": ""
+      }
+    ],
+    "medication_side_effects": [],
+    "all_medication_names": [
+      "Esomep",
+      "Metamizol",
+      "Novalgin",
+      "Dexilant",
+      "Alukohl-Gel"
+    ],
+    "forbidden_medications": [],
+    "diagnostic_hypotheses": [
+      "Magenschleimhautentzündung"
+    ],
+    "diagnostic_plans": [
+      "Urinanalyse",
+      "Kontrolle Entzündungswerte"
+    ],
+    "laboratory_results": [
+      {
+        "parameter": "CRP",
+        "value": "8",
+        "unit": "",
+        "interpretation": "leicht erhöht"
+      },
+      {
+        "parameter": "Weisse Blutzellen",
+        "value": "12.1",
+        "unit": "",
+        "interpretation": "leicht erhöht"
+      },
+      {
+        "parameter": "Urin",
+        "value": "negativ",
+        "unit": "",
+        "interpretation": "keine Bakterien, keine Entzündung"
+      }
+    ],
+    "functional_status": {},
+    "sick_leave": {},
+    "therapeutic_interventions": [
+      "Dexilant einmal täglich zur gleichen Tageszeit nehmen",
+      "Alukohl-Gel nach dem Essen und Trinken nehmen",
+      "Alukohl-Gel nicht mit Wasser runterspülen"
+    ],
+    "follow_up_instructions": {
+      "next_appointment": "morgen Nachmittag",
+      "red_flags": [],
+      "monitoring": [
+        "CRP kontrollieren",
+        "Weisse Blutzellen kontrollieren"
+      ]
+    },
+    "patient_education": [
+      "Dexilant kann vor, mit oder nach dem Essen eingenommen werden",
+      "Alukohl-Gel muss wirken können, nicht mit Wasser runterspülen",
+      "Vier Wochen Test mit Dexilant"
+    ]
+  },
+  "provenance": {
+    "status": "auto-generated"
+  }
+}

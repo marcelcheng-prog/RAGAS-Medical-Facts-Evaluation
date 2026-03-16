@@ -1,0 +1,33 @@
+S:
+- Hauptgrund: Magenschmerzen seit einigen Tagen, heute stärker, mit Erbrechen und Durchfall
+- Magenschmerzen
+- Epigastrische Schmerzen
+- Erbrechen (nur Speichel)
+
+O:
+- Temperatur 36.9 °C (doctor_measured)
+- Blutdruck 163/76 mmHg (doctor_measured)
+- Herzfrequenz 77 /min (doctor_measured)
+- Empfindlichkeit im Oberbauch/epigastrisch
+- Empfindlichkeit im linken Unterbauch
+- Empfindlichkeit in der rechten Flanke
+- Medikamente aktuell: Esomep 40 mg manchmal täglich; Metamizol heute Morgen
+
+A:
+- Magenschleimhautentzündung
+
+P:
+- Medikament: Dexilant; Aktion: new; Frequenz: einmal täglich; Grund: moderner und länger wirkend als Esomep
+- Medikament: Esomep; Aktion: stopped; Grund: pausieren für vier Wochen Test mit Dexilant
+- Medikament: Alukohl-Gel; Aktion: new; Dosis: zwei Messlöffel; Frequenz: 3-4x täglich
+- Diagnostik: Urinanalyse
+- Diagnostik: Kontrolle Entzündungswerte
+- Dexilant einmal täglich zur gleichen Tageszeit nehmen
+- Alukohl-Gel nach dem Essen und Trinken nehmen
+- Alukohl-Gel nicht mit Wasser runterspülen
+- Nachkontrolle: morgen Nachmittag
+- Monitoring: CRP kontrollieren
+- Monitoring: Weisse Blutzellen kontrollieren
+- Dexilant kann vor, mit oder nach dem Essen eingenommen werden
+- Alukohl-Gel muss wirken können, nicht mit Wasser runterspülen
+- Vier Wochen Test mit Dexilant

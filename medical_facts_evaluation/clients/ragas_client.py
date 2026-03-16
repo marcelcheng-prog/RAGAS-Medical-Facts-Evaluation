@@ -299,13 +299,64 @@ class RagasEvaluator:
                 return score
             
             return None
-            
+
         except Exception as e:
             if self.verbose:
                 print(f"  ❌ Family history RAGAS evaluation failed: {e}")
                 import traceback
                 traceback.print_exc()
             
+            return None
+
+    def evaluate_semantic_list_recall(
+        self,
+        *,
+        transcript: str,
+        category_name: str,
+        predicted_items: list[str],
+        gold_items: list[str],
+    ) -> Optional[float]:
+        """
+        Generic RAGAS context_recall for semantic equivalence of list items.
+
+        Useful for SOAP sections where wording differs but meaning may match.
+        """
+        if not gold_items:
+            return 1.0 if not predicted_items else 0.0
+
+        try:
+            import pandas as pd
+            from ragas import evaluate
+            from ragas.metrics import context_recall
+            from ragas.dataset_schema import SingleTurnSample, EvaluationDataset
+
+            pred_text = "\n".join(f"- {x}" for x in predicted_items) if predicted_items else "(none)"
+            gold_text = "\n".join(f"- {x}" for x in gold_items)
+
+            sample = SingleTurnSample(
+                user_input=(
+                    f"Compare extracted {category_name} entries against expected entries. "
+                    "Treat semantically equivalent medical phrasing as match."
+                ),
+                response=f"Predicted {category_name}:\n{pred_text}",
+                retrieved_contexts=[transcript],
+                reference=f"Expected {category_name}:\n{gold_text}",
+            )
+
+            dataset = EvaluationDataset(samples=[sample])
+            results = evaluate(
+                dataset=dataset,
+                metrics=[context_recall],
+                llm=self.llm,
+                embeddings=self.embeddings,
+            )
+
+            df = results.to_pandas()
+            if 'context_recall' in df.columns:
+                val = df['context_recall'].iloc[0]
+                return float(val) if pd.notna(val) else None
+            return None
+        except Exception:
             return None
     
     @classmethod

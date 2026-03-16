@@ -1,0 +1,15 @@
+S:
+- Anamnese: keine Daten
+
+O:
+- BMI 29 kg/m²
+- Gewichtsverlust 2 kg
+- Medikamente aktuell: Chardians Met; Forsiga; DPP4-Hämer
+
+A:
+- Objektive Messungen vorliegend
+
+P:
+- Medikament: Ozempic; Aktion: new; Dosis: 0,5 mg aktuell, Erhöhung auf 1,0 mg; Frequenz: wöchentlich
+- Medikament: Metformin; Aktion: new
+- Medikament: Wegobi; Aktion: refused

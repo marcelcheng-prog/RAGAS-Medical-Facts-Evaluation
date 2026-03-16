@@ -40,6 +40,7 @@ env/
 results/
 *.json
 !medical_facts_evaluation/test_cases/*.json
+!medical_facts_evaluation/gold_soap/*.json
 
 # Logs
 *.log

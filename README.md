@@ -1,18 +1,18 @@
-# RAGAS Medical Facts Evaluation Framework
+# RAGAS Medical Facts & SOAP Evaluation Framework
 
-Evaluation framework for testing Medical Facts extraction agents using the [RAGAS](https://docs.ragas.io/) (Retrieval Augmented Generation Assessment) framework.
-
-> **⚠️ Scope**: This framework currently evaluates **Medical Facts Extraction** agents only. SOAP note generation evaluation is **not yet supported**.
+Evaluation framework for testing **Medical Facts extraction** and **SOAP note generation** agents using the [RAGAS](https://docs.ragas.io/) (Retrieval Augmented Generation Assessment) framework, with a **Streamlit web UI** for interactive evaluation, agent ranking, and favorites management.
 
 ## Overview
 
-This tool evaluates the quality of Medical Facts agents deployed on RAGFlow by:
+This tool evaluates the quality of Medical Facts and SOAP agents deployed on RAGFlow by:
 
 - **Extracting medical facts** from doctor-patient transcripts (German)
 - **Comparing extracted facts** against ground truth annotations
+- **Evaluating SOAP notes** with lexical, GPT-semantic, and RAGAS scoring
 - **Computing RAGAS metrics** (Faithfulness, Context Recall, Answer Relevancy)
 - **Measuring medication extraction quality** (Precision, Recall, F1, Hallucinations)
-- **Comparing multiple agents** side-by-side
+- **Comparing multiple agents** side-by-side with ranking leaderboard
+- **Interactive web UI** for running evaluations, managing agent favorites, and viewing rankings
 
 ## Production Prompt Agent
 
@@ -58,10 +58,14 @@ python -m medical_facts_evaluation --agent-a a6ef1157028011f180502a3cdbc575c7 --
 
 - 🔬 **RAGAS Evaluation**: Industry-standard LLM evaluation metrics
 - 💊 **Medication Tracking**: Precision/Recall for medication extraction
+- 🧼 **SOAP Evaluation**: Three-tier scoring (lexical + GPT-semantic + RAGAS)
 - 🆚 **Agent Comparison**: Compare two agents on the same test case
 - 📊 **Rich Output**: Beautiful terminal tables with pass/fail indicators
 - 📁 **JSON Reports**: Detailed results saved for analysis
-- 🧪 **Multiple Test Cases**: German medical transcripts with ground truth
+- 🧪 **Multiple Test Cases**: 13+ German medical transcripts with ground truth
+- 🌐 **Web UI**: Streamlit dashboard for interactive evaluation and ranking
+- ⭐ **Favorites**: Save and manage preferred agent configurations
+- 🏆 **Leaderboard**: Automatic ranking of agents by score and response time
 
 ## Installation
 
@@ -512,10 +516,15 @@ RAGAS_Medical_Facts_Agent_refactor/
 │   ├── config/
 │   │   ├── settings.py       # Environment configuration
 │   │   └── thresholds.py     # Quality thresholds
+│   ├── evaluators/
+│   │   └── soap_evaluator.py # SOAP three-tier scoring
+│   ├── formatters/
+│   │   └── soap_formatter.py # Medical facts → SOAP conversion
 │   ├── metrics/
 │   │   ├── medication.py     # Medication evaluation
 │   │   ├── vital_signs.py    # Vital signs evaluation
-│   │   └── symptoms.py       # Symptom evaluation
+│   │   ├── symptoms.py       # Symptom evaluation
+│   │   └── safety.py         # Hallucination & safety checks
 │   ├── models/
 │   │   ├── ground_truth.py   # Data classes
 │   │   ├── evaluation.py     # Result models
@@ -523,11 +532,11 @@ RAGAS_Medical_Facts_Agent_refactor/
 │   ├── reporters/
 │   │   ├── console.py        # Rich terminal output
 │   │   └── json_reporter.py  # JSON file output
-│   └── test_cases/
-│       ├── schema.json       # Test case JSON schema
-│       ├── michael_mueller.json
-│       ├── diabetes_kneubühler.json
-│       └── ...
+│   ├── test_cases/           # 13+ ground truth JSON files
+│   ├── gold_soap/            # Gold SOAP references
+│   └── prompts/
+│       └── soap_formatter_prompt.md
+├── app.py                    # Streamlit web UI
 ├── .env.example
 ├── .gitignore
 ├── requirements.txt
@@ -554,6 +563,79 @@ PRODUCTION = QualityThresholds(
     # ...
 )
 ```
+
+## SOAP Note Evaluation
+
+The framework supports evaluation of SOAP note generation agents with a three-tier scoring system:
+
+### Scoring Layers
+
+| Layer | Weight | Method | Description |
+|-------|--------|--------|-------------|
+| **Lexical** | 35% | Token F1 | Word-level overlap between predicted and gold sections |
+| **GPT Semantic** | 30% | `gpt-4o-mini` | LLM judges medical equivalence (e.g., "morgens" = "1-0-0") |
+| **RAGAS Semantic** | 35% | Context Recall | RAGAS framework measures semantic list recall |
+
+### SOAP CLI Commands
+
+```bash
+# Evaluate SOAP agent on default test case
+python -m medical_facts_evaluation --mode soap --agent-a <soap_agent_id> --verbose-soap
+
+# Evaluate on all test cases
+python -m medical_facts_evaluation --mode soap --agent-a <id> --all-test-cases --verbose-soap
+
+# Compare two SOAP agents
+python -m medical_facts_evaluation --mode soap --compare --agent-a <id1> --agent-b <id2> --verbose-soap
+
+# Custom thresholds
+python -m medical_facts_evaluation --mode soap --agent-a <id> \
+  --soap-structure-threshold 0.75 --soap-content-threshold 0.60
+```
+
+### SOAP Agent IDs
+
+| Agent | ID | Description |
+|-------|----|-------------|
+| SOAP v1 | `be95d9821ef211f194964348756e437e` | First SOAP generation agent |
+| SOAP v2 | `f44320e61ef011f194964348756e437e` | Improved SOAP generation agent |
+
+### Verbose SOAP Output
+
+When `--verbose-soap` is enabled, the output includes:
+- Per-section scores (lexical, GPT-semantic, RAGAS, effective blend)
+- Predicted vs Gold item comparison for each S/O/A/P section
+- Missing and extra items highlighted
+- Weakness summary identifying lowest-scoring sections
+- Top actionable fixes to improve agent prompts
+
+### Gold Standard SOAP Files
+
+Gold SOAP references are stored in `medical_facts_evaluation/gold_soap/` as `.soap.json` files, auto-generated from test case ground truth via the SOAP formatter. These should be reviewed by a clinician for production use.
+
+---
+
+## Web UI (Streamlit Dashboard)
+
+An interactive web interface for running evaluations without the command line.
+
+### Launch
+
+```bash
+# From the RAGAS_Medical_Facts_Agent_refactor directory
+streamlit run app.py
+```
+
+### Features
+
+- **Agent Evaluation**: Enter any RAGFlow agent ID and run medical facts or SOAP evaluation
+- **Test Case Selection**: Pick from all available test cases or run all
+- **Live Results**: View detailed evaluation output with section scores and diagnostics
+- **Agent Favorites**: Save frequently-used agents with custom labels for quick access
+- **Ranking Leaderboard**: Automatic ranking table sorted by quality score and response time
+- **Export**: Download results as JSON
+
+---
 
 ## Known Limitations
 

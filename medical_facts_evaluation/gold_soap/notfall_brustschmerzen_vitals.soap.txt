@@ -1,0 +1,42 @@
+S:
+- Hauptgrund: Akute Brustschmerzen seit 2 Stunden, retrosternal mit Ausstrahlung in linken Arm
+- Brustschmerzen retrosternal (Schmerzstärke initial 8/10, aktuell 5/10, nach Therapie 3/10, zuletzt 2/10)
+- Ausstrahlung in linken Arm
+- Atemnot (leicht)
+
+O:
+- Blutdruck 165/95 mmHg (doctor_measured)
+- Puls 92 /min (doctor_measured)
+- Sauerstoffsättigung 94 % (doctor_measured)
+- Temperatur 36.9 °C (doctor_measured)
+- Blutdruck 145/85 mmHg (doctor_measured)
+- Puls 88 /min (doctor_measured)
+- Sauerstoffsättigung 98 % (doctor_measured)
+- Blutdruck 138/82 mmHg (doctor_measured)
+- Puls 78 /min (doctor_measured)
+- Sauerstoffsättigung 99 % (doctor_measured)
+- EKG: ST-Hebungen in V2-V4 (Vorderwandinfarkt)
+- Medikamente aktuell: Lisinopril 10 mg einmal täglich; Atorvastatin 40 mg einmal täglich abends
+
+A:
+- Akuter ST-Hebungsinfarkt (STEMI) der Vorderwand
+- Akutes Koronarsyndrom
+
+P:
+- Medikament: Aspirin; Aktion: new; Dosis: 300 mg; Frequenz: Einmalgabe (Ladedosis); Grund: Thrombozytenaggregationshemmung
+- Medikament: Heparin; Aktion: new; Dosis: 5000 Einheiten; Frequenz: Einmalgabe i.v.; Grund: Antikoagulation
+- Medikament: Sauerstoff; Aktion: new; Dosis: 4 L/min; Frequenz: kontinuierlich via Nasenbrille; Grund: Sättigung verbessern
+- Medikament: Nitroglycerin-Spray; Aktion: new; Dosis: 2 Hübe; Frequenz: Einmalgabe sublingual; Grund: Koronardilatation
+- Medikament: Morphin; Aktion: new; Dosis: 5 mg; Frequenz: Einmalgabe i.v.; Grund: Analgesie
+- Medikament: Ticagrelor; Aktion: new; Dosis: 180 mg; Frequenz: Einmalgabe (Ladedosis); Grund: Duale Thrombozytenaggregationshemmung
+- Diagnostik: Herzkatheteruntersuchung (Koronarangiographie)
+- Diagnostik: Perkutane Koronarintervention (PCI) mit Stentimplantation
+- Sauerstoffgabe 4 L/min via Nasenbrille
+- Aspirin 300 mg Ladedosis
+- Heparin 5000 IE i.v.
+- Nitroglycerin-Spray 2 Hübe sublingual
+- Morphin 5 mg i.v.
+- Ticagrelor 180 mg Ladedosis
+- Notfall-Herzkatheter geplant
+- Monitoring: Kontinuierliche EKG-Überwachung
+- Monitoring: Vitalzeichen-Monitoring

@@ -1,0 +1,148 @@
+{
+  "metadata": {
+    "generated_by": "soap_formatter.py",
+    "timestamp": "2026-03-16T04:39:48.211192+00:00",
+    "source_file": "medical_facts_evaluation/test_cases\\ortho_knee_arthrose.json"
+  },
+  "soap_text": "S:\n- Hauptgrund: Schmerzen im linken Knie seit 3 Monaten, verschlimmert beim Treppensteigen\n- Schmerzen linkes Knie\n- Schmerzverstärkung beim Treppensteigen\n- Knacken im Knie gelegentlich\n\nO:\n- Rechtes Knie: unauffällig, keine Schwellung, keine Rötung\n- Linkes Knie: keine sichtbare Schwellung, keine Rötung\n- Druckschmerz medial (innen) am linken Knie\n- Medikamente aktuell: L-Thyroxin 75 µg einmal täglich am Morgen; Dafalgan 500 mg 2-3x täglich bei Bedarf\n\nA:\n- Gonarthrose links (Knie-Arthrose)\n\nP:\n- Medikament: Dafalgan; Aktion: changed; Dosis: 500 mg; Frequenz: dreimal täglich; Grund: Regelmässige Einnahme statt nur bei Bedarf\n- Medikament: Capsaicin-Salbe; Aktion: new; Dosis: dünn auftragen; Frequenz: dreimal täglich; Grund: Alternative zu NSAIDs wegen Ibuprofen-Allergie\n- Medikament: L-Thyroxin; Aktion: continued; Dosis: 75 µg; Frequenz: einmal täglich am Morgen\n- Medikament: Tramadol; Aktion: refused; Grund: Patient lehnt ab wegen Übelkeit in der Vorgeschichte\n- Medikament: Voltaren-Gel; Aktion: refused; Grund: NSAR - kontraindiziert bei Ibuprofen-Allergie\n- Diagnostik: Röntgen linkes Knie\n- Diagnostik: Physiotherapie 12 Sitzungen\n- Medikamentöse Schmerztherapie (Dafalgan 500mg 3x täglich)\n- Topische Schmerztherapie (Capsaicin-Salbe auf linkes Knie)\n- Physiotherapie 12 Sitzungen\n- Nachkontrolle: in 4 Wochen zur Kontrolle mit Röntgenbild",
+  "soap": {
+    "S": [
+      "Hauptgrund: Schmerzen im linken Knie seit 3 Monaten, verschlimmert beim Treppensteigen",
+      "Schmerzen linkes Knie",
+      "Schmerzverstärkung beim Treppensteigen",
+      "Knacken im Knie gelegentlich"
+    ],
+    "O": [
+      "Rechtes Knie: unauffällig, keine Schwellung, keine Rötung",
+      "Linkes Knie: keine sichtbare Schwellung, keine Rötung",
+      "Druckschmerz medial (innen) am linken Knie",
+      "Medikamente aktuell: L-Thyroxin 75 µg einmal täglich am Morgen; Dafalgan 500 mg 2-3x täglich bei Bedarf"
+    ],
+    "A": [
+      "Gonarthrose links (Knie-Arthrose)"
+    ],
+    "P": [
+      "Medikament: Dafalgan; Aktion: changed; Dosis: 500 mg; Frequenz: dreimal täglich; Grund: Regelmässige Einnahme statt nur bei Bedarf",
+      "Medikament: Capsaicin-Salbe; Aktion: new; Dosis: dünn auftragen; Frequenz: dreimal täglich; Grund: Alternative zu NSAIDs wegen Ibuprofen-Allergie",
+      "Medikament: L-Thyroxin; Aktion: continued; Dosis: 75 µg; Frequenz: einmal täglich am Morgen",
+      "Medikament: Tramadol; Aktion: refused; Grund: Patient lehnt ab wegen Übelkeit in der Vorgeschichte",
+      "Medikament: Voltaren-Gel; Aktion: refused; Grund: NSAR - kontraindiziert bei Ibuprofen-Allergie",
+      "Diagnostik: Röntgen linkes Knie",
+      "Diagnostik: Physiotherapie 12 Sitzungen",
+      "Medikamentöse Schmerztherapie (Dafalgan 500mg 3x täglich)",
+      "Topische Schmerztherapie (Capsaicin-Salbe auf linkes Knie)",
+      "Physiotherapie 12 Sitzungen",
+      "Nachkontrolle: in 4 Wochen zur Kontrolle mit Röntgenbild"
+    ]
+  },
+  "source_extract": {
+    "chief_complaint": "Schmerzen im linken Knie seit 3 Monaten, verschlimmert beim Treppensteigen",
+    "symptoms": [
+      "Schmerzen linkes Knie",
+      "Schmerzverstärkung beim Treppensteigen",
+      "Knacken im Knie gelegentlich"
+    ],
+    "vital_measurements": [],
+    "physical_examination": [
+      "Rechtes Knie: unauffällig, keine Schwellung, keine Rötung",
+      "Linkes Knie: keine sichtbare Schwellung, keine Rötung",
+      "Druckschmerz medial (innen) am linken Knie",
+      "Leichter Druckschmerz lateral (aussen) am linken Knie",
+      "Schmerzen bei Flexion ca. 90 Grad",
+      "Krepitation (Knacken) bei Bewegung"
+    ],
+    "medical_history": [
+      "Hypothyreose (Schilddrüsenunterfunktion)"
+    ],
+    "family_history": [],
+    "allergies": [
+      "Ibuprofen (Ausschlag am ganzen Körper)"
+    ],
+    "medications_taken": [
+      {
+        "name": "L-Thyroxin",
+        "dose": "75 µg",
+        "frequency": "einmal täglich am Morgen",
+        "indication": "Hypothyreose",
+        "notes": "Patient unsicher ob 75 µg oder 50 µg - muss zu Hause nachschauen"
+      },
+      {
+        "name": "Dafalgan",
+        "dose": "500 mg",
+        "frequency": "2-3x täglich bei Bedarf",
+        "indication": "Knieschmerzen",
+        "notes": "Selbstmedikation, hilft nur teilweise"
+      }
+    ],
+    "medications_planned": [
+      {
+        "name": "Dafalgan",
+        "action": "changed",
+        "dose": "500 mg",
+        "frequency": "dreimal täglich",
+        "indication": "Gonarthrose links, Schmerztherapie",
+        "reason": "Regelmässige Einnahme statt nur bei Bedarf"
+      },
+      {
+        "name": "Capsaicin-Salbe",
+        "action": "new",
+        "dose": "dünn auftragen",
+        "frequency": "dreimal täglich",
+        "indication": "Gonarthrose links, topische Schmerztherapie",
+        "reason": "Alternative zu NSAIDs wegen Ibuprofen-Allergie"
+      },
+      {
+        "name": "L-Thyroxin",
+        "action": "continued",
+        "dose": "75 µg",
+        "frequency": "einmal täglich am Morgen",
+        "indication": "Hypothyreose",
+        "notes": "Weiter wie bisher, Dosis bestätigen"
+      },
+      {
+        "name": "Tramadol",
+        "action": "refused",
+        "reason": "Patient lehnt ab wegen Übelkeit in der Vorgeschichte"
+      },
+      {
+        "name": "Voltaren-Gel",
+        "action": "refused",
+        "reason": "NSAR - kontraindiziert bei Ibuprofen-Allergie"
+      }
+    ],
+    "all_medication_names": [
+      "L-Thyroxin",
+      "Dafalgan",
+      "Paracetamol",
+      "Tramadol",
+      "Capsaicin-Salbe",
+      "Ibuprofen",
+      "Voltaren-Gel",
+      "Diclofenac"
+    ],
+    "forbidden_medications": [],
+    "diagnostic_hypotheses": [
+      "Gonarthrose links (Knie-Arthrose)"
+    ],
+    "diagnostic_plans": [
+      "Röntgen linkes Knie",
+      "Physiotherapie 12 Sitzungen"
+    ],
+    "therapeutic_interventions": [
+      "Medikamentöse Schmerztherapie (Dafalgan 500mg 3x täglich)",
+      "Topische Schmerztherapie (Capsaicin-Salbe auf linkes Knie)",
+      "Physiotherapie 12 Sitzungen"
+    ],
+    "follow_up_instructions": {
+      "next_appointment": "in 4 Wochen zur Kontrolle mit Röntgenbild",
+      "red_flags": [
+        "Schmerzverschlimmerung",
+        "Schwellung des Knies",
+        "Rötung des Knies"
+      ]
+    }
+  },
+  "provenance": {
+    "status": "auto-generated"
+  }
+}

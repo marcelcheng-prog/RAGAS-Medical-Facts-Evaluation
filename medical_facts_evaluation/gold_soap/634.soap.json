@@ -1,0 +1,142 @@
+{
+  "metadata": {
+    "generated_by": "soap_formatter.py",
+    "timestamp": "2026-03-16T04:39:47.633060+00:00",
+    "source_file": "medical_facts_evaluation/test_cases\\634.json"
+  },
+  "soap_text": "S:\n- Hauptgrund: Starke krampfartige Bauchschmerzen kombiniert mit Diarrhoe\n- Bauchschmerzen\n- Diarrhoe\n\nO:\n- Diffuse Druckdolenz\n- Medikamente aktuell: Ziproxin\n\nA:\n- Enterokolitis\n- Bakterielle Enteritis (Salmonellen, EAEC)\n- Enteritis des terminalen Ileums\n- Enteritis Colon transversum\n- Invagination im Bereich Jejunum/Ileum\n\nP:\n- Diagnostik: Gastroenterologie-Überweisung zur Beurteilung\n- Diagnostik: CT-Abdomen\n- Nachkontrolle: Gastroenterologie Kantonspital Baden\n- Befunde mit Patientin besprochen",
+  "soap": {
+    "S": [
+      "Hauptgrund: Starke krampfartige Bauchschmerzen kombiniert mit Diarrhoe",
+      "Bauchschmerzen",
+      "Diarrhoe"
+    ],
+    "O": [
+      "Diffuse Druckdolenz",
+      "Medikamente aktuell: Ziproxin"
+    ],
+    "A": [
+      "Enterokolitis",
+      "Bakterielle Enteritis (Salmonellen, EAEC)",
+      "Enteritis des terminalen Ileums",
+      "Enteritis Colon transversum",
+      "Invagination im Bereich Jejunum/Ileum"
+    ],
+    "P": [
+      "Diagnostik: Gastroenterologie-Überweisung zur Beurteilung",
+      "Diagnostik: CT-Abdomen",
+      "Nachkontrolle: Gastroenterologie Kantonspital Baden",
+      "Befunde mit Patientin besprochen"
+    ]
+  },
+  "source_extract": {
+    "chief_complaint": "Starke krampfartige Bauchschmerzen kombiniert mit Diarrhoe",
+    "symptoms": [
+      "Bauchschmerzen",
+      "Diarrhoe"
+    ],
+    "patient_measurements": [],
+    "vital_measurements": [],
+    "physical_examination": [
+      "Diffuse Druckdolenz"
+    ],
+    "medical_history": [
+      "Tendenz zur Obstipation seit längerem",
+      "Selbst gekaufte Stuhlregulantien eingenommen",
+      "Keine Kolonoskopie bisher",
+      "Reise nach Ägypten (bis Dienstag nach Ostern)"
+    ],
+    "family_history": [],
+    "social_history": {
+      "Reisen": "Ägypten bis Dienstag nach Ostern"
+    },
+    "allergies": [],
+    "medications_taken": [
+      {
+        "name": "Ziproxin",
+        "dose": "",
+        "frequency": "",
+        "indication": "Bakterielle Enteritis",
+        "notes": "Therapie bei positiven Stuhlkulturen auf Salmonellen und EAEC"
+      }
+    ],
+    "medications_planned": [],
+    "medication_side_effects": [],
+    "all_medication_names": [
+      "Ziproxin"
+    ],
+    "forbidden_medications": [],
+    "diagnostic_hypotheses": [
+      "Enterokolitis",
+      "Bakterielle Enteritis (Salmonellen, EAEC)",
+      "Enteritis des terminalen Ileums",
+      "Enteritis Colon transversum",
+      "Invagination im Bereich Jejunum/Ileum"
+    ],
+    "diagnostic_plans": [
+      "Gastroenterologie-Überweisung zur Beurteilung",
+      "CT-Abdomen"
+    ],
+    "laboratory_results": [
+      {
+        "parameter": "CRP",
+        "value": "179",
+        "unit": "mg/L",
+        "interpretation": "deutlich erhöht"
+      },
+      {
+        "parameter": "Leukozyten",
+        "value": "5000",
+        "unit": "/µL",
+        "interpretation": "Normbereich"
+      },
+      {
+        "parameter": "Stuhlkultur Salmonellen",
+        "value": "positiv",
+        "unit": "",
+        "interpretation": ""
+      },
+      {
+        "parameter": "Stuhlkultur EAEC",
+        "value": "positiv",
+        "unit": "",
+        "interpretation": "enteroaggregative E. coli"
+      }
+    ],
+    "imaging_results": [
+      {
+        "modality": "CT-Abdomen",
+        "location": "Röntgeninstitut Baden",
+        "findings": [
+          "Enteritis des terminalen Ileums",
+          "Enteritis Colon transversum",
+          "Invagination im Bereich Jejunum/Ileum"
+        ]
+      }
+    ],
+    "functional_status": {
+      "description": "Kann nicht arbeiten wegen starker Bauchschmerzen",
+      "limitations": [
+        "Arbeitsunfähigkeit"
+      ]
+    },
+    "sick_leave": {
+      "issued": "yes",
+      "duration": "",
+      "percentage": "",
+      "reason": "Starke Bauchschmerzen, kann nicht arbeiten"
+    },
+    "therapeutic_interventions": [],
+    "follow_up_instructions": {
+      "next_appointment": "Gastroenterologie Kantonspital Baden",
+      "red_flags": [],
+      "monitoring": []
+    },
+    "patient_education": [
+      "Befunde mit Patientin besprochen"
+    ]
+  },
+  "provenance": {
+    "status": "auto-generated"
+  }
+}

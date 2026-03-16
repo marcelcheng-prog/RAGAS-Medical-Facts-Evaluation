@@ -1,0 +1,43 @@
+S:
+- Hauptgrund: Müdigkeit und geschwollene Beine, Atemnot beim Treppensteigen
+- Müdigkeit
+- Geschwollene Beine
+- Atemnot beim Treppensteigen
+
+O:
+- Blutdruck 145/88 mmHg (doctor_measured)
+- Herzfrequenz 68 /min (doctor_measured)
+- Sauerstoffsättigung 94 % (doctor_measured)
+- Ödeme beide Unterschenkel bis zum Knie
+- Rasselgeräusche über beiden Lungen
+- Herztöne sehr leise
+- Medikamente aktuell: Koncor 5 mg morgens; Xarelto 20 mg morgens; Torasemid 10 mg 2-3x pro Woche; Tafalgan 1000 mg 3x täglich (morgens, mittags, abends); Kalzium; Witamin D
+
+A:
+- Dekompensierte Herzinsuffizienz
+- Lungenödem
+
+P:
+- Medikament: Torasemid; Aktion: changed; Dosis: 20 mg; Frequenz: jeden Tag am Morgen; Grund: Herzinsuffizienz nicht gut eingestellt, Dosis zu niedrig und zu selten eingenommen
+- Medikament: Koncor; Aktion: changed; Dosis: 10 mg; Frequenz: morgens; Grund: Herzinsuffizienz nicht gut eingestellt
+- Medikament: Tafalgan; Aktion: changed; Dosis: maximum 2x täglich; Frequenz: bei Bedarf; Grund: 3g täglich ist zu viel für Leber im Alter
+- Medikament: Voltaren Gel; Aktion: new; Frequenz: 2x täglich auf die Knie; Grund: Lokale Therapie statt systemisches Tafalgan, schont die Leber
+- Medikament: Xarelto; Aktion: continued; Dosis: 20 mg; Frequenz: jeden Tag; Grund: wichtig für Schlaganfallprophylaxe
+- Medikament: Kalzium; Aktion: continued
+- Medikament: Witamin D; Aktion: continued
+- Diagnostik: Blutabnahme in 2 Wochen: Leber, Nieren, Salze
+- Täglich wiegen am Morgen vor Frühstück
+- Gewicht aufschreiben
+- Blutdruck zu Hause kontrollieren
+- Voltaren Gel auf Knie schmieren 2x täglich
+- Nachkontrolle: in 2 Wochen
+- Monitoring: Täglich wiegen
+- Monitoring: Blutdruck zu Hause messen
+- Monitoring: Gewicht aufschreiben
+- Erklärung: Herzinsuffizienz nicht gut eingestellt, Wasser sammelt sich in Beinen und Lunge
+- Erklärung: Torasemid muss jeden Tag genommen werden, nicht nur bei Bedarf
+- Erklärung: 3g Tafalgan täglich zu viel für Leber im Alter
+- Erklärung: Voltaren Gel wirkt lokal und belastet Leber nicht
+- Erklärung: Gewichtszunahme >2kg in 3 Tagen bedeutet Wasseransammlung
+- Erklärung: Xarelto wichtig für Schlaganfallprophylaxe bei Vorhofflimmern
+- Erklärung: Blutdruckgerät von Spitex ausleihen

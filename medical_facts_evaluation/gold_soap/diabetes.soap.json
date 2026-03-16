@@ -1,0 +1,115 @@
+{
+  "metadata": {
+    "generated_by": "soap_formatter.py",
+    "timestamp": "2026-03-16T04:39:47.736087+00:00",
+    "source_file": "medical_facts_evaluation/test_cases\\diabetes.json"
+  },
+  "soap_text": "S:\n- Anamnese: keine Daten\n\nO:\n- BMI 29 kg/m²\n- Gewichtsverlust 2 kg\n- Medikamente aktuell: Chardians Met; Forsiga; DPP4-Hämer\n\nA:\n- Objektive Messungen vorliegend\n\nP:\n- Medikament: Ozempic; Aktion: new; Dosis: 0,5 mg aktuell, Erhöhung auf 1,0 mg; Frequenz: wöchentlich\n- Medikament: Metformin; Aktion: new\n- Medikament: Wegobi; Aktion: refused",
+  "soap": {
+    "S": [],
+    "O": [
+      "BMI 29 kg/m²",
+      "Gewichtsverlust 2 kg",
+      "Medikamente aktuell: Chardians Met; Forsiga; DPP4-Hämer"
+    ],
+    "A": [
+      "Objektive Messungen vorliegend"
+    ],
+    "P": [
+      "Medikament: Ozempic; Aktion: new; Dosis: 0,5 mg aktuell, Erhöhung auf 1,0 mg; Frequenz: wöchentlich",
+      "Medikament: Metformin; Aktion: new",
+      "Medikament: Wegobi; Aktion: refused"
+    ]
+  },
+  "source_extract": {
+    "diagnoses": [
+      "Diabetes mellitus Typ 2",
+      "Übergewicht"
+    ],
+    "medications_taken": [
+      {
+        "name": "Chardians Met",
+        "dose": "",
+        "frequency": "",
+        "action": "stopped",
+        "notes": "Jardiance/SGLT2-Inhibitor - gestoppt"
+      },
+      {
+        "name": "Forsiga",
+        "dose": "",
+        "frequency": "",
+        "action": "stopped",
+        "notes": "Forxiga/SGLT2-Inhibitor - gestoppt"
+      },
+      {
+        "name": "DPP4-Hämer",
+        "dose": "",
+        "frequency": "",
+        "action": "stopped",
+        "notes": "DPP-4-Hemmer - gestoppt"
+      }
+    ],
+    "medications_planned": [
+      {
+        "name": "Ozempic",
+        "action": "new",
+        "dose": "0,5 mg aktuell, Erhöhung auf 1,0 mg",
+        "frequency": "wöchentlich",
+        "notes": "GLP-1-Analogon, Subkutane Injektion"
+      },
+      {
+        "name": "Metformin",
+        "action": "new",
+        "dose": "",
+        "frequency": "",
+        "notes": "Basistherapie Diabetes"
+      },
+      {
+        "name": "Wegobi",
+        "action": "refused",
+        "dose": "",
+        "frequency": "",
+        "notes": "Diskutiert aber abgelehnt - Limitation der regelmäßigen Kontrolle"
+      }
+    ],
+    "all_medication_names": [
+      "Chardians Met",
+      "Forsiga",
+      "DPP4-Hämer",
+      "SGLT2-Hybirdur",
+      "Ozempic",
+      "Metformin",
+      "Wegobi"
+    ],
+    "vital_measurements": [
+      {
+        "parameter": "BMI",
+        "value": "29",
+        "unit": "kg/m²"
+      },
+      {
+        "parameter": "Gewichtsverlust",
+        "value": "2",
+        "unit": "kg"
+      }
+    ],
+    "lab_values": [
+      {
+        "name": "HbA1c",
+        "value": "7,4",
+        "unit": "%",
+        "notes": "nicht ideal kontrolliert, nach Therapieumstellung leicht gesunken"
+      }
+    ],
+    "symptoms": [],
+    "procedures": [
+      "Diabetologische Verlaufskontrolle",
+      "Therapieumstellung auf GLP-1-Analogon",
+      "Dosissteigerung Ozempic auf 1,0 mg"
+    ],
+    "follow_up": "Verlaufskontrolle in 3 Monaten"
+  },
+  "provenance": {
+    "status": "auto-generated"
+  }
+}

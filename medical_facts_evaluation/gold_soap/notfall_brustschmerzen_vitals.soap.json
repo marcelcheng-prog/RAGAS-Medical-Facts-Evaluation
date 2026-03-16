@@ -1,0 +1,264 @@
+{
+  "metadata": {
+    "generated_by": "soap_formatter.py",
+    "timestamp": "2026-03-16T04:39:48.159816+00:00",
+    "source_file": "medical_facts_evaluation/test_cases\\notfall_brustschmerzen_vitals.json"
+  },
+  "soap_text": "S:\n- Hauptgrund: Akute Brustschmerzen seit 2 Stunden, retrosternal mit Ausstrahlung in linken Arm\n- Brustschmerzen retrosternal (Schmerzstärke initial 8/10, aktuell 5/10, nach Therapie 3/10, zuletzt 2/10)\n- Ausstrahlung in linken Arm\n- Atemnot (leicht)\n\nO:\n- Blutdruck 165/95 mmHg (doctor_measured)\n- Puls 92 /min (doctor_measured)\n- Sauerstoffsättigung 94 % (doctor_measured)\n- Temperatur 36.9 °C (doctor_measured)\n- Blutdruck 145/85 mmHg (doctor_measured)\n- Puls 88 /min (doctor_measured)\n- Sauerstoffsättigung 98 % (doctor_measured)\n- Blutdruck 138/82 mmHg (doctor_measured)\n- Puls 78 /min (doctor_measured)\n- Sauerstoffsättigung 99 % (doctor_measured)\n- EKG: ST-Hebungen in V2-V4 (Vorderwandinfarkt)\n- Medikamente aktuell: Lisinopril 10 mg einmal täglich; Atorvastatin 40 mg einmal täglich abends\n\nA:\n- Akuter ST-Hebungsinfarkt (STEMI) der Vorderwand\n- Akutes Koronarsyndrom\n\nP:\n- Medikament: Aspirin; Aktion: new; Dosis: 300 mg; Frequenz: Einmalgabe (Ladedosis); Grund: Thrombozytenaggregationshemmung\n- Medikament: Heparin; Aktion: new; Dosis: 5000 Einheiten; Frequenz: Einmalgabe i.v.; Grund: Antikoagulation\n- Medikament: Sauerstoff; Aktion: new; Dosis: 4 L/min; Frequenz: kontinuierlich via Nasenbrille; Grund: Sättigung verbessern\n- Medikament: Nitroglycerin-Spray; Aktion: new; Dosis: 2 Hübe; Frequenz: Einmalgabe sublingual; Grund: Koronardilatation\n- Medikament: Morphin; Aktion: new; Dosis: 5 mg; Frequenz: Einmalgabe i.v.; Grund: Analgesie\n- Medikament: Ticagrelor; Aktion: new; Dosis: 180 mg; Frequenz: Einmalgabe (Ladedosis); Grund: Duale Thrombozytenaggregationshemmung\n- Diagnostik: Herzkatheteruntersuchung (Koronarangiographie)\n- Diagnostik: Perkutane Koronarintervention (PCI) mit Stentimplantation\n- Sauerstoffgabe 4 L/min via Nasenbrille\n- Aspirin 300 mg Ladedosis\n- Heparin 5000 IE i.v.\n- Nitroglycerin-Spray 2 Hübe sublingual\n- Morphin 5 mg i.v.\n- Ticagrelor 180 mg Ladedosis\n- Notfall-Herzkatheter geplant\n- Monitoring: Kontinuierliche EKG-Überwachung\n- Monitoring: Vitalzeichen-Monitoring",
+  "soap": {
+    "S": [
+      "Hauptgrund: Akute Brustschmerzen seit 2 Stunden, retrosternal mit Ausstrahlung in linken Arm",
+      "Brustschmerzen retrosternal (Schmerzstärke initial 8/10, aktuell 5/10, nach Therapie 3/10, zuletzt 2/10)",
+      "Ausstrahlung in linken Arm",
+      "Atemnot (leicht)"
+    ],
+    "O": [
+      "Blutdruck 165/95 mmHg (doctor_measured)",
+      "Puls 92 /min (doctor_measured)",
+      "Sauerstoffsättigung 94 % (doctor_measured)",
+      "Temperatur 36.9 °C (doctor_measured)",
+      "Blutdruck 145/85 mmHg (doctor_measured)",
+      "Puls 88 /min (doctor_measured)",
+      "Sauerstoffsättigung 98 % (doctor_measured)",
+      "Blutdruck 138/82 mmHg (doctor_measured)",
+      "Puls 78 /min (doctor_measured)",
+      "Sauerstoffsättigung 99 % (doctor_measured)",
+      "EKG: ST-Hebungen in V2-V4 (Vorderwandinfarkt)",
+      "Medikamente aktuell: Lisinopril 10 mg einmal täglich; Atorvastatin 40 mg einmal täglich abends"
+    ],
+    "A": [
+      "Akuter ST-Hebungsinfarkt (STEMI) der Vorderwand",
+      "Akutes Koronarsyndrom"
+    ],
+    "P": [
+      "Medikament: Aspirin; Aktion: new; Dosis: 300 mg; Frequenz: Einmalgabe (Ladedosis); Grund: Thrombozytenaggregationshemmung",
+      "Medikament: Heparin; Aktion: new; Dosis: 5000 Einheiten; Frequenz: Einmalgabe i.v.; Grund: Antikoagulation",
+      "Medikament: Sauerstoff; Aktion: new; Dosis: 4 L/min; Frequenz: kontinuierlich via Nasenbrille; Grund: Sättigung verbessern",
+      "Medikament: Nitroglycerin-Spray; Aktion: new; Dosis: 2 Hübe; Frequenz: Einmalgabe sublingual; Grund: Koronardilatation",
+      "Medikament: Morphin; Aktion: new; Dosis: 5 mg; Frequenz: Einmalgabe i.v.; Grund: Analgesie",
+      "Medikament: Ticagrelor; Aktion: new; Dosis: 180 mg; Frequenz: Einmalgabe (Ladedosis); Grund: Duale Thrombozytenaggregationshemmung",
+      "Diagnostik: Herzkatheteruntersuchung (Koronarangiographie)",
+      "Diagnostik: Perkutane Koronarintervention (PCI) mit Stentimplantation",
+      "Sauerstoffgabe 4 L/min via Nasenbrille",
+      "Aspirin 300 mg Ladedosis",
+      "Heparin 5000 IE i.v.",
+      "Nitroglycerin-Spray 2 Hübe sublingual",
+      "Morphin 5 mg i.v.",
+      "Ticagrelor 180 mg Ladedosis",
+      "Notfall-Herzkatheter geplant",
+      "Monitoring: Kontinuierliche EKG-Überwachung",
+      "Monitoring: Vitalzeichen-Monitoring"
+    ]
+  },
+  "source_extract": {
+    "chief_complaint": "Akute Brustschmerzen seit 2 Stunden, retrosternal mit Ausstrahlung in linken Arm",
+    "symptoms": [
+      "Brustschmerzen retrosternal (Schmerzstärke initial 8/10, aktuell 5/10, nach Therapie 3/10, zuletzt 2/10)",
+      "Ausstrahlung in linken Arm",
+      "Atemnot (leicht)",
+      "Übelkeit (ohne Erbrechen)",
+      "Kaltschweissigkeit"
+    ],
+    "vital_measurements": [
+      {
+        "parameter": "Blutdruck",
+        "value": "165/95",
+        "unit": "mmHg",
+        "source": "doctor_measured",
+        "timing": "initial"
+      },
+      {
+        "parameter": "Puls",
+        "value": "92",
+        "unit": "/min",
+        "source": "doctor_measured",
+        "timing": "initial",
+        "notes": "regelmässig"
+      },
+      {
+        "parameter": "Sauerstoffsättigung",
+        "value": "94",
+        "unit": "%",
+        "source": "doctor_measured",
+        "timing": "initial",
+        "notes": "an Raumluft"
+      },
+      {
+        "parameter": "Temperatur",
+        "value": "36.9",
+        "unit": "°C",
+        "source": "doctor_measured",
+        "timing": "initial"
+      },
+      {
+        "parameter": "Blutdruck",
+        "value": "145/85",
+        "unit": "mmHg",
+        "source": "doctor_measured",
+        "timing": "nach Nitro"
+      },
+      {
+        "parameter": "Puls",
+        "value": "88",
+        "unit": "/min",
+        "source": "doctor_measured",
+        "timing": "nach Nitro"
+      },
+      {
+        "parameter": "Sauerstoffsättigung",
+        "value": "98",
+        "unit": "%",
+        "source": "doctor_measured",
+        "timing": "mit O2",
+        "notes": "mit 4L O2/min"
+      },
+      {
+        "parameter": "Blutdruck",
+        "value": "138/82",
+        "unit": "mmHg",
+        "source": "doctor_measured",
+        "timing": "vor Katheter"
+      },
+      {
+        "parameter": "Puls",
+        "value": "78",
+        "unit": "/min",
+        "source": "doctor_measured",
+        "timing": "vor Katheter",
+        "notes": "regelmässig"
+      },
+      {
+        "parameter": "Sauerstoffsättigung",
+        "value": "99",
+        "unit": "%",
+        "source": "doctor_measured",
+        "timing": "vor Katheter"
+      }
+    ],
+    "physical_examination": [
+      "EKG: ST-Hebungen in V2-V4 (Vorderwandinfarkt)"
+    ],
+    "medical_history": [
+      "Arterielle Hypertonie (seit 10 Jahren)",
+      "Hypercholesterinämie",
+      "Nikotinabusus (15 Zigaretten/Tag seit 40 Jahren, ca. 30 pack-years)"
+    ],
+    "family_history": [
+      "Vater: Herzinfarkt mit 58, verstorben an zweitem Herzinfarkt mit 72",
+      "Bruder (65): Koronare Herzkrankheit mit Stent"
+    ],
+    "allergies": [],
+    "medications_taken": [
+      {
+        "name": "Lisinopril",
+        "dose": "10 mg",
+        "frequency": "einmal täglich",
+        "indication": "Hypertonie"
+      },
+      {
+        "name": "Atorvastatin",
+        "dose": "40 mg",
+        "frequency": "einmal täglich abends",
+        "indication": "Hypercholesterinämie"
+      }
+    ],
+    "medications_planned": [
+      {
+        "name": "Aspirin",
+        "action": "new",
+        "dose": "300 mg",
+        "frequency": "Einmalgabe (Ladedosis)",
+        "indication": "Akuter Myokardinfarkt",
+        "reason": "Thrombozytenaggregationshemmung"
+      },
+      {
+        "name": "Heparin",
+        "action": "new",
+        "dose": "5000 Einheiten",
+        "frequency": "Einmalgabe i.v.",
+        "indication": "Akuter Myokardinfarkt",
+        "reason": "Antikoagulation"
+      },
+      {
+        "name": "Sauerstoff",
+        "action": "new",
+        "dose": "4 L/min",
+        "frequency": "kontinuierlich via Nasenbrille",
+        "indication": "Hypoxämie (SpO2 94%)",
+        "reason": "Sättigung verbessern"
+      },
+      {
+        "name": "Nitroglycerin-Spray",
+        "action": "new",
+        "dose": "2 Hübe",
+        "frequency": "Einmalgabe sublingual",
+        "indication": "Brustschmerzen bei ACS",
+        "reason": "Koronardilatation"
+      },
+      {
+        "name": "Morphin",
+        "action": "new",
+        "dose": "5 mg",
+        "frequency": "Einmalgabe i.v.",
+        "indication": "Starke Brustschmerzen",
+        "reason": "Analgesie"
+      },
+      {
+        "name": "Ticagrelor",
+        "action": "new",
+        "dose": "180 mg",
+        "frequency": "Einmalgabe (Ladedosis)",
+        "indication": "Akuter Myokardinfarkt, vor PCI",
+        "reason": "Duale Thrombozytenaggregationshemmung"
+      }
+    ],
+    "all_medication_names": [
+      "Lisinopril",
+      "Atorvastatin",
+      "Aspirin",
+      "Heparin",
+      "Sauerstoff",
+      "Nitroglycerin",
+      "Nitro-Spray",
+      "Morphin",
+      "Ticagrelor"
+    ],
+    "forbidden_medications": [],
+    "diagnostic_hypotheses": [
+      "Akuter ST-Hebungsinfarkt (STEMI) der Vorderwand",
+      "Akutes Koronarsyndrom"
+    ],
+    "diagnostic_plans": [
+      "Herzkatheteruntersuchung (Koronarangiographie)",
+      "Perkutane Koronarintervention (PCI) mit Stentimplantation"
+    ],
+    "laboratory_results": [
+      {
+        "parameter": "Troponin I",
+        "value": "0.8",
+        "unit": "ng/mL",
+        "reference": "<0.04",
+        "interpretation": "Stark erhöht, bestätigt Myokardinfarkt"
+      }
+    ],
+    "therapeutic_interventions": [
+      "Sauerstoffgabe 4 L/min via Nasenbrille",
+      "Aspirin 300 mg Ladedosis",
+      "Heparin 5000 IE i.v.",
+      "Nitroglycerin-Spray 2 Hübe sublingual",
+      "Morphin 5 mg i.v.",
+      "Ticagrelor 180 mg Ladedosis",
+      "Notfall-Herzkatheter geplant"
+    ],
+    "follow_up_instructions": {
+      "next_steps": "Herzkatheter, danach Intensivstation",
+      "monitoring": [
+        "Kontinuierliche EKG-Überwachung",
+        "Vitalzeichen-Monitoring"
+      ]
+    }
+  },
+  "provenance": {
+    "status": "auto-generated"
+  }
+}

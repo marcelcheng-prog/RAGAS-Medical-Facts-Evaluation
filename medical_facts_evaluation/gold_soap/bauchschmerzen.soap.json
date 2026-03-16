@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "generated_by": "soap_formatter.py",
+    "timestamp": "2026-03-16T04:39:47.684978+00:00",
+    "source_file": "medical_facts_evaluation/test_cases\\bauchschmerzen.json"
+  },
+  "soap_text": "S:\n- Fieber seit 3 Tagen\n- Übelkeit\n- Linkseitige Bauchschmerzen\n\nO:\n- Blutdruck 109/66 mmHg\n- Puls 94 bpm\n- Temperatur 38.4 °C\n- Druckschmerz linker Unterbauch\n- Loslass-Schmerz positiv\n- Aktive Darmgeräusche\n- Medikamente aktuell: Tafalgan 1g; antebotika zwei; atihstamn vier; gesinsaal\n\nA:\n- Magen-Darm-Grippe\n- Divertikulitis\n\nP:\n- Medikament: Antibiotika; Aktion: new\n- Medikament: Schmerzmittel; Aktion: new\n- Medikament: Durchfallmedikament; Aktion: new\n- Diagnostik: Labor (Entzündungswerte)\n- Diagnostik: CT-Abklärung (falls unklar)",
+  "soap": {
+    "S": [
+      "Fieber seit 3 Tagen",
+      "Übelkeit",
+      "Linkseitige Bauchschmerzen"
+    ],
+    "O": [
+      "Blutdruck 109/66 mmHg",
+      "Puls 94 bpm",
+      "Temperatur 38.4 °C",
+      "Druckschmerz linker Unterbauch",
+      "Loslass-Schmerz positiv",
+      "Aktive Darmgeräusche",
+      "Medikamente aktuell: Tafalgan 1g; antebotika zwei; atihstamn vier; gesinsaal"
+    ],
+    "A": [
+      "Magen-Darm-Grippe",
+      "Divertikulitis"
+    ],
+    "P": [
+      "Medikament: Antibiotika; Aktion: new",
+      "Medikament: Schmerzmittel; Aktion: new",
+      "Medikament: Durchfallmedikament; Aktion: new",
+      "Diagnostik: Labor (Entzündungswerte)",
+      "Diagnostik: CT-Abklärung (falls unklar)"
+    ]
+  },
+  "source_extract": {
+    "medications_taken": [
+      {
+        "name": "Tafalgan",
+        "dose": "1g",
+        "frequency": "",
+        "action": "continued",
+        "notes": "Patient took for fever (Eingremmer = Ein Gramm)"
+      },
+      {
+        "name": "antebotika",
+        "dose": "zwei",
+        "frequency": "",
+        "action": "continued",
+        "notes": "Transcription as-is"
+      },
+      {
+        "name": "atihstamn",
+        "dose": "vier",
+        "frequency": "",
+        "action": "continued",
+        "notes": "Transcription as-is"
+      },
+      {
+        "name": "gesinsaal",
+        "dose": "",
+        "frequency": "",
+        "action": "continued",
+        "notes": "Antihistamine (transcribed as Gesinsaal)"
+      }
+    ],
+    "medications_planned": [
+      {
+        "name": "Antibiotika",
+        "dose": "",
+        "frequency": "",
+        "action": "new",
+        "notes": "Pending lab results, for suspected diverticulitis"
+      },
+      {
+        "name": "Schmerzmittel",
+        "dose": "",
+        "frequency": "",
+        "action": "new",
+        "notes": "Doctor will prescribe something for pain"
+      },
+      {
+        "name": "Durchfallmedikament",
+        "dose": "",
+        "frequency": "",
+        "action": "new",
+        "notes": "Doctor will prescribe something for diarrhea"
+      }
+    ],
+    "all_medication_names": [
+      "Tafalgan",
+      "antebotika",
+      "atihstamn",
+      "gesinsaal",
+      "Antibiotika",
+      "Schmerzmittel",
+      "Durchfallmedikament"
+    ],
+    "vital_measurements": [
+      {
+        "parameter": "Blutdruck",
+        "value": "109/66",
+        "unit": "mmHg"
+      },
+      {
+        "parameter": "Puls",
+        "value": "94",
+        "unit": "bpm"
+      },
+      {
+        "parameter": "Temperatur",
+        "value": "38.4",
+        "unit": "°C"
+      }
+    ],
+    "symptoms": [
+      "Fieber seit 3 Tagen",
+      "Übelkeit",
+      "Linkseitige Bauchschmerzen",
+      "Durchfall"
+    ],
+    "medical_history": [
+      "Reizdarm",
+      "Heuschnupfen",
+      "Cortisonspritze vor 2 Jahren"
+    ],
+    "family_history": [],
+    "physical_examination": [
+      "Druckschmerz linker Unterbauch",
+      "Loslass-Schmerz positiv",
+      "Aktive Darmgeräusche"
+    ],
+    "diagnostic_hypotheses": [
+      "Magen-Darm-Grippe",
+      "Divertikulitis"
+    ],
+    "diagnostic_plans": [
+      "Labor (Entzündungswerte)",
+      "CT-Abklärung (falls unklar)"
+    ],
+    "forbidden_medications": []
+  },
+  "provenance": {
+    "status": "auto-generated"
+  }
+}

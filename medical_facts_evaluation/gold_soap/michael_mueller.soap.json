@@ -1,0 +1,131 @@
+{
+  "metadata": {
+    "generated_by": "soap_formatter.py",
+    "timestamp": "2026-03-16T04:39:48.108950+00:00",
+    "source_file": "medical_facts_evaluation/test_cases\\michael_mueller.json"
+  },
+  "soap_text": "S:\n- Rücken zwickt\n- Blutzucker macht was er will\n\nO:\n- Blutdruck 160/90 mmHg (doctor_measured)\n- Medikamente aktuell: Metformin 1000 mg 1-0-1; Ramipril 5 mg morgens\n\nA:\n- Objektive Messungen vorliegend; Symptomatik: Rücken zwickt, Blutzucker macht was er will\n\nP:\n- Medikament: Ozempic; Aktion: refused; Grund: Werte nicht schlecht genug, Lieferengpässe\n- Medikament: Tramadol; Aktion: stopped; Grund: Zu stark, macht schwindelig\n- Medikament: Ibuprofen; Aktion: refused; Grund: Grenzwertige Nierenwerte (GFR <60)\n- Medikament: Novalgin Tropfen; Aktion: new; Dosis: 20-30 Tropfen; Frequenz: bei Bedarf max 4x täglich\n- Medikament: Ramipril; Aktion: changed; Dosis: 10 mg; Frequenz: täglich; Grund: Blutdruck zu hoch\n- Medikament: Thrombosespritze; Aktion: refused; Grund: Flug zu kurz\n- Diagnostik: Labor\n- Tramadol-Reste sofort entsorgen\n- Viel Wasser trinken auf Flug\n- Beine bewegen auf Flug",
+  "soap": {
+    "S": [
+      "Rücken zwickt",
+      "Blutzucker macht was er will"
+    ],
+    "O": [
+      "Blutdruck 160/90 mmHg (doctor_measured)",
+      "Medikamente aktuell: Metformin 1000 mg 1-0-1; Ramipril 5 mg morgens"
+    ],
+    "A": [
+      "Objektive Messungen vorliegend; Symptomatik: Rücken zwickt, Blutzucker macht was er will"
+    ],
+    "P": [
+      "Medikament: Ozempic; Aktion: refused; Grund: Werte nicht schlecht genug, Lieferengpässe",
+      "Medikament: Tramadol; Aktion: stopped; Grund: Zu stark, macht schwindelig",
+      "Medikament: Ibuprofen; Aktion: refused; Grund: Grenzwertige Nierenwerte (GFR <60)",
+      "Medikament: Novalgin Tropfen; Aktion: new; Dosis: 20-30 Tropfen; Frequenz: bei Bedarf max 4x täglich",
+      "Medikament: Ramipril; Aktion: changed; Dosis: 10 mg; Frequenz: täglich; Grund: Blutdruck zu hoch",
+      "Medikament: Thrombosespritze; Aktion: refused; Grund: Flug zu kurz",
+      "Diagnostik: Labor",
+      "Tramadol-Reste sofort entsorgen",
+      "Viel Wasser trinken auf Flug",
+      "Beine bewegen auf Flug"
+    ]
+  },
+  "source_extract": {
+    "medications_taken": [
+      {
+        "name": "Metformin",
+        "dose": "1000 mg",
+        "frequency": "1-0-1",
+        "indication": "Diabetes"
+      },
+      {
+        "name": "Ramipril",
+        "dose": "5 mg",
+        "frequency": "morgens",
+        "indication": "Blutdruck"
+      }
+    ],
+    "medications_planned": [
+      {
+        "name": "Ozempic",
+        "action": "refused",
+        "reason": "Werte nicht schlecht genug, Lieferengpässe"
+      },
+      {
+        "name": "Tramadol",
+        "action": "stopped",
+        "reason": "Zu stark, macht schwindelig"
+      },
+      {
+        "name": "Ibuprofen",
+        "action": "refused",
+        "reason": "Grenzwertige Nierenwerte (GFR <60)"
+      },
+      {
+        "name": "Novalgin Tropfen",
+        "action": "new",
+        "dose": "20-30 Tropfen",
+        "frequency": "bei Bedarf max 4x täglich",
+        "indication": "Rückenschmerzen"
+      },
+      {
+        "name": "Ramipril",
+        "action": "changed",
+        "dose": "10 mg",
+        "frequency": "täglich",
+        "reason": "Blutdruck zu hoch"
+      },
+      {
+        "name": "Thrombosespritze",
+        "action": "refused",
+        "reason": "Flug zu kurz"
+      }
+    ],
+    "all_medication_names": [
+      "Metformin",
+      "Ozempic",
+      "Tramadol",
+      "Ibuprofen",
+      "Novalgin Tropfen",
+      "Metamizol",
+      "Ramipril",
+      "Thrombosespritze"
+    ],
+    "vital_measurements": [
+      {
+        "parameter": "Blutdruck",
+        "value": "160/90",
+        "unit": "mmHg",
+        "source": "doctor_measured"
+      }
+    ],
+    "symptoms": [
+      "Rücken zwickt",
+      "Blutzucker macht was er will"
+    ],
+    "medical_history": [
+      "Grenzwertige Nierenwerte (GFR <60)"
+    ],
+    "family_history": [],
+    "diagnostic_plans": [
+      "Labor"
+    ],
+    "therapeutic_interventions": [
+      "Tramadol-Reste sofort entsorgen",
+      "Viel Wasser trinken auf Flug",
+      "Beine bewegen auf Flug"
+    ],
+    "forbidden_medications": [
+      "Risperidon",
+      "Diazepam",
+      "Citalopram",
+      "Alprazolam",
+      "Lorazepam",
+      "Sertralin",
+      "Fluoxetin"
+    ]
+  },
+  "provenance": {
+    "status": "auto-generated"
+  }
+}

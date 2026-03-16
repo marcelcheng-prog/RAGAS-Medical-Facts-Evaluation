@@ -1,0 +1,24 @@
+S:
+- Fieber seit 3 Tagen
+- Übelkeit
+- Linkseitige Bauchschmerzen
+
+O:
+- Blutdruck 109/66 mmHg
+- Puls 94 bpm
+- Temperatur 38.4 °C
+- Druckschmerz linker Unterbauch
+- Loslass-Schmerz positiv
+- Aktive Darmgeräusche
+- Medikamente aktuell: Tafalgan 1g; antebotika zwei; atihstamn vier; gesinsaal
+
+A:
+- Magen-Darm-Grippe
+- Divertikulitis
+
+P:
+- Medikament: Antibiotika; Aktion: new
+- Medikament: Schmerzmittel; Aktion: new
+- Medikament: Durchfallmedikament; Aktion: new
+- Diagnostik: Labor (Entzündungswerte)
+- Diagnostik: CT-Abklärung (falls unklar)

@@ -1,0 +1,24 @@
+S:
+- Magenschmerzen
+- Epigastrische Schmerzen
+- Übelkeit/Erbrechen (nur Speichel)
+
+O:
+- Temperatur 36.9 °C
+- Puls 77 /min
+- Blutdruck 163/76 mmHg
+- Oberbauch/Epigastrium druckempfindlich
+- Linker Unterbauch leicht empfindlich
+- Rechte Flanke empfindlich
+- Medikamente aktuell: Esomep 40 mg jeden Tag; Metamizol
+
+A:
+- Magenschleimhautentzündung (Gastritis)
+- Stressbedingt
+
+P:
+- Medikament: Dexilant; Aktion: new; Frequenz: einmal pro Tag
+- Medikament: Esomep; Aktion: stopped; Dosis: 40 mg
+- Medikament: Alukohl-Gel; Aktion: new; Dosis: zwei Messlöffel; Frequenz: 3-4x pro Tag
+- Diagnostik: Urinuntersuchung
+- Diagnostik: Kontrolle Entzündungswerte morgen (CRP, weisse Blutzellen)

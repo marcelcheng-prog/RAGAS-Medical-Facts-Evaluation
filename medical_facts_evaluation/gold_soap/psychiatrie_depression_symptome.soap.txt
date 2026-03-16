@@ -1,0 +1,35 @@
+S:
+- Hauptgrund: Müdigkeit, Antriebslosigkeit und gedrückte Stimmung seit ca. 3-4 Monaten
+- Müdigkeit und Antriebslosigkeit
+- Gedrückte Stimmung
+- Hoffnungslosigkeit
+
+O:
+- Medikamente aktuell: Sertralin 50 mg einmal täglich morgens; Zopiclon 7.5 mg bei Bedarf, ca. 2x/Woche; Ibuprofen unbekannt bei Bedarf
+
+A:
+- Mittelschwere bis schwere depressive Episode (F32.1/F32.2)
+- Risiko: Alkoholmissbrauch
+
+P:
+- Medikament: Sertralin; Aktion: changed; Dosis: 100 mg; Frequenz: einmal täglich morgens; Grund: Dosiserhöhung wegen unzureichender Wirkung bei 50 mg
+- Medikament: Trazodon; Aktion: new; Dosis: 50 mg; Frequenz: zur Nacht; Grund: Schlafunterstützung und antidepressive Augmentation
+- Medikament: Zopiclon; Aktion: stopped; Grund: Ausschleichen geplant, nur noch bei absolutem Bedarf, komplettes Absetzen in 2 Wochen
+- Diagnostik: Kognitive Verhaltenstherapie (Überweisung)
+- Diagnostik: Kontrolltermin in 1 Woche
+- Diagnostik: Engmaschige Suizidalitätseinschätzung
+- Dosiserhöhung Sertralin 50 mg → 100 mg
+- Neu: Trazodon 50 mg zur Nacht
+- Ausschleichen Zopiclon
+- Überweisung Psychotherapie (KVT)
+- Krisenhotline-Nummer mitgegeben
+- Alkoholabstinenz empfohlen
+- Nachkontrolle: in 1 Woche
+- Monitoring: Stimmung
+- Monitoring: Suizidalität
+- Monitoring: Schlaf
+- Monitoring: Nebenwirkungen Sertralin
+- Monitoring: Alkoholkonsum
+- Alkohol verschlechtert Depression
+- Krisenhotline-Nummer
+- Zopiclon nicht täglich nehmen, bald absetzen

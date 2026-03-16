@@ -1,0 +1,301 @@
+{
+  "metadata": {
+    "generated_by": "soap_formatter.py",
+    "timestamp": "2026-03-16T04:39:47.789515+00:00",
+    "source_file": "medical_facts_evaluation/test_cases\\diabetes_hypertonie.json"
+  },
+  "soap_text": "S:\n- Hauptgrund: Kopfschmerzen seit 2-3 Wochen, erhöhte Müdigkeit\n- Kopfschmerzen im Nacken\n- Kopfschmerzen an der Stirn\n- Erhöhte Müdigkeit\n- Blutdruck zu Hause 165/95 mmHg\n- Blutzucker nüchtern 8-8.5 mmol/L\n\nO:\n- Blutdruck 168/98 mmHg (doctor_measured)\n- Herzfrequenz 82 /min (doctor_measured)\n- Temperatur 36.7 °C (doctor_measured)\n- Blutzucker 8.2 mmol/L (doctor_measured)\n- Lunge frei\n- Herztöne regelmässig, keine Geräusche\n- Bauch weich, nicht druckempfindlich\n- Medikamente aktuell: Metvormin 1000 mg zweimal täglich; Amlodipin 5 mg einmal täglich am Morgen; Atorvastatin 20 mg einmal täglich abends; Dafalgan bei Bedarf\n\nA:\n- Arterielle Hypertonie, unzureichend kontrolliert\n- Diabetes mellitus Typ 2, unzureichend kontrolliert\n- Erhöhtes kardiovaskuläres Risiko (positive Familienanamnese)\n\nP:\n- Medikament: Amlodipin; Aktion: changed; Dosis: 10 mg; Frequenz: einmal täglich am Morgen; Grund: Blutdruck zu hoch trotz 5 mg\n- Medikament: Ramipril; Aktion: new; Dosis: 5 mg; Frequenz: einmal täglich am Morgen; Grund: ACE-Hemmer für Kombitherapie und Nierenschutz\n- Medikament: Metformin; Aktion: changed; Dosis: 1500 mg; Frequenz: zweimal täglich; Grund: Blutzucker nicht optimal eingestellt\n- Medikament: Empagliflozin; Aktion: new; Dosis: 10 mg; Frequenz: einmal täglich am Morgen; Grund: Zusätzliche Blutzuckerkontrolle und kardiovaskulärer Schutz bei positiver Familienanamnese\n- Medikament: Atorvastatin; Aktion: continued; Dosis: 20 mg; Frequenz: einmal täglich abends; Grund: Dosis bleibt gleich\n- Medikament: Dafalgan; Aktion: continued; Dosis: maximal 3000 mg pro Tag; Frequenz: bei Bedarf bei Kopfschmerzen; Grund: maximal 3 Tabletten à 1000 mg pro Tag\n- Diagnostik: Blutabnahme in 4 Wochen: Nierenwerte, Leberwerte, HbA1c\n- Diagnostik: Blutdruckmessung zu Hause mindestens 3x pro Woche (morgens und abends)\n- Medikamentenanpassung wie oben beschrieben\n- Gewichtsreduktion anstreben\n- Kleinere Portionen essen\n- Weniger Kohlenhydrate\n- Weiterhin spazieren gehen\n- Nachkontrolle: in 4 Wochen\n- Monitoring: Blutdruck zu Hause messen 3x pro Woche (morgens und abends)\n- Monitoring: Werte aufschreiben\n- Monitoring: Blutabnahme in 4 Wochen\n- Bei starken Kopfschmerzen oder Brustschmerzen sofort wiederkommen oder Notfall anrufen\n- Metformin langsam steigern über 3 Wochen\n- Blutdruck zu Hause kontrollieren\n- Gewichtsreduktion versuchen\n- Dafalgan maximal 3g pro Tag",
+  "soap": {
+    "S": [
+      "Hauptgrund: Kopfschmerzen seit 2-3 Wochen, erhöhte Müdigkeit",
+      "Kopfschmerzen im Nacken",
+      "Kopfschmerzen an der Stirn",
+      "Erhöhte Müdigkeit",
+      "Blutdruck zu Hause 165/95 mmHg",
+      "Blutzucker nüchtern 8-8.5 mmol/L"
+    ],
+    "O": [
+      "Blutdruck 168/98 mmHg (doctor_measured)",
+      "Herzfrequenz 82 /min (doctor_measured)",
+      "Temperatur 36.7 °C (doctor_measured)",
+      "Blutzucker 8.2 mmol/L (doctor_measured)",
+      "Lunge frei",
+      "Herztöne regelmässig, keine Geräusche",
+      "Bauch weich, nicht druckempfindlich",
+      "Medikamente aktuell: Metvormin 1000 mg zweimal täglich; Amlodipin 5 mg einmal täglich am Morgen; Atorvastatin 20 mg einmal täglich abends; Dafalgan bei Bedarf"
+    ],
+    "A": [
+      "Arterielle Hypertonie, unzureichend kontrolliert",
+      "Diabetes mellitus Typ 2, unzureichend kontrolliert",
+      "Erhöhtes kardiovaskuläres Risiko (positive Familienanamnese)"
+    ],
+    "P": [
+      "Medikament: Amlodipin; Aktion: changed; Dosis: 10 mg; Frequenz: einmal täglich am Morgen; Grund: Blutdruck zu hoch trotz 5 mg",
+      "Medikament: Ramipril; Aktion: new; Dosis: 5 mg; Frequenz: einmal täglich am Morgen; Grund: ACE-Hemmer für Kombitherapie und Nierenschutz",
+      "Medikament: Metformin; Aktion: changed; Dosis: 1500 mg; Frequenz: zweimal täglich; Grund: Blutzucker nicht optimal eingestellt",
+      "Medikament: Empagliflozin; Aktion: new; Dosis: 10 mg; Frequenz: einmal täglich am Morgen; Grund: Zusätzliche Blutzuckerkontrolle und kardiovaskulärer Schutz bei positiver Familienanamnese",
+      "Medikament: Atorvastatin; Aktion: continued; Dosis: 20 mg; Frequenz: einmal täglich abends; Grund: Dosis bleibt gleich",
+      "Medikament: Dafalgan; Aktion: continued; Dosis: maximal 3000 mg pro Tag; Frequenz: bei Bedarf bei Kopfschmerzen; Grund: maximal 3 Tabletten à 1000 mg pro Tag",
+      "Diagnostik: Blutabnahme in 4 Wochen: Nierenwerte, Leberwerte, HbA1c",
+      "Diagnostik: Blutdruckmessung zu Hause mindestens 3x pro Woche (morgens und abends)",
+      "Medikamentenanpassung wie oben beschrieben",
+      "Gewichtsreduktion anstreben",
+      "Kleinere Portionen essen",
+      "Weniger Kohlenhydrate",
+      "Weiterhin spazieren gehen",
+      "Nachkontrolle: in 4 Wochen",
+      "Monitoring: Blutdruck zu Hause messen 3x pro Woche (morgens und abends)",
+      "Monitoring: Werte aufschreiben",
+      "Monitoring: Blutabnahme in 4 Wochen",
+      "Bei starken Kopfschmerzen oder Brustschmerzen sofort wiederkommen oder Notfall anrufen",
+      "Metformin langsam steigern über 3 Wochen",
+      "Blutdruck zu Hause kontrollieren",
+      "Gewichtsreduktion versuchen",
+      "Dafalgan maximal 3g pro Tag"
+    ]
+  },
+  "source_extract": {
+    "chief_complaint": "Kopfschmerzen seit 2-3 Wochen, erhöhte Müdigkeit",
+    "symptoms": [
+      "Kopfschmerzen im Nacken",
+      "Kopfschmerzen an der Stirn",
+      "Erhöhte Müdigkeit"
+    ],
+    "patient_measurements": [
+      {
+        "parameter": "Blutdruck zu Hause",
+        "value": "165/95",
+        "unit": "mmHg",
+        "timing": "gestern Abend",
+        "source": "patient_measured"
+      },
+      {
+        "parameter": "Blutzucker nüchtern",
+        "value": "8-8.5",
+        "unit": "mmol/L",
+        "timing": "morgens",
+        "source": "patient_measured"
+      },
+      {
+        "parameter": "Körpergewicht",
+        "value": "92",
+        "unit": "kg",
+        "source": "patient_reported"
+      },
+      {
+        "parameter": "Körpergrösse",
+        "value": "1.75",
+        "unit": "m",
+        "source": "patient_reported"
+      },
+      {
+        "parameter": "BMI",
+        "value": "30",
+        "unit": "kg/m²",
+        "source": "doctor_calculated"
+      }
+    ],
+    "vital_signs": [
+      {
+        "parameter": "Blutdruck",
+        "value": "168/98",
+        "unit": "mmHg",
+        "source": "doctor_measured"
+      },
+      {
+        "parameter": "Herzfrequenz",
+        "value": "82",
+        "unit": "/min",
+        "source": "doctor_measured"
+      },
+      {
+        "parameter": "Temperatur",
+        "value": "36.7",
+        "unit": "°C",
+        "source": "doctor_measured"
+      },
+      {
+        "parameter": "Blutzucker",
+        "value": "8.2",
+        "unit": "mmol/L",
+        "timing": "postprandial (ca. 3.5 Stunden nach Frühstück)",
+        "source": "doctor_measured"
+      }
+    ],
+    "physical_examination": [
+      "Lunge frei",
+      "Herztöne regelmässig, keine Geräusche",
+      "Bauch weich, nicht druckempfindlich",
+      "Leber und Milz nicht vergrössert",
+      "Keine Ödeme an den Beinen",
+      "Fusspulse tastbar"
+    ],
+    "medical_history": [
+      "Diabetes Typ 2",
+      "Arterielle Hypertonie",
+      "Ex-Raucher (aufgehört vor 2 Jahren)"
+    ],
+    "family_history": [
+      {
+        "relation": "Vater",
+        "condition": "Herzinfarkt mit 58 Jahren",
+        "outcome": "verstorben"
+      },
+      {
+        "relation": "Mutter",
+        "condition": "Diabetes",
+        "status": "lebt, nimmt viele Medikamente"
+      },
+      {
+        "relation": "Mutter",
+        "condition": "Arterielle Hypertonie",
+        "status": "lebt"
+      },
+      {
+        "relation": "Bruder",
+        "condition": "Diabetes",
+        "diagnosis_age": "45 Jahre"
+      }
+    ],
+    "social_history": {
+      "Rauchen": "Ex-Raucher, aufgehört vor 2 Jahren",
+      "Alkohol": "Ab und zu ein Bier am Wochenende",
+      "Sport": "Spazieren gehen 2-3x pro Woche"
+    },
+    "allergies": [],
+    "medications_taken": [
+      {
+        "name": "Metvormin",
+        "dose": "1000 mg",
+        "frequency": "zweimal täglich",
+        "indication": "Diabetes",
+        "notes": "regelmässig eingenommen"
+      },
+      {
+        "name": "Amlodipin",
+        "dose": "5 mg",
+        "frequency": "einmal täglich am Morgen",
+        "indication": "Hypertonie",
+        "notes": "regelmässig eingenommen"
+      },
+      {
+        "name": "Atorvastatin",
+        "dose": "20 mg",
+        "frequency": "einmal täglich abends",
+        "indication": "Cholesterin",
+        "notes": "regelmässig eingenommen"
+      },
+      {
+        "name": "Dafalgan",
+        "dose": "",
+        "frequency": "bei Bedarf",
+        "indication": "Kopfschmerzen",
+        "notes": "zu Hause verfügbar"
+      }
+    ],
+    "medications_planned": [
+      {
+        "name": "Amlodipin",
+        "action": "changed",
+        "dose": "10 mg",
+        "frequency": "einmal täglich am Morgen",
+        "indication": "Hypertonie",
+        "reason": "Blutdruck zu hoch trotz 5 mg"
+      },
+      {
+        "name": "Ramipril",
+        "action": "new",
+        "dose": "5 mg",
+        "frequency": "einmal täglich am Morgen",
+        "indication": "Hypertonie, Nierenschutz bei Diabetes",
+        "reason": "ACE-Hemmer für Kombitherapie und Nierenschutz"
+      },
+      {
+        "name": "Metformin",
+        "action": "changed",
+        "dose": "1500 mg",
+        "frequency": "zweimal täglich",
+        "indication": "Diabetes",
+        "reason": "Blutzucker nicht optimal eingestellt",
+        "notes": "Langsame Steigerung: Woche 1: 2x1000mg, Woche 2: morgens 1500mg+abends 1000mg, ab Woche 3: 2x1500mg"
+      },
+      {
+        "name": "Empagliflozin",
+        "action": "new",
+        "dose": "10 mg",
+        "frequency": "einmal täglich am Morgen",
+        "indication": "Diabetes, Herz- und Nierenschutz",
+        "reason": "Zusätzliche Blutzuckerkontrolle und kardiovaskulärer Schutz bei positiver Familienanamnese"
+      },
+      {
+        "name": "Atorvastatin",
+        "action": "continued",
+        "dose": "20 mg",
+        "frequency": "einmal täglich abends",
+        "indication": "Cholesterin",
+        "reason": "Dosis bleibt gleich"
+      },
+      {
+        "name": "Dafalgan",
+        "action": "continued",
+        "dose": "maximal 3000 mg pro Tag",
+        "frequency": "bei Bedarf bei Kopfschmerzen",
+        "indication": "Kopfschmerzen",
+        "reason": "maximal 3 Tabletten à 1000 mg pro Tag"
+      }
+    ],
+    "medication_side_effects": [],
+    "all_medication_names": [
+      "Metformin",
+      "Amlodipin",
+      "Atorvastatin",
+      "Ramipril",
+      "Empagliflozin",
+      "Jardins",
+      "Dafalgan"
+    ],
+    "forbidden_medications": [],
+    "diagnostic_hypotheses": [
+      "Arterielle Hypertonie, unzureichend kontrolliert",
+      "Diabetes mellitus Typ 2, unzureichend kontrolliert",
+      "Erhöhtes kardiovaskuläres Risiko (positive Familienanamnese)"
+    ],
+    "diagnostic_plans": [
+      "Blutabnahme in 4 Wochen: Nierenwerte, Leberwerte, HbA1c",
+      "Blutdruckmessung zu Hause mindestens 3x pro Woche (morgens und abends)"
+    ],
+    "laboratory_results": [],
+    "functional_status": {},
+    "sick_leave": {},
+    "therapeutic_interventions": [
+      "Medikamentenanpassung wie oben beschrieben",
+      "Gewichtsreduktion anstreben",
+      "Kleinere Portionen essen",
+      "Weniger Kohlenhydrate",
+      "Weiterhin spazieren gehen"
+    ],
+    "follow_up_instructions": {
+      "next_appointment": "in 4 Wochen",
+      "red_flags": [
+        "Starke Kopfschmerzen",
+        "Brustschmerzen",
+        "Blutdruck geht nicht runter"
+      ],
+      "monitoring": [
+        "Blutdruck zu Hause messen 3x pro Woche (morgens und abends)",
+        "Werte aufschreiben",
+        "Blutabnahme in 4 Wochen"
+      ]
+    },
+    "patient_education": [
+      "Bei starken Kopfschmerzen oder Brustschmerzen sofort wiederkommen oder Notfall anrufen",
+      "Metformin langsam steigern über 3 Wochen",
+      "Blutdruck zu Hause kontrollieren",
+      "Gewichtsreduktion versuchen",
+      "Dafalgan maximal 3g pro Tag"
+    ]
+  },
+  "provenance": {
+    "status": "auto-generated"
+  }
+}

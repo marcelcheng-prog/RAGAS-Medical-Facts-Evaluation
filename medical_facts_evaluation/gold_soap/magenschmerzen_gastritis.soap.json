@@ -1,0 +1,157 @@
+{
+  "metadata": {
+    "generated_by": "soap_formatter.py",
+    "timestamp": "2026-03-16T04:39:47.998860+00:00",
+    "source_file": "medical_facts_evaluation/test_cases\\magenschmerzen_gastritis.json"
+  },
+  "soap_text": "S:\n- Magenschmerzen\n- Epigastrische Schmerzen\n- Übelkeit/Erbrechen (nur Speichel)\n\nO:\n- Temperatur 36.9 °C\n- Puls 77 /min\n- Blutdruck 163/76 mmHg\n- Oberbauch/Epigastrium druckempfindlich\n- Linker Unterbauch leicht empfindlich\n- Rechte Flanke empfindlich\n- Medikamente aktuell: Esomep 40 mg jeden Tag; Metamizol\n\nA:\n- Magenschleimhautentzündung (Gastritis)\n- Stressbedingt\n\nP:\n- Medikament: Dexilant; Aktion: new; Frequenz: einmal pro Tag\n- Medikament: Esomep; Aktion: stopped; Dosis: 40 mg\n- Medikament: Alukohl-Gel; Aktion: new; Dosis: zwei Messlöffel; Frequenz: 3-4x pro Tag\n- Diagnostik: Urinuntersuchung\n- Diagnostik: Kontrolle Entzündungswerte morgen (CRP, weisse Blutzellen)",
+  "soap": {
+    "S": [
+      "Magenschmerzen",
+      "Epigastrische Schmerzen",
+      "Übelkeit/Erbrechen (nur Speichel)"
+    ],
+    "O": [
+      "Temperatur 36.9 °C",
+      "Puls 77 /min",
+      "Blutdruck 163/76 mmHg",
+      "Oberbauch/Epigastrium druckempfindlich",
+      "Linker Unterbauch leicht empfindlich",
+      "Rechte Flanke empfindlich",
+      "Medikamente aktuell: Esomep 40 mg jeden Tag; Metamizol"
+    ],
+    "A": [
+      "Magenschleimhautentzündung (Gastritis)",
+      "Stressbedingt"
+    ],
+    "P": [
+      "Medikament: Dexilant; Aktion: new; Frequenz: einmal pro Tag",
+      "Medikament: Esomep; Aktion: stopped; Dosis: 40 mg",
+      "Medikament: Alukohl-Gel; Aktion: new; Dosis: zwei Messlöffel; Frequenz: 3-4x pro Tag",
+      "Diagnostik: Urinuntersuchung",
+      "Diagnostik: Kontrolle Entzündungswerte morgen (CRP, weisse Blutzellen)"
+    ]
+  },
+  "source_extract": {
+    "medications_taken": [
+      {
+        "name": "Esomep",
+        "dose": "40 mg",
+        "frequency": "jeden Tag",
+        "action": "continued",
+        "notes": "Magenschoner/PPI"
+      },
+      {
+        "name": "Metamizol",
+        "dose": "",
+        "frequency": "",
+        "action": "continued",
+        "notes": "Schmerzmedikament, heute Morgen genommen. Gleich wie Novalgin"
+      }
+    ],
+    "medications_planned": [
+      {
+        "name": "Dexilant",
+        "dose": "",
+        "frequency": "einmal pro Tag",
+        "action": "new",
+        "notes": "Ersetzt Esomep, für 4 Wochen"
+      },
+      {
+        "name": "Esomep",
+        "dose": "40 mg",
+        "frequency": "",
+        "action": "stopped",
+        "notes": "Pausieren für 4 Wochen"
+      },
+      {
+        "name": "Alukohl-Gel",
+        "dose": "zwei Messlöffel",
+        "frequency": "3-4x pro Tag",
+        "action": "new",
+        "notes": "Nach Essen/Trinken, nicht mit Wasser runterspülen"
+      }
+    ],
+    "all_medication_names": [
+      "Esomep",
+      "Metamizol",
+      "Novalgin",
+      "Dexilant",
+      "Alukohl-Gel"
+    ],
+    "vital_measurements": [
+      {
+        "parameter": "Temperatur",
+        "value": "36.9",
+        "unit": "°C"
+      },
+      {
+        "parameter": "Puls",
+        "value": "77",
+        "unit": "/min"
+      },
+      {
+        "parameter": "Blutdruck",
+        "value": "163/76",
+        "unit": "mmHg"
+      }
+    ],
+    "symptoms": [
+      "Magenschmerzen",
+      "Epigastrische Schmerzen",
+      "Übelkeit/Erbrechen (nur Speichel)",
+      "Durchfall",
+      "Aufstossen/Sodbrennen"
+    ],
+    "medical_history": [
+      "Nierensteine",
+      "Tod des Ehemannes (Stress)"
+    ],
+    "family_history": [],
+    "diagnostic_plans": [
+      "Urinuntersuchung",
+      "Kontrolle Entzündungswerte morgen (CRP, weisse Blutzellen)"
+    ],
+    "lab_values": [
+      {
+        "parameter": "CRP",
+        "value": "8",
+        "unit": "",
+        "interpretation": "leicht erhöht, unter 10 fast normal"
+      },
+      {
+        "parameter": "Weisse Blutzellen",
+        "value": "12.1",
+        "unit": "",
+        "interpretation": "leicht erhöht"
+      },
+      {
+        "parameter": "Urin",
+        "value": "negativ",
+        "unit": "",
+        "interpretation": "keine Bakterien, keine Entzündung"
+      }
+    ],
+    "physical_examination": [
+      "Oberbauch/Epigastrium druckempfindlich",
+      "Linker Unterbauch leicht empfindlich",
+      "Rechte Flanke empfindlich",
+      "Rege Darmgeräusche",
+      "Keine Unterschenkel-Ödeme",
+      "Keine gestauten Halsvenen"
+    ],
+    "diagnostic_hypotheses": [
+      "Magenschleimhautentzündung (Gastritis)",
+      "Stressbedingt"
+    ],
+    "therapeutic_interventions": [],
+    "forbidden_medications": [],
+    "follow_up": {
+      "next_appointment": "morgen Nachmittag",
+      "reason": "Kontrolle Entzündungswerte (CRP, weisse Blutzellen)"
+    }
+  },
+  "provenance": {
+    "status": "auto-generated"
+  }
+}

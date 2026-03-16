@@ -1,0 +1,22 @@
+S:
+- Rücken zwickt
+- Blutzucker macht was er will
+
+O:
+- Blutdruck 160/90 mmHg (doctor_measured)
+- Medikamente aktuell: Metformin 1000 mg 1-0-1; Ramipril 5 mg morgens
+
+A:
+- Objektive Messungen vorliegend; Symptomatik: Rücken zwickt, Blutzucker macht was er will
+
+P:
+- Medikament: Ozempic; Aktion: refused; Grund: Werte nicht schlecht genug, Lieferengpässe
+- Medikament: Tramadol; Aktion: stopped; Grund: Zu stark, macht schwindelig
+- Medikament: Ibuprofen; Aktion: refused; Grund: Grenzwertige Nierenwerte (GFR <60)
+- Medikament: Novalgin Tropfen; Aktion: new; Dosis: 20-30 Tropfen; Frequenz: bei Bedarf max 4x täglich
+- Medikament: Ramipril; Aktion: changed; Dosis: 10 mg; Frequenz: täglich; Grund: Blutdruck zu hoch
+- Medikament: Thrombosespritze; Aktion: refused; Grund: Flug zu kurz
+- Diagnostik: Labor
+- Tramadol-Reste sofort entsorgen
+- Viel Wasser trinken auf Flug
+- Beine bewegen auf Flug

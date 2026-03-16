@@ -1,0 +1,95 @@
+{
+  "metadata": {
+    "generated_by": "soap_formatter.py",
+    "timestamp": "2026-03-16T04:39:47.945208+00:00",
+    "source_file": "medical_facts_evaluation/test_cases\\korrektur_noise_filter.json"
+  },
+  "soap_text": "S:\n- produktiver Husten seit drei Tagen\n- gelblicher Auswurf\n- Fieber\n\nO:\n- Temperatur 37.8 °C (patient_reported)\n- Temperatur 38.5 °C (patient_reported)\n- Medikamente aktuell: Bisoprolol 5 mg morgens; Ramipril 5 mg morgens; Simvastatin 40 mg abends; L-Thyroxin 75 µg morgens nüchtern\n\nA:\n- Objektive Messungen vorliegend; Symptomatik: produktiver Husten seit drei Tagen, gelblicher Auswurf, Fieber\n\nP:\n- kein Plan dokumentiert",
+  "soap": {
+    "S": [
+      "produktiver Husten seit drei Tagen",
+      "gelblicher Auswurf",
+      "Fieber"
+    ],
+    "O": [
+      "Temperatur 37.8 °C (patient_reported)",
+      "Temperatur 38.5 °C (patient_reported)",
+      "Medikamente aktuell: Bisoprolol 5 mg morgens; Ramipril 5 mg morgens; Simvastatin 40 mg abends; L-Thyroxin 75 µg morgens nüchtern"
+    ],
+    "A": [
+      "Objektive Messungen vorliegend; Symptomatik: produktiver Husten seit drei Tagen, gelblicher Auswurf, Fieber"
+    ],
+    "P": []
+  },
+  "source_extract": {
+    "medications_taken": [
+      {
+        "name": "Bisoprolol",
+        "dose": "5 mg",
+        "frequency": "morgens",
+        "action": "continued",
+        "notes": "QM-013: Patient initially said Metoprolol then corrected to Bisoprolol"
+      },
+      {
+        "name": "Ramipril",
+        "dose": "5 mg",
+        "frequency": "morgens",
+        "action": "continued",
+        "notes": "QM-013: Patient initially said 2.5 mg then corrected to 5 mg"
+      },
+      {
+        "name": "Simvastatin",
+        "dose": "40 mg",
+        "frequency": "abends",
+        "action": "changed",
+        "notes": "QM-013: Patient said 20 mg then corrected to 40 mg (dose increased)"
+      },
+      {
+        "name": "L-Thyroxin",
+        "dose": "75 µg",
+        "frequency": "morgens nüchtern",
+        "action": "changed",
+        "notes": "QM-013: Patient said 50 then corrected to 75 µg (dose adjusted last month)"
+      }
+    ],
+    "medications_planned": [],
+    "all_medication_names": [
+      "Bisoprolol",
+      "Ramipril",
+      "Simvastatin",
+      "L-Thyroxin"
+    ],
+    "vital_measurements": [
+      {
+        "parameter": "Temperatur",
+        "value": "37.8",
+        "unit": "°C",
+        "source": "patient_reported"
+      },
+      {
+        "parameter": "Temperatur",
+        "value": "38.5",
+        "unit": "°C",
+        "source": "patient_reported"
+      }
+    ],
+    "symptoms": [
+      "produktiver Husten seit drei Tagen",
+      "gelblicher Auswurf",
+      "Fieber"
+    ],
+    "medical_history": [
+      "Amoxicillin-Allergie mit Hautausschlag"
+    ],
+    "family_history": [],
+    "diagnostic_plans": [],
+    "therapeutic_interventions": [],
+    "forbidden_medications": [
+      "Metoprolol",
+      "Penicillin"
+    ]
+  },
+  "provenance": {
+    "status": "auto-generated"
+  }
+}
