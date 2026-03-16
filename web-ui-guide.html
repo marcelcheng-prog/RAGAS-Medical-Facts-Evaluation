@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Web UI Guide | RAGAS Medical Facts &amp; SOAP Evaluation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Web UI Guide" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Evaluation framework for Medical Facts extraction and SOAP note generation agents" />
+<meta property="og:description" content="Evaluation framework for Medical Facts extraction and SOAP note generation agents" />
+<link rel="canonical" href="/RAGAS-Medical-Facts-Evaluation/web-ui-guide.html" />
+<meta property="og:url" content="/RAGAS-Medical-Facts-Evaluation/web-ui-guide.html" />
+<meta property="og:site_name" content="RAGAS Medical Facts &amp; SOAP Evaluation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Web UI Guide" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Evaluation framework for Medical Facts extraction and SOAP note generation agents","headline":"Web UI Guide","url":"/RAGAS-Medical-Facts-Evaluation/web-ui-guide.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/RAGAS-Medical-Facts-Evaluation/assets/css/style.css?v=cb14ec824a7837898f542f72455188ca1eee7796">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/RAGAS-Medical-Facts-Evaluation/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name">Web UI Guide</h1>
+      <h2 class="project-tagline">Evaluation framework for Medical Facts extraction and SOAP note generation agents</h2>
+      
+        <a href="https://github.com/marcelcheng-prog/RAGAS-Medical-Facts-Evaluation" class="btn">View on GitHub</a>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="streamlit-web-ui-guide">Streamlit Web UI Guide</h1>
+
+<p>The Streamlit dashboard provides an interactive interface for running evaluations, comparing agents, reviewing gold standards, and tracking feedback.</p>
+
+<h2 id="launch">Launch</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>RAGAS_Medical_Facts_Agent_refactor
+python <span class="nt">-m</span> streamlit run app.py <span class="nt">--server</span>.headless <span class="nb">true</span>
+</code></pre></div></div>
+
+<p>Open <strong>http://localhost:8501</strong> in your browser.</p>
+
+<hr />
+
+<h2 id="sidebar-configuration">Sidebar Configuration</h2>
+
+<h3 id="agent-selection">Agent Selection</h3>
+
+<p>Choose from predefined agents via dropdown:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Agent ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>DEV-FLH agent</td>
+      <td><code class="language-plaintext highlighter-rouge">ff04c2b01edb11f194964348756e437e</code></td>
+    </tr>
+    <tr>
+      <td>medicalfactssoapv2 agent</td>
+      <td><code class="language-plaintext highlighter-rouge">f44320e61ef011f194964348756e437e</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Or select <strong>✏️ Custom Agent ID</strong> to enter any agent ID manually. Saved favorites also appear in the dropdown.</p>
+
+<h3 id="compare-mode">Compare Mode</h3>
+
+<p>Enable <strong>🆚 Compare two agents</strong> to select a second agent. Results are displayed side-by-side with a summary table showing wins/losses.</p>
+
+<h3 id="thresholds-soap-mode">Thresholds (SOAP mode)</h3>
+
+<ul>
+  <li><strong>Structure Threshold</strong> — minimum fraction of SOAP sections (S, O, A, P) present. Default: 1.0 (all 4 required).</li>
+  <li><strong>Content Threshold</strong> — minimum average content quality score. Default: 0.70.</li>
+</ul>
+
+<hr />
+
+<h2 id="tabs">Tabs</h2>
+
+<h3 id="-evaluate">📊 Evaluate</h3>
+
+<ol>
+  <li>Select evaluation mode (Medical Facts or SOAP)</li>
+  <li>Choose agent(s) and test case(s)</li>
+  <li>Click <strong>🚀 Run Evaluation</strong></li>
+  <li>View detailed results with metrics, auto-recommendations, and feedback forms</li>
+</ol>
+
+<p><strong>Medical Facts results include:</strong></p>
+<ul>
+  <li>Quality score (0–100)</li>
+  <li>Medication precision, recall, F1</li>
+  <li>Faithfulness and context recall</li>
+  <li>Hallucination list</li>
+</ul>
+
+<p><strong>SOAP results include:</strong></p>
+<ul>
+  <li>Overall score (structure × 30% + content × 70%)</li>
+  <li>Per-section scores (S, O, A, P) with lexical, semantic, and RAGAS breakdown</li>
+  <li>Missing/extra items per section</li>
+</ul>
+
+<h3 id="-data-browser">📋 Data Browser</h3>
+
+<p>Browse per test case:</p>
+<ul>
+  <li>Editable transcript</li>
+  <li>Ground truth medical facts (formatted + raw JSON)</li>
+  <li>Gold standard SOAP (formatted, plain text, raw JSON)</li>
+  <li>Auto-derived SOAP from ground truth</li>
+  <li>Past evaluation output files</li>
+</ul>
+
+<h3 id="-gold-standard-review">📖 Gold Standard Review</h3>
+
+<p>Overview of <strong>all</strong> test cases with:</p>
+<ul>
+  <li>Summary metrics (total cases, gold files, reviewed count)</li>
+  <li>Filter bar and “show only unreviewed” toggle</li>
+  <li>For each test case:
+    <ul>
+      <li>Resizable transcript viewer</li>
+      <li>Ground truth medical facts (left column)</li>
+      <li>Gold standard SOAP (right column)</li>
+      <li>Previous review feedback</li>
+      <li>Feedback form with target (transcript / ground truth / gold SOAP / general), free text, and priority slider</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Feedback is saved to <code class="language-plaintext highlighter-rouge">data/gold_review/</code> as JSON files — one per test case.</p>
+
+<h3 id="-rankings">🏆 Rankings</h3>
+
+<p>Agent leaderboard showing:</p>
+<ul>
+  <li>Average, best, and worst scores</li>
+  <li>Average and minimum response times</li>
+  <li>Pass rate</li>
+  <li>Last run timestamp</li>
+</ul>
+
+<p>Filter by mode (Medical Facts / SOAP). Individual run history also available.</p>
+
+<h3 id="-feedback">💬 Feedback</h3>
+
+<p>Browse all evaluation feedback entries with filters by agent, mode, and test case. Each entry shows:</p>
+<ul>
+  <li>Timestamp, agent, test case, score</li>
+  <li>User feedback text</li>
+  <li>Auto-recommendations</li>
+</ul>
+
+<p>Export as JSON or clear all.</p>
+
+<h3 id="-favorites">⭐ Favorites</h3>
+
+<p>Manage saved agent configurations. Add via sidebar, delete from this tab.</p>
+
+<hr />
+
+<h2 id="data-storage">Data Storage</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Directory</th>
+      <th>Contents</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">data/favorites.json</code></td>
+      <td>Saved agent favorites</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">data/rankings.json</code></td>
+      <td>Evaluation run history</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">data/feedback/</code></td>
+      <td>Per agent+test evaluation feedback</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">data/gold_review/</code></td>
+      <td>Gold standard review feedback</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">results/</code></td>
+      <td>Past evaluation output JSON files</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p><a href="index">← Back to Home</a></p>
+
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/marcelcheng-prog/RAGAS-Medical-Facts-Evaluation">RAGAS-Medical-Facts-Evaluation</a> is maintained by <a href="https://github.com/marcelcheng-prog">marcelcheng-prog</a>.</span>
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>

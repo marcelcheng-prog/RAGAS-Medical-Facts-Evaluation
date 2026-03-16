@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>QM Codes Reference | RAGAS Medical Facts &amp; SOAP Evaluation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="QM Codes Reference" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Evaluation framework for Medical Facts extraction and SOAP note generation agents" />
+<meta property="og:description" content="Evaluation framework for Medical Facts extraction and SOAP note generation agents" />
+<link rel="canonical" href="/RAGAS-Medical-Facts-Evaluation/qm-codes.html" />
+<meta property="og:url" content="/RAGAS-Medical-Facts-Evaluation/qm-codes.html" />
+<meta property="og:site_name" content="RAGAS Medical Facts &amp; SOAP Evaluation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="QM Codes Reference" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Evaluation framework for Medical Facts extraction and SOAP note generation agents","headline":"QM Codes Reference","url":"/RAGAS-Medical-Facts-Evaluation/qm-codes.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/RAGAS-Medical-Facts-Evaluation/assets/css/style.css?v=cb14ec824a7837898f542f72455188ca1eee7796">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/RAGAS-Medical-Facts-Evaluation/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name">QM Codes Reference</h1>
+      <h2 class="project-tagline">Evaluation framework for Medical Facts extraction and SOAP note generation agents</h2>
+      
+        <a href="https://github.com/marcelcheng-prog/RAGAS-Medical-Facts-Evaluation" class="btn">View on GitHub</a>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="quality-metrics-qm-codes-reference">Quality Metrics (QM) Codes Reference</h1>
+
+<p>The evaluation framework validates agent output against 18 quality metric codes organized into three severity categories.</p>
+
+<h2 id="severity-levels">Severity Levels</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Level</th>
+      <th style="text-align: center">Icon</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>PASS</strong></td>
+      <td style="text-align: center">🟢</td>
+      <td>Akzeptiert — meets quality standards</td>
+    </tr>
+    <tr>
+      <td><strong>MAJOR</strong></td>
+      <td style="text-align: center">🟡</td>
+      <td>Nacharbeit nötig — requires manual review/correction</td>
+    </tr>
+    <tr>
+      <td><strong>CRITICAL</strong></td>
+      <td style="text-align: center">🔴</td>
+      <td>Showstopper — patient safety risk, must be fixed</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="safety--medikation--patientendaten-qm-001-to-qm-008">SAFETY — Medikation &amp; Patientendaten (QM-001 to QM-008)</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Kategorie</th>
+      <th>Metrik / Prüfpunkt</th>
+      <th>🟢 PASS</th>
+      <th>🟡 MAJOR</th>
+      <th>🔴 CRITICAL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>QM-001</strong></td>
+      <td>Medikation</td>
+      <td><strong>Wirkstoff-Integrität</strong></td>
+      <td>Name korrekt erkannt (Verbatim)</td>
+      <td>Leichter Tippfehler im Namen</td>
+      <td>Falscher Wirkstoff / Halluzination</td>
+    </tr>
+    <tr>
+      <td><strong>QM-002</strong></td>
+      <td>Medikation</td>
+      <td><strong>Dosierung &amp; Einheit</strong></td>
+      <td>Zahl und Einheit (mg/µg) exakt</td>
+      <td>Einheit fehlt, aber Zahl stimmt</td>
+      <td>Falsche Dosis oder Einheit (z.B. mg statt µg)</td>
+    </tr>
+    <tr>
+      <td><strong>QM-003</strong></td>
+      <td>Medikation</td>
+      <td><strong>Logik: Bestand vs. Neu</strong></td>
+      <td>Korrekt getrennt in Anamnese/Plan</td>
+      <td>Vermischt, aber als Medikation erkennbar</td>
+      <td>Bestandsmedikament fälschlich als “neu”</td>
+    </tr>
+    <tr>
+      <td><strong>QM-004</strong></td>
+      <td>Medikation</td>
+      <td><strong>Negativ-Filter</strong></td>
+      <td>Abgelehntes Medikament ignoriert</td>
+      <td>Erwähnt, aber Status unklar</td>
+      <td>Abgelehntes Medikament als “Verordnung”</td>
+    </tr>
+    <tr>
+      <td><strong>QM-005</strong></td>
+      <td>Medikation</td>
+      <td><strong>Unsicherheits-Handling</strong></td>
+      <td>Markiert als [UNCLEAR]</td>
+      <td>Ungenaue Angabe ohne Markierung</td>
+      <td>KI rät/erfindet eine Dosis</td>
+    </tr>
+    <tr>
+      <td><strong>QM-006</strong></td>
+      <td>Patientendaten</td>
+      <td><strong>Lateralität (Links/Rechts)</strong></td>
+      <td>Seite korrekt (z.B. linkes Knie)</td>
+      <td>Seite fehlt (nur “Knie”)</td>
+      <td>Seite vertauscht (Rechts statt Links)</td>
+    </tr>
+    <tr>
+      <td><strong>QM-007</strong></td>
+      <td>Patientendaten</td>
+      <td><strong>Allergien (CAVE)</strong></td>
+      <td>Allergie korrekt erfasst</td>
+      <td>Allergie im Fließtext versteckt</td>
+      <td>Allergie übersehen oder “Keine Allergien” erfunden</td>
+    </tr>
+    <tr>
+      <td><strong>QM-008</strong></td>
+      <td>Patientendaten</td>
+      <td><strong>Ausschluss (Negation)</strong></td>
+      <td>Kein Fieber korrekt erkannt</td>
+      <td>Unpräzise (“Unwohlsein” statt “Grippe”)</td>
+      <td>Hat Fieber (Das “Kein” überlesen)</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="accuracy--diagnostik--kontext-qm-009-to-qm-013">ACCURACY — Diagnostik &amp; Kontext (QM-009 to QM-013)</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Kategorie</th>
+      <th>Metrik / Prüfpunkt</th>
+      <th>🟢 PASS</th>
+      <th>🟡 MAJOR</th>
+      <th>🔴 CRITICAL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>QM-009</strong></td>
+      <td>Diagnostik</td>
+      <td><strong>Hauptdiagnose</strong></td>
+      <td>Kernproblem korrekt identifiziert</td>
+      <td>Unpräzise (“Unwohlsein” statt “Grippe”)</td>
+      <td>Thema verfehlt / Falsche Diagnose erfunden</td>
+    </tr>
+    <tr>
+      <td><strong>QM-010</strong></td>
+      <td>Diagnostik</td>
+      <td><strong>Messwerte (Vitals/Labs)</strong></td>
+      <td>Werte exakt (RR 120/80)</td>
+      <td>Wert da, Parametername unklar</td>
+      <td>Zahlenfehler (Kommafehler)</td>
+    </tr>
+    <tr>
+      <td><strong>QM-011</strong></td>
+      <td>Kontext</td>
+      <td><strong>Attribution (Wer?)</strong></td>
+      <td>Symptome Dritter (Ehefrau) ignoriert</td>
+      <td>Dritte erwähnt, aber abgegrenzt</td>
+      <td>Symptome Dritter dem Patienten zugeordnet</td>
+    </tr>
+    <tr>
+      <td><strong>QM-012</strong></td>
+      <td>Kontext</td>
+      <td><strong>Zeitlicher Verlauf</strong></td>
+      <td>Zeitangaben (“seit 3 Tagen”) korrekt</td>
+      <td>Zeit fehlt (“seit einiger Zeit”)</td>
+      <td>Falsche Zeit (“seit 3 Wochen” statt “3 Tagen”)</td>
+    </tr>
+    <tr>
+      <td><strong>QM-013</strong></td>
+      <td>Kontext</td>
+      <td><strong>Korrektur-Erkennung</strong></td>
+      <td>Letztgültige Aussage (“nein doch nicht”) zählt</td>
+      <td>Beide Aussagen (falsch &amp; richtig) gelistet</td>
+      <td>Nur die falsche (korrigierte) Aussage übernommen</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="usability--struktur-inhalt--stil-qm-014-to-qm-018">USABILITY — Struktur, Inhalt &amp; Stil (QM-014 to QM-018)</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Kategorie</th>
+      <th>Metrik / Prüfpunkt</th>
+      <th>🟢 PASS</th>
+      <th>🟡 MAJOR</th>
+      <th>🔴 CRITICAL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>QM-014</strong></td>
+      <td>Struktur</td>
+      <td><strong>SOAP-Formatierung</strong></td>
+      <td>Saubere Trennung S-O-A-P</td>
+      <td>Infos in falscher Sektion (z.B. Befund in Plan)</td>
+      <td>Keine Struktur / Fließtext-Block</td>
+    </tr>
+    <tr>
+      <td><strong>QM-015</strong></td>
+      <td>Inhalt</td>
+      <td><strong>Noise Filter (Smalltalk)</strong></td>
+      <td>Kein Smalltalk (Wetter/Urlaub)</td>
+      <td>Kurzer Satz Smalltalk enthalten</td>
+      <td>Lange Passagen über Irrelevantes (Urlaub, Admin)</td>
+    </tr>
+    <tr>
+      <td><strong>QM-016</strong></td>
+      <td>Stil</td>
+      <td><strong>Medizinischer Jargon</strong></td>
+      <td>Fachsprache / Stichpunkte</td>
+      <td>Umgangssprache / Ganze Sätze</td>
+      <td>Chatbot-Stil (“Der Arzt sagte dann…”)</td>
+    </tr>
+    <tr>
+      <td><strong>QM-017</strong></td>
+      <td>Stil</td>
+      <td><strong>Sprache &amp; Grammatik</strong></td>
+      <td>Korrekte deutsche Grammatik</td>
+      <td>Leichte Grammatikfehler</td>
+      <td>Englische Wörter gemischt / Sinn entstellt</td>
+    </tr>
+    <tr>
+      <td><strong>QM-018</strong></td>
+      <td>Inhalt</td>
+      <td><strong>Halluzination (Füller)</strong></td>
+      <td>Nur Fakten aus Audio</td>
+      <td>—</td>
+      <td>Erfundene Untersuchungen (“Abdomen weich”), die nie stattfanden</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="test-case-coverage">Test Case Coverage</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Test Case</th>
+      <th>Primary QM Codes</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ortho_knee_arthrose</code></td>
+      <td>QM-002 through QM-008</td>
+      <td>Comprehensive safety metrics</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">gyn_pregnancy_gestational_diabetes</code></td>
+      <td>QM-002 through QM-008</td>
+      <td>Pregnancy-specific safety</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">korrektur_noise_filter</code></td>
+      <td>QM-013, QM-015</td>
+      <td>Correction &amp; noise handling</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">diabetes_hypertonie</code></td>
+      <td>QM-001, QM-003, QM-010</td>
+      <td>Medication &amp; vitals</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">medikamentenreview_polypharmazie</code></td>
+      <td>QM-001, QM-009</td>
+      <td>Polypharmacy &amp; ASR errors</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">hausarzt</code></td>
+      <td>QM-001, QM-003, QM-011</td>
+      <td>Complete GP consultation</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">michael_mueller</code></td>
+      <td>QM-001, QM-003, QM-004</td>
+      <td>Standard diabetes case</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p><a href="index">← Back to Home</a></p>
+
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/marcelcheng-prog/RAGAS-Medical-Facts-Evaluation">RAGAS-Medical-Facts-Evaluation</a> is maintained by <a href="https://github.com/marcelcheng-prog">marcelcheng-prog</a>.</span>
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>

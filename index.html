@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Home | RAGAS Medical Facts &amp; SOAP Evaluation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Home" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Evaluation framework for Medical Facts extraction and SOAP note generation agents" />
+<meta property="og:description" content="Evaluation framework for Medical Facts extraction and SOAP note generation agents" />
+<link rel="canonical" href="/RAGAS-Medical-Facts-Evaluation/" />
+<meta property="og:url" content="/RAGAS-Medical-Facts-Evaluation/" />
+<meta property="og:site_name" content="RAGAS Medical Facts &amp; SOAP Evaluation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Home" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Evaluation framework for Medical Facts extraction and SOAP note generation agents","headline":"Home","name":"RAGAS Medical Facts &amp; SOAP Evaluation","url":"/RAGAS-Medical-Facts-Evaluation/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/RAGAS-Medical-Facts-Evaluation/assets/css/style.css?v=cb14ec824a7837898f542f72455188ca1eee7796">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/RAGAS-Medical-Facts-Evaluation/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name">Home</h1>
+      <h2 class="project-tagline">Evaluation framework for Medical Facts extraction and SOAP note generation agents</h2>
+      
+        <a href="https://github.com/marcelcheng-prog/RAGAS-Medical-Facts-Evaluation" class="btn">View on GitHub</a>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="-ragas-medical-facts--soap-evaluation">🏥 RAGAS Medical Facts &amp; SOAP Evaluation</h1>
+
+<p>Evaluation framework for testing <strong>Medical Facts extraction</strong> and <strong>SOAP note generation</strong> agents using <a href="https://docs.ragas.io/">RAGAS</a>, with a <strong>Streamlit web UI</strong> for interactive evaluation, agent comparison, and gold standard review.</p>
+
+<hr />
+
+<h2 id="features">Features</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>🔬 <strong>RAGAS Evaluation</strong></td>
+      <td>Industry-standard LLM evaluation metrics (Faithfulness, Context Recall)</td>
+    </tr>
+    <tr>
+      <td>💊 <strong>Medication Tracking</strong></td>
+      <td>Precision / Recall / F1 for medication extraction with hallucination detection</td>
+    </tr>
+    <tr>
+      <td>🧼 <strong>SOAP Evaluation</strong></td>
+      <td>Three-tier scoring: lexical + GPT-semantic + RAGAS weighted blend</td>
+    </tr>
+    <tr>
+      <td>🆚 <strong>Agent Comparison</strong></td>
+      <td>Side-by-side comparison of two agents on the same test cases</td>
+    </tr>
+    <tr>
+      <td>📖 <strong>Gold Standard Review</strong></td>
+      <td>Browse all transcripts, gold SOAP, and ground truth with feedback</td>
+    </tr>
+    <tr>
+      <td>🏆 <strong>Leaderboard</strong></td>
+      <td>Automatic ranking by score and response time</td>
+    </tr>
+    <tr>
+      <td>⭐ <strong>Favorites</strong></td>
+      <td>Save and manage preferred agent configurations</td>
+    </tr>
+    <tr>
+      <td>💬 <strong>Feedback System</strong></td>
+      <td>Per-test-case feedback with auto-recommendations</td>
+    </tr>
+    <tr>
+      <td>📊 <strong>Web UI</strong></td>
+      <td>Full Streamlit dashboard at <code class="language-plaintext highlighter-rouge">localhost:8501</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="quick-start">Quick Start</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Clone</span>
+git clone https://github.com/marcelcheng-prog/RAGAS-Medical-Facts-Evaluation.git
+<span class="nb">cd </span>RAGAS-Medical-Facts-Evaluation
+
+<span class="c"># Install</span>
+pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+
+<span class="c"># Configure</span>
+<span class="nb">cp</span> .env.example .env   <span class="c"># add your OPENAI_API_KEY and MEDICAL_FACTS_AUTH_TOKEN</span>
+
+<span class="c"># Run CLI</span>
+python <span class="nt">-m</span> medical_facts_evaluation <span class="nt">--verbose</span>
+
+<span class="c"># Run Web UI</span>
+python <span class="nt">-m</span> streamlit run app.py <span class="nt">--server</span>.headless <span class="nb">true</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="architecture">Architecture</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>┌─────────────────────────────────────────────────────────┐
+│                  Streamlit Web UI (app.py)               │
+│  ┌──────────┬───────────┬──────────┬──────────┬────────┐│
+│  │ Evaluate │ Data      │ Gold Std │ Rankings │Feedback││
+│  │          │ Browser   │ Review   │          │        ││
+│  └──────────┴───────────┴──────────┴──────────┴────────┘│
+├─────────────────────────────────────────────────────────┤
+│                  Evaluation Engine                        │
+│  ┌─────────────────┐  ┌─────────────────────────────┐   │
+│  │ MedicalFacts     │  │ SOAP Evaluator              │   │
+│  │ Evaluator        │  │ (lexical + GPT + RAGAS)     │   │
+│  └────────┬────────┘  └──────────┬──────────────────┘   │
+│           │                      │                       │
+│  ┌────────▼────────┐  ┌─────────▼──────────┐           │
+│  │ RAGFlow API     │  │ OpenAI GPT-4       │           │
+│  │ (Agent Client)  │  │ (Semantic Scoring)  │           │
+│  └─────────────────┘  └────────────────────┘           │
+├─────────────────────────────────────────────────────────┤
+│                  Test Data                                │
+│  test_cases/*.json  │  gold_soap/*.soap.json  │ data/   │
+└─────────────────────────────────────────────────────────┘
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="evaluation-modes">Evaluation Modes</h2>
+
+<h3 id="medical-facts-mode">Medical Facts Mode</h3>
+
+<p>Extracts structured medical facts from doctor-patient transcripts and evaluates:</p>
+
+<ul>
+  <li><strong>Medication extraction</strong> — name, dose, frequency, action (continued/new/changed/stopped)</li>
+  <li><strong>RAGAS Faithfulness</strong> — are extracted facts supported by the transcript?</li>
+  <li><strong>RAGAS Context Recall</strong> — are all ground truth facts captured?</li>
+  <li><strong>Hallucination detection</strong> — medications the agent invented</li>
+</ul>
+
+<h3 id="soap-mode">SOAP Mode</h3>
+
+<p>Generates Subjective / Objective / Assessment / Plan notes and evaluates with a three-tier blend:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tier</th>
+      <th>Weight</th>
+      <th>What it measures</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Lexical (token F1)</td>
+      <td>35%</td>
+      <td>Word-level overlap with gold standard</td>
+    </tr>
+    <tr>
+      <td>GPT-Semantic</td>
+      <td>30%</td>
+      <td>Meaning-level similarity scored by GPT</td>
+    </tr>
+    <tr>
+      <td>RAGAS Context Recall</td>
+      <td>35%</td>
+      <td>Semantic list recall via RAGAS</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Thresholds:</strong></p>
+<ul>
+  <li><strong>Structure Threshold</strong> — minimum fraction of S/O/A/P sections present (default: 1.0 = all required)</li>
+  <li><strong>Content Threshold</strong> — minimum average content quality across sections (default: 0.70)</li>
+</ul>
+
+<hr />
+
+<h2 id="quality-metrics-qm-codes">Quality Metrics (QM Codes)</h2>
+
+<p>The framework validates agents against 18 quality metric codes across three categories:</p>
+
+<h3 id="safety-qm-001--qm-008">Safety (QM-001 – QM-008)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>What it checks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>QM-001</td>
+      <td>Drug name integrity (verbatim extraction)</td>
+    </tr>
+    <tr>
+      <td>QM-002</td>
+      <td>Dosage &amp; unit correctness (mg vs µg)</td>
+    </tr>
+    <tr>
+      <td>QM-003</td>
+      <td>Existing vs. new medication classification</td>
+    </tr>
+    <tr>
+      <td>QM-004</td>
+      <td>Rejected medication filtering</td>
+    </tr>
+    <tr>
+      <td>QM-005</td>
+      <td>Uncertainty handling ([UNCLEAR] markers)</td>
+    </tr>
+    <tr>
+      <td>QM-006</td>
+      <td>Laterality (left/right) correctness</td>
+    </tr>
+    <tr>
+      <td>QM-007</td>
+      <td>Allergy (CAVE) capture</td>
+    </tr>
+    <tr>
+      <td>QM-008</td>
+      <td>Negation handling (“no fever” ≠ “fever”)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="accuracy-qm-009--qm-013">Accuracy (QM-009 – QM-013)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>What it checks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>QM-009</td>
+      <td>Primary diagnosis identification</td>
+    </tr>
+    <tr>
+      <td>QM-010</td>
+      <td>Vital sign / lab value precision</td>
+    </tr>
+    <tr>
+      <td>QM-011</td>
+      <td>Attribution (patient vs. third party)</td>
+    </tr>
+    <tr>
+      <td>QM-012</td>
+      <td>Temporal accuracy (“3 days” vs “3 weeks”)</td>
+    </tr>
+    <tr>
+      <td>QM-013</td>
+      <td>Self-correction recognition</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="usability-qm-014--qm-018">Usability (QM-014 – QM-018)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>What it checks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>QM-014</td>
+      <td>SOAP section formatting</td>
+    </tr>
+    <tr>
+      <td>QM-015</td>
+      <td>Noise / smalltalk filtering</td>
+    </tr>
+    <tr>
+      <td>QM-016</td>
+      <td>Medical terminology style</td>
+    </tr>
+    <tr>
+      <td>QM-017</td>
+      <td>Language &amp; grammar quality</td>
+    </tr>
+    <tr>
+      <td>QM-018</td>
+      <td>Hallucination / filler detection</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="test-cases">Test Cases</h2>
+
+<p>13 German medical transcripts with ground truth:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Test Case</th>
+      <th>Description</th>
+      <th style="text-align: center">Meds</th>
+      <th style="text-align: center">Complexity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ortho_knee_arthrose</code></td>
+      <td>Knee arthritis, NSAID allergy, opioid refusal</td>
+      <td style="text-align: center">8</td>
+      <td style="text-align: center">High</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">gyn_pregnancy_gestational_diabetes</code></td>
+      <td>Pregnancy SSW 28, gestational diabetes, 3 allergies</td>
+      <td style="text-align: center">11</td>
+      <td style="text-align: center">High</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">diabetes_hypertonie</code></td>
+      <td>Diabetes + Hypertension with family history</td>
+      <td style="text-align: center">7</td>
+      <td style="text-align: center">High</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">medikamentenreview_polypharmazie</code></td>
+      <td>Elderly polypharmacy, heart failure</td>
+      <td style="text-align: center">7</td>
+      <td style="text-align: center">High</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">hausarzt</code></td>
+      <td>Complete GP consultation</td>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">High</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">korrektur_noise_filter</code></td>
+      <td>Corrections &amp; smalltalk filtering</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">High</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">michael_mueller</code></td>
+      <td>Diabetes &amp; back pain</td>
+      <td style="text-align: center">8</td>
+      <td style="text-align: center">Medium</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">diabetes</code></td>
+      <td>Diabetes therapy change</td>
+      <td style="text-align: center">7</td>
+      <td style="text-align: center">Medium</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">magenschmerzen_gastritis</code></td>
+      <td>Gastritis with PPI therapy</td>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">Medium</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">bauchschmerzen</code></td>
+      <td>Abdominal pain &amp; fever</td>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">Medium</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">notfall_brustschmerzen_vitals</code></td>
+      <td>Emergency chest pain with vitals</td>
+      <td style="text-align: center">—</td>
+      <td style="text-align: center">High</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">psychiatrie_depression_symptome</code></td>
+      <td>Psychiatry depression symptoms</td>
+      <td style="text-align: center">—</td>
+      <td style="text-align: center">Medium</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">634</code></td>
+      <td>General consultation</td>
+      <td style="text-align: center">—</td>
+      <td style="text-align: center">Medium</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="predefined-agents">Predefined Agents</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Agent ID</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>DEV-FLH agent</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">ff04c2b01edb11f194964348756e437e</code></td>
+      <td>Development / FLH testing</td>
+    </tr>
+    <tr>
+      <td><strong>medicalfactssoapv2</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">f44320e61ef011f194964348756e437e</code></td>
+      <td>SOAP v2 production agent</td>
+    </tr>
+    <tr>
+      <td><strong>Production MF</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">e1a25a64fdc611f0b3cb4afd40f7103b</code></td>
+      <td>Production Medical Facts agent</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="web-ui-tabs">Web UI Tabs</h2>
+
+<h3 id="-evaluate">📊 Evaluate</h3>
+<p>Run Medical Facts or SOAP evaluations with configurable thresholds. Supports single agent or side-by-side comparison.</p>
+
+<h3 id="-data-browser">📋 Data Browser</h3>
+<p>Browse transcripts, ground truth, gold SOAP, and past evaluation outputs per test case.</p>
+
+<h3 id="-gold-standard-review">📖 Gold Standard Review</h3>
+<p>Review all test cases at a glance — transcript, ground truth medical facts, and gold SOAP side by side. Leave prioritized feedback on what should be improved.</p>
+
+<h3 id="-rankings">🏆 Rankings</h3>
+<p>Agent leaderboard sorted by average/best score, pass rate, and response time.</p>
+
+<h3 id="-feedback">💬 Feedback</h3>
+<p>Browse all feedback entries with filtering by agent, mode, and test case. Export as JSON.</p>
+
+<h3 id="-favorites">⭐ Favorites</h3>
+<p>Save and manage preferred agent configurations for quick access.</p>
+
+<hr />
+
+<h2 id="pages">Pages</h2>
+
+<ul>
+  <li><a href="index">Home</a> — this page</li>
+  <li><a href="qm-codes">QM Codes Reference</a> — detailed quality metric definitions</li>
+  <li><a href="web-ui-guide">Web UI Guide</a> — how to use the Streamlit dashboard</li>
+</ul>
+
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/marcelcheng-prog/RAGAS-Medical-Facts-Evaluation">RAGAS-Medical-Facts-Evaluation</a> is maintained by <a href="https://github.com/marcelcheng-prog">marcelcheng-prog</a>.</span>
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>
